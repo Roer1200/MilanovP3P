@@ -8,3 +8,8 @@ C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\Website\previewDesi
 C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\Website\previewDesign\Milanov\Milanov\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\Website\previewDesign\Milanov\Milanov\obj\Debug\Milanov.dll
 C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\Website\previewDesign\Milanov\Milanov\obj\Debug\Milanov.pdb
+C:\GitHub\MilanovP3P\Website\Milanov\Milanov\bin\Milanov.dll
+C:\GitHub\MilanovP3P\Website\Milanov\Milanov\bin\Milanov.pdb
+C:\GitHub\MilanovP3P\Website\Milanov\Milanov\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\MilanovP3P\Website\Milanov\Milanov\obj\Debug\Milanov.dll
+C:\GitHub\MilanovP3P\Website\Milanov\Milanov\obj\Debug\Milanov.pdb

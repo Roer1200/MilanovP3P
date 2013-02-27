@@ -51,6 +51,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MilanovDB.mdf" />
+    <Content Include="App_Data\MilanovDB_log.ldf">
+      <DependentUpon>MilanovDB.mdf</DependentUpon>
+    </Content>
     <Content Include="fancybox\blank.gif" />
     <Content Include="fancybox\fancybox-x.png" />
     <Content Include="fancybox\fancybox-y.png" />
