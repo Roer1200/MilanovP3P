@@ -1,0 +1,22 @@
+Een aantal aandachtspunten voor het schrijven van het verslag:
+
+- Voor wie schrijven we dit verslag, met andere woorden wie is de lezer?
+   bv medestudent, voor een groep die met verslag weer door moet bouwen of een (baas)opdrachtgever..(wel of niet technisch)
+
+- Zorg dat de bladzijden genummerd zijn en de inhoudsopgave (automatisch) goed gegeneerd wordt.
+
+- de gebruikte figuren een nummer - en een onderschrift hebben.
+
+- Ontwerp/analyse diagrammen altijd een inleidende tekst plaatsen.
+
+- Als er teveel ontwerptekeningen/UML-schema's in de lopende tekst komen overweeg dan om schema's in de bijlage(s) te plaatsen en van uit de lopende tekst van het verslag te verwijzen naar de goede bijlagen.
+
+- Onderwerpen voor het verslag:
+- Inleiding      (hoe kom je aan de opdracht in welke context, hoe is het team tot stand    gekomen.)
+- Analyse (wat is het "echte" probleem)
+- Opdrachtomschrijving (wat gaan  wij doen in eigen woorden met eisen en wensen)
+- aanpak/ontwerp/uitwerking (planning/ functioneel ontwerp met UML en NIAM bv. screenshots van het (toekomstige) product plus beschrijving/ eventueel iets over de testrapporten (testrapport te groot denk aan een bijlage)
+- problemen en oplossingen (vooral technisch, mag ook een beetje  over het proces)
+- conclusie (over het product, voldoet het aan de eisen/wensen)
+- evaluatie (reflecteren op eigen functioneren)
+- bijlagen (uitgebreide UML etc, wel verwijzing opnemen in de goede hoofdstukken)

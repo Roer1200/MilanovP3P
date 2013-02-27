@@ -1,5 +1,0 @@
-C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\GitHub\MilanovP3P\MilanovP3P\bin\MilanovP3P.dll
-C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\GitHub\MilanovP3P\MilanovP3P\bin\MilanovP3P.pdb
-C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\GitHub\MilanovP3P\MilanovP3P\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\GitHub\MilanovP3P\MilanovP3P\obj\Debug\MilanovP3P.dll
-C:\Users\Yme\Desktop\NHL\Projecten\J1    [12-13]\P3P Milanov\GitHub\MilanovP3P\MilanovP3P\obj\Debug\MilanovP3P.pdb
