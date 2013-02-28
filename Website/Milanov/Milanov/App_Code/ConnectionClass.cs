@@ -51,24 +51,20 @@ public static class ConnectionClass
     public static void AddPicture(Picture picture)
     {
         string query = string.Format(
-                "INSERT INTO picture VALUE ('{0}','{1}',@price, '{2}', '{3}', '{4}')",
-                picture.name,picture.category,picture.image,picture.description);
+                @"INSERT INTO picture VALUES ('{0}', '{1}', @prices, '{2}', '{3}')",
+                picture.Name, picture.Category, picture.Image, picture.Description);
         command.CommandText = query;
-        command.Parameters.Add(new SqlParameter("price", picture.price));
+        command.Parameters.Add(new SqlParameter("@price", picture.Price));
         try
         {
-         conn.Open();
-        command.ExecuteNonQuery();
+            conn.Open();
+            command.ExecuteNonQuery();
         }
             finally
         {
 
             conn.Close();
             command.Parameters.Clear();
-        }
-        
-      
-        
-
+        }    
     }
 }

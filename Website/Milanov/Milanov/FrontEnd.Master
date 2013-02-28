@@ -9,7 +9,7 @@
     <!-- scripts -->    
 
     <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style_v3.css" />
     <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
 
     <!-- metatags? -->
@@ -18,55 +18,55 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div id="container">
-            <div id="menubar">
-                <div id="menu">
-                    <ul>
-                        <li><a href="/pages/Home.aspx"><span>Home</span></a></li>
-                        <li class="has-sub"><a href="/pages/Test.aspx"><span>Products</span></a>
-                            <ul>
-                                <li class="has-sub"><a href="#"><span>Product 1</span></a>
-                                <ul>
-                                    <li><a href="#"><span>Sub Item</span></a></li>
-                                    <li class="last"><a href="#"><span>Sub Item</span></a></li>
-                                </ul>
-                                </li>
-                                <li class="has-sub"><a href="#"><span>Product 2</span></a>
-                                <ul>
-                                    <li><a href="#"><span>Sub Item</span></a></li>
-                                    <li class="last"><a href="#"><span>Sub Item</span></a></li>
-                                </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="/pages/Shop.aspx"><span>Shop</span></a></li>
-                        <li class="last"><a href="/pages/Picture_Overview.aspx"><span>Administrator</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="header">
-                <div id="social">
-                    <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" height="30px" width="30px" /></a>
-                    <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" height="30px" width="30px" /></a>
-                </div>
-                <!--<p class="headerTitle"><!--<a href="/pages/Home.aspx">Milanov</a></p>
-                <p class="headerSlogan">Fotografie</p>-->
-            </div>
-
-
-            <div id="content_area">
-                <asp:ContentPlaceHolder ID="content" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-
-            <div id="opvuller">t</div>
-
-            <div id="footer">
-                <p>Copyright &copy; 2012. All Rights Reserved.<br />
-                Designed by WYN.</p>
+<body>
+    <div id="container">
+        <div id="menubar">
+            <div id="social">
+                <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" alt="facebook" height="30px" width="30px" /></a>
+                <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" alt="twitter" height="30px" width="30px" /></a>
             </div>
         </div>
-    </form>
+
+        <div id="menu">
+            <ul>
+                <li><a href="/pages/Home.aspx"><span>Home</span></a></li>
+                <li class="has-sub"><a href="/pages/Test.aspx"><span>Products</span></a>
+                    <ul>
+                        <li class="has-sub"><a href="#"><span>Product 1</span></a>
+                        <ul>
+                            <li><a href="#"><span>Sub Item</span></a></li>
+                            <li class="last"><a href="#"><span>Sub Item</span></a></li>
+                        </ul>
+                        </li>
+                        <li class="has-sub"><a href="#"><span>Product 2</span></a>
+                        <ul>
+                            <li><a href="#"><span>Sub Item</span></a></li>
+                            <li class="last"><a href="#"><span>Sub Item</span></a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/pages/Shop.aspx"><span>Shop</span></a></li>
+                <li class="last"><a href="/pages/Picture_Overview.aspx"><span>Administrator</span></a></li>
+            </ul>
+        </div>
+
+        <div id="header">
+            <p class="headerTitle"><!--<a href="/pages/Home.aspx">-->Milanov<!--</a>--></p>
+            <p class="headerSlogan">Fotografie</p>
+        </div>
+
+        <div id="content_area">
+            <form id="form1" runat="server" >
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </form>
+        </div>
+
+        <div id="footer">
+            <p>Copyright &copy; 2012. All Rights Reserved.<br />
+            Designed by WYN.</p>
+        </div> 
+    </div>    
 </body>
 </html>

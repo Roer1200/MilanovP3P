@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Milanov.pages
 {
-    public partial class AddPicture : System.Web.UI.Page
+    public partial class Picture_Add : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -12,6 +12,7 @@ namespace Milanov.pages
             showImages();
             ddlImage.SelectedValue = selectedValue;
         }
+
         private void showImages()
         {
             string[] images = Directory.GetFiles(Server.MapPath("../images/pictures/"));
@@ -23,29 +24,32 @@ namespace Milanov.pages
                 string imageName = image.Substring(image.LastIndexOf(@"\") + 1);
                 imagelist.Add(imageName);
             }
+
             ddlImage.DataSource = imagelist;
             ddlImage.DataBind();
         }
+
         private void ClearTextFields()
         {
             txtName.Text = "";
             txtCategory.Text = "";
             txtPrice.Text = "";
-            txtDesc.Text = "";
+            txtDescription.Text = "";
         }
-        protected void btnUploadFoto_Click(object sender, EventArgs e)
+
+        protected void btnUploadImage_Click(object sender, EventArgs e)
         {
             try
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
                 FileUpload1.SaveAs(Server.MapPath("~/images/pictures/") + filename);
-                lblResult.Text = "Image" + filename + "succesvol geupload!";
+                lblResult.Text = "Image" + filename + " succesvol geupload!";
                 Page_Load(sender, e);
             }
+
             catch (Exception)
-            {
-                
-                lblResult.Text = "Upload failed!";
+            {                
+                lblResult.Text = "Upload image failed!";
             }
         }
 
@@ -58,20 +62,19 @@ namespace Milanov.pages
                 double price = Convert.ToDouble(txtPrice.Text);
                 price = price / 100;
                 string image = "../images/pictures/" + ddlImage.SelectedValue;
-                string description = txtDesc.Text;
+                string description = txtDescription.Text;
 
-                Picture picture = new Picture(name,category,price,image,description);
+                Picture picture = new Picture(name, category, price, image, description);
                 ConnectionClass.AddPicture(picture);
 
-                lblResult.Text = "Upload succesvol!";
+                lblResult.Text = "Upload new item succesvol!";
                 ClearTextFields();
             }
+
             catch (Exception)
             {
-                lblResult.Text = "Upload failed!";
-                
+                lblResult.Text = "Upload new item failed!";                
             }
         }
-
     }
 }

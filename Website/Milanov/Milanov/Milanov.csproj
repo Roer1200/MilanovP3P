@@ -92,7 +92,7 @@
     <Content Include="images\pictures\7.jpg" />
     <Content Include="images\pictures\8.jpg" />
     <Content Include="images\twitter.png" />
-    <Content Include="pages\AddPicture.aspx" />
+    <Content Include="pages\Picture_Add.aspx" />
     <Content Include="pages\Home.aspx" />
     <Content Include="pages\Picture_Overview.aspx" />
     <Content Include="pages\Shop.aspx" />
@@ -127,12 +127,12 @@
     <Compile Include="FrontEnd.Master.designer.cs">
       <DependentUpon>FrontEnd.Master</DependentUpon>
     </Compile>
-    <Compile Include="pages\AddPicture.aspx.cs">
-      <DependentUpon>AddPicture.aspx</DependentUpon>
+    <Compile Include="pages\Picture_Add.aspx.cs">
+      <DependentUpon>Picture_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\AddPicture.aspx.designer.cs">
-      <DependentUpon>AddPicture.aspx</DependentUpon>
+    <Compile Include="pages\Picture_Add.aspx.designer.cs">
+      <DependentUpon>Picture_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

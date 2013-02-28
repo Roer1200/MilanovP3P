@@ -52,7 +52,7 @@ namespace Milanov.pages
                 </tr>           
             
                </table>",
-                       picture.name, picture.category, picture.price, picture.image, picture.description));
+                       picture.Name, picture.Category, picture.Price, picture.Image, picture.Description));
 
                 lblOutput.Text = sb.ToString();
             }
