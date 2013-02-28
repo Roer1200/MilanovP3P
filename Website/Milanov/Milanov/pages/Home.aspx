@@ -15,7 +15,7 @@
         dapibus. Nulla dapibus auctor vulputate. Sed cursus nisi at mauris mollis semper.
         Vestibulum consectetur cursus dui sit amet pretium.</p>
     <img id="Img2" runat="server" src="../images/lipsum.gif" class="imgRight" />
-    <h3>Title 2</h3>
+    <h3>Title 2</h3>    
     <p>
         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
         himenaeos. Donec porttitor placerat nunc a consectetur. Ut fermentum eleifend molestie.

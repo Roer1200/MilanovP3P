@@ -6,6 +6,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <h3>Available Picture:</h3>
     <p>        
+        <asp:LinkButton ID="LinkButton1" runat="server" 
+            PostBackUrl="~/pages/AddPicture.aspx">Voeg nieuwe foto toe</asp:LinkButton>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 

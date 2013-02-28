@@ -16,4 +16,12 @@
         this.image = image;
         this.description = description;
     }
+    public Picture(string name, string category, double price, string image, string description)
+    {
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+    }
 }
