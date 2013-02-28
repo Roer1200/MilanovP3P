@@ -13,3 +13,8 @@ C:\GitHub\MilanovP3P\Website\Milanov\Milanov\bin\Milanov.pdb
 C:\GitHub\MilanovP3P\Website\Milanov\Milanov\obj\Debug\ResolveAssemblyReference.cache
 C:\GitHub\MilanovP3P\Website\Milanov\Milanov\obj\Debug\Milanov.dll
 C:\GitHub\MilanovP3P\Website\Milanov\Milanov\obj\Debug\Milanov.pdb
+C:\HPcalculator\Website\Milanov\Milanov\bin\Milanov.dll
+C:\HPcalculator\Website\Milanov\Milanov\bin\Milanov.pdb
+C:\HPcalculator\Website\Milanov\Milanov\obj\Debug\ResolveAssemblyReference.cache
+C:\HPcalculator\Website\Milanov\Milanov\obj\Debug\Milanov.dll
+C:\HPcalculator\Website\Milanov\Milanov\obj\Debug\Milanov.pdb
