@@ -98,7 +98,9 @@
     <Content Include="pages\Shop.aspx" />
     <Content Include="pages\Test.aspx" />
     <Content Include="styles\menu.css" />
-    <Content Include="styles\style.css" />
+    <Content Include="styles\style_v1.css" />
+    <Content Include="styles\style_v2.css" />
+    <Content Include="styles\style_v3.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
