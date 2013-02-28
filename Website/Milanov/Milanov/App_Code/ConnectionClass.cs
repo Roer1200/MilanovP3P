@@ -51,7 +51,7 @@ public static class ConnectionClass
     public static void AddPicture(Picture picture)
     {
         string query = string.Format(
-                "INSERT INTO picture VALUE ('{0}','{1}',@prices, '{2}', '{3}', '{4}',{5}')",
+                "INSERT INTO picture VALUE ('{0}','{1}',@price, '{2}', '{3}', '{4}')",
                 picture.name,picture.category,picture.image,picture.description);
         command.CommandText = query;
         command.Parameters.Add(new SqlParameter("price", picture.price));

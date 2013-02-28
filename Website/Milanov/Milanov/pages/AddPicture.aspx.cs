@@ -38,7 +38,7 @@ namespace Milanov.pages
             try
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
-                FileUpload1.SaveAs(Server.MapPath("../images/pictures/") + filename);
+                FileUpload1.SaveAs(Server.MapPath("~/images/pictures/") + filename);
                 lblResult.Text = "Image" + filename + "succesvol geupload!";
                 Page_Load(sender, e);
             }
