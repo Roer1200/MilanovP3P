@@ -22,15 +22,20 @@ body
 
 /* menubar -> menu in menu.css */
 
+#login
+{
+    float: right;   
+}
+
 #social
 {
     float: right;
-    margin: 6px 50px 4px auto;    
+    margin: 6px 20px 4px auto;    
 }
 
 #header 
 {
-    background-image: url('~/images/header.png');
+    background-image: url('../images/header.png');
     background-repeat: no-repeat;
     height: 263px;
     width: 1200px;

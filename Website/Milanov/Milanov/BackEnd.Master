@@ -42,8 +42,16 @@
                     <li><a href="/pages/Picture.aspx">Picture</a></li>
                     <li><a href="#">Administrator</a>
                         <ul>
-                            <li><a href="/pages/Picture_Overview.aspx">Picture</a></li>
-                            <li><a href="/pages/account/Admin.aspx">Users</a></li>
+                            <li><a href="/pages/admin/Picture_Overview.aspx">Picture_Overview</a>
+                                <ul>
+                                    <li><a href="/pages/admin/Picture_Add.aspx">Picture_Add</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a>
+                                <ul>
+                                    <li><a href="/pages/admin/Users_Add.aspx">Users_Add</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>

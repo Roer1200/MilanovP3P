@@ -92,12 +92,13 @@
     <Content Include="images\pictures\7.jpg" />
     <Content Include="images\pictures\8.jpg" />
     <Content Include="images\twitter.png" />
-    <Content Include="pages\account\Admin.aspx" />
+    <Content Include="pages\admin\Users_Add.aspx" />
+    <Content Include="pages\admin\Users_Overview.aspx" />
     <Content Include="pages\account\Login.aspx" />
     <Content Include="pages\account\Register.aspx" />
-    <Content Include="pages\Picture_Add.aspx" />
+    <Content Include="pages\admin\Picture_Add.aspx" />
     <Content Include="pages\Home.aspx" />
-    <Content Include="pages\Picture_Overview.aspx" />
+    <Content Include="pages\admin\Picture_Overview.aspx" />
     <Content Include="pages\Picture.aspx" />
     <Content Include="pages\Test.aspx" />
     <Content Include="styles\menu.css" />
@@ -131,12 +132,19 @@
     <Compile Include="FrontEnd.Master.designer.cs">
       <DependentUpon>FrontEnd.Master</DependentUpon>
     </Compile>
-    <Compile Include="pages\account\Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="pages\admin\Users_Add.aspx.cs">
+      <DependentUpon>Users_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\account\Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="pages\admin\Users_Add.aspx.designer.cs">
+      <DependentUpon>Users_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\admin\Users_Overview.aspx.cs">
+      <DependentUpon>Users_Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\admin\Users_Overview.aspx.designer.cs">
+      <DependentUpon>Users_Overview.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -152,11 +160,11 @@
     <Compile Include="pages\account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Picture_Add.aspx.cs">
+    <Compile Include="pages\admin\Picture_Add.aspx.cs">
       <DependentUpon>Picture_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Picture_Add.aspx.designer.cs">
+    <Compile Include="pages\admin\Picture_Add.aspx.designer.cs">
       <DependentUpon>Picture_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Home.aspx.cs">
@@ -166,11 +174,11 @@
     <Compile Include="pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Picture_Overview.aspx.cs">
+    <Compile Include="pages\admin\Picture_Overview.aspx.cs">
       <DependentUpon>Picture_Overview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Picture_Overview.aspx.designer.cs">
+    <Compile Include="pages\admin\Picture_Overview.aspx.designer.cs">
       <DependentUpon>Picture_Overview.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Picture.aspx.cs">

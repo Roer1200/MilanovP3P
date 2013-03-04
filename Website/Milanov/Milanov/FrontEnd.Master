@@ -19,54 +19,64 @@
 </head>
 <body>
     <div id="container">
-        <div id="menubar">
-            <div id="menu">
-                <ul>
-                    <li><a href="/pages/Home.aspx">Home</a></li>
-                    <li <!--class="has-sub"--><a href="/pages/Test.aspx">Fancybox</a>
-                        <!--<ul>
-                            <li class="has-sub"><a href="#">Product 1</a>
-                            <ul>
-                                <li><a href="#">Sub Item</a></li>
-                                <li class="last"><a href="#">Sub Item</a></li>
-                            </ul>
-                            </li>
-                            <li class="has-sub"><a href="#">Product 2</a>
-                            <ul>
-                                <li><a href="#">Sub Item</a></li>
-                                <li class="last"><a href="#">Sub Item</a></li>
-                            </ul>
-                            </li>
-                        </ul>-->
-                    </li>
-                    <li><a href="/pages/Picture.aspx">Picture</a></li>
-                    <li><a href="#">Administrator</a>
-                        <ul>
-                            <li><a href="/pages/Picture_Overview.aspx">Picture</a></li>
-                            <li><a href="/pages/account/Admin.aspx">Users</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div id="social">
-                <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" alt="facebook" height="30px" width="30px" /></a>
-                <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" alt="twitter" height="30px" width="30px" /></a>
-            </div>
-        </div>
-
-        <div id="header">
-            <p class="headerTitle"><!--<a href="/pages/Home.aspx">-->Milanov<!--</a>--></p>
-            <p class="headerSlogan">Fotografie</p>
-        </div>
-
-        <div id="content_area">
+        <div id="form">
             <form id="form1" runat="server" >
-                <div id="Login">
-                    <asp:Label ID="lblLogin" runat="server" Text=""></asp:Label><br />
-                    <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                <div id="menubar">
+                    <div id="menu">
+                        <ul>
+                            <li><a href="/pages/Home.aspx">Home</a></li>
+                            <li <!--class="has-sub"--><a href="/pages/Test.aspx">Fancybox</a>
+                                <!--<ul>
+                                    <li class="has-sub"><a href="#">Product 1</a>
+                                    <ul>
+                                        <li><a href="#">Sub Item</a></li>
+                                        <li class="last"><a href="#">Sub Item</a></li>
+                                    </ul>
+                                    </li>
+                                    <li class="has-sub"><a href="#">Product 2</a>
+                                    <ul>
+                                        <li><a href="#">Sub Item</a></li>
+                                        <li class="last"><a href="#">Sub Item</a></li>
+                                    </ul>
+                                    </li>
+                                </ul>-->
+                            </li>
+                            <li><a href="/pages/Picture.aspx">Picture</a></li>
+                            <li><a href="#">Administrator</a>
+                                <ul>
+                                    <li><a href="/pages/admin/Picture_Overview.aspx">Picture_Overview</a>
+                                        <ul>
+                                            <li><a href="/pages/admin/Picture_Add.aspx">Picture_Add</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a>
+                                        <ul>
+                                            <li><a href="/pages/admin/Users_Add.aspx">Users_Add</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="social">
+                        <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" alt="facebook" height="30px" width="30px" /></a>
+                        <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" alt="twitter" height="30px" width="30px" /></a>
+                    </div>
                 </div>
-                <asp:ContentPlaceHolder ID="content" runat="server">
-                </asp:ContentPlaceHolder>
+
+                <div id="header">
+                    <p class="headerTitle"><!--<a href="/pages/Home.aspx">-->Milanov<!--</a>--></p>
+                    <p class="headerSlogan">Fotografie</p>
+                                                            <div id="login">
+                        <asp:Label ID="lblLogin" runat="server" Text=""></asp:Label><br />
+                        <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                    </div>
+                </div>
+
+                <div id="content_area">
+                        <asp:ContentPlaceHolder ID="content" runat="server">
+                        </asp:ContentPlaceHolder>                
+                </div>
             </form>
         </div>
 
