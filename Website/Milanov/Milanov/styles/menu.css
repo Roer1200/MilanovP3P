@@ -1,15 +1,14 @@
 ﻿#menubar
 {
     background-color: #103E4D;
-    height: 40px;
 }
 
 #menu 
 {
     background-color: #103E4D;
-    height: 30px; 
+    height: 40px; 
     width: 600px; 
-    margin: -15px auto 0px auto; 
+    margin: 0px auto 0px auto; 
 }
 
 #menu ul 
