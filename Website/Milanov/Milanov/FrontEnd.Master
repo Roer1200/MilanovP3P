@@ -22,25 +22,30 @@
         <div id="menubar">
             <div id="menu">
                 <ul>
-                    <li><a href="/pages/Home.aspx"><span>Home</span></a></li>
-                    <li class="has-sub"><a href="/pages/Test.aspx"><span>Products</span></a>
+                    <li><a href="/pages/Home.aspx">Home</a></li>
+                    <li <!--class="has-sub"--><a href="/pages/Test.aspx">Fancybox</a>
+                        <!--<ul>
+                            <li class="has-sub"><a href="#">Product 1</a>
+                            <ul>
+                                <li><a href="#">Sub Item</a></li>
+                                <li class="last"><a href="#">Sub Item</a></li>
+                            </ul>
+                            </li>
+                            <li class="has-sub"><a href="#">Product 2</a>
+                            <ul>
+                                <li><a href="#">Sub Item</a></li>
+                                <li class="last"><a href="#">Sub Item</a></li>
+                            </ul>
+                            </li>
+                        </ul>-->
+                    </li>
+                    <li><a href="/pages/Picture.aspx">Picture</a></li>
+                    <li><a href="#">Administrator</a>
                         <ul>
-                            <li class="has-sub"><a href="#"><span>Product 1</span></a>
-                            <ul>
-                                <li><a href="#"><span>Sub Item</span></a></li>
-                                <li class="last"><a href="#"><span>Sub Item</span></a></li>
-                            </ul>
-                            </li>
-                            <li class="has-sub"><a href="#"><span>Product 2</span></a>
-                            <ul>
-                                <li><a href="#"><span>Sub Item</span></a></li>
-                                <li class="last"><a href="#"><span>Sub Item</span></a></li>
-                            </ul>
-                            </li>
+                            <li><a href="/pages/Picture_Overview.aspx">Picture</a></li>
+                            <li><a href="/pages/account/Admin.aspx">Users</a></li>
                         </ul>
                     </li>
-                    <li><a href="/pages/Shop.aspx"><span>Shop</span></a></li>
-                    <li class="last"><a href="/pages/Picture_Overview.aspx"><span>Administrator</span></a></li>
                 </ul>
             </div>
             <div id="social">
@@ -56,6 +61,10 @@
 
         <div id="content_area">
             <form id="form1" runat="server" >
+                <div id="Login">
+                    <asp:Label ID="lblLogin" runat="server" Text=""></asp:Label><br />
+                    <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                </div>
                 <asp:ContentPlaceHolder ID="content" runat="server">
                 </asp:ContentPlaceHolder>
             </form>

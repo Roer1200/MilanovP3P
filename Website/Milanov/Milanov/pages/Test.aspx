@@ -27,18 +27,18 @@
     <center>
         <table>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/1.jpg" title="test"><img src="../images/pictures/1.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/2.jpg"><img src="../images/pictures/2.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/3.jpg"><img src="../images/pictures/3.jpg" height="100px" width="100px"/></a></td>
+		        <td><a rel="fancybox" href="~/images/pictures/1.jpg" title="test"><img src="~/images/pictures/1.jpg" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="~/images/pictures/2.jpg"><img src="~/images/pictures/2.jpg" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="~/images/pictures/3.jpg"><img src="~/images/pictures/3.jpg" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/4.jpg"><img src="../images/pictures/4.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/5.jpg"><img src="../images/pictures/5.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/6.jpg"><img src="../images/pictures/6.jpg" height="100px" width="100px"/></a></td>
+		        <td><a rel="fancybox" href="~/images/pictures/4.jpg"><img src="~/images/pictures/4.jpg" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="~/images/pictures/5.jpg"><img src="~/images/pictures/5.jpg" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="~/images/pictures/6.jpg"><img src="~/images/pictures/6.jpg" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/7.jpg"><img src="../images/pictures/7.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/8.jpg"><img src="../images/pictures/8.jpg" height="100px" width="100px"/></a></td>        
+		        <td><a rel="fancybox" href="~/images/pictures/7.jpg"><img src="~/images/pictures/7.jpg" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="~/images/pictures/8.jpg"><img src="~/images/pictures/8.jpg" height="100px" width="100px"/></a></td>        
 	        </tr>
         </table>
     </center>

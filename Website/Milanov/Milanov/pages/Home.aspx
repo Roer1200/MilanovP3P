@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <img id="Img3" runat="server" src="../images/lipsum.gif" class="imgLeft" />
+    <img id="Img3" runat="server" src="~/images/lipsum.gif" class="imgLeft" />
     <h3>Title 1</h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lectus urna,
@@ -14,7 +14,7 @@
         per conubia nostra, per inceptos himenaeos. Sed sit amet velit at purus elementum
         dapibus. Nulla dapibus auctor vulputate. Sed cursus nisi at mauris mollis semper.
         Vestibulum consectetur cursus dui sit amet pretium.</p>
-    <img id="Img2" runat="server" src="../images/lipsum.gif" class="imgRight" />
+    <img id="Img2" runat="server" src="~/images/lipsum.gif" class="imgRight" />
     <h3>Title 2</h3>    
     <p>
         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -27,7 +27,7 @@
         id nibh libero, sed pulvinar nisi. Curabitur ultrices, neque in dignissim viverra,
         justo nisl dignissim magna, a tempor eros turpis in diam. Suspendisse potenti. Sed
         tincidunt est ac elit bibendum nec varius ante vestibulum.</p>
-    <img id="Img1" runat="server" src="../images/lipsum.gif" class="imgLeft" />
+    <img id="Img1" runat="server" src="~/images/lipsum.gif" class="imgLeft" />
     <h3>Title 3</h3>
     <p>
         In hac habitasse platea dictumst. In purus leo, consequat nec porta a, varius sed

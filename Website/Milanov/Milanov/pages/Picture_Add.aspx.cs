@@ -8,6 +8,10 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["type"] != "administrator")
+            {
+                Response.Redirect("~/pages/account/Login.aspx");
+            }
             string selectedValue = ddlImage.SelectedValue;
             showImages();
             ddlImage.SelectedValue = selectedValue;
@@ -15,7 +19,7 @@ namespace Milanov.pages
 
         private void showImages()
         {
-            string[] images = Directory.GetFiles(Server.MapPath("../images/pictures/"));
+            string[] images = Directory.GetFiles(Server.MapPath("~/images/pictures/"));
 
             ArrayList imagelist = new ArrayList();
 
@@ -42,7 +46,7 @@ namespace Milanov.pages
             try
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
-                FileUpload1.SaveAs(Server.MapPath("../images/pictures/") + filename);
+                FileUpload1.SaveAs(Server.MapPath("~/images/pictures/") + filename);
                 lblResult.Text = "Image " + filename + " succesvol geupload!";
                 Page_Load(sender, e);
             }
@@ -61,7 +65,7 @@ namespace Milanov.pages
                 string category = txtCategory.Text;
                 double price = Convert.ToDouble(txtPrice.Text);
                 price = price / 100;
-                string image = "../images/pictures/" + ddlImage.SelectedValue;
+                string image = "~/images/pictures/" + ddlImage.SelectedValue;
                 string description = txtDescription.Text;
 
                 Picture picture = new Picture(name, category, price, image, description);

@@ -16,6 +16,7 @@
         this.Image = image;
         this.Description = description;
     }
+
     public Picture(string name, string category, double price, string image, string description)
     {
         this.Name = name;
