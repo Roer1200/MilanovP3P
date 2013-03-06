@@ -1,15 +1,15 @@
-﻿public class Type
+﻿public class Categories
 {
     public int Id { get; set; }
     public string Name { get; set; }
 
-    public Type(int id, string name)
+    public Categories(int id, string name)
     {
         this.Id = id;
         this.Name = name;
     }
 
-    public Type(string name)
+    public Categories(string name)
     {
         this.Name = name;
     }

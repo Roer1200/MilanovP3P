@@ -23,7 +23,7 @@
             <div id="menu">
                 <ul>
                     <li><a href="/pages/Home.aspx">Home</a></li>
-                    <li <!--class="has-sub"--><a href="/pages/Fancybox.aspx">Fancybox</a>
+                    <li> <!--class="has-sub"--><a href="/pages/Fancybox.aspx">Fancybox</a>
                         <!--<ul>
                             <li class="has-sub"><a href="#">Product 1</a>
                             <ul>
@@ -39,27 +39,27 @@
                             </li>
                         </ul>-->
                     </li>
-                    <li><a href="/pages/Picture.aspx">Picture</a></li>
+                    <li><a href="/pages/Products.aspx">Products</a></li>
                     <li><a href="#">Administrator</a>
                         <ul>
-                            <li><a href="/pages/admin/Category_Overview.aspx">Picture_Overview</a>
+                            <li><a href="/pages/admin/Categories_Overview.aspx">Categories_Overview</a>
                                 <ul>
-                                    <li><a href="/pages/admin/Category_Add.aspx">Picture_Add</a></li>
+                                    <li><a href="/pages/admin/Categories_Add.aspx">Categories_Add</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/pages/admin/Product_Overview.aspx">Users_Overview</a>
+                            <li><a href="/pages/admin/Products_Overview.aspx">Products_Overview</a>
                                 <ul>
-                                    <li><a href="/pages/admin/Product_Add.aspx">Users_Add</a></li>
+                                    <li><a href="/pages/admin/Products_Add.aspx">Products_Add</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/pages/admin/Type_Overview.aspx">Users_Overview</a>
+                            <li><a href="/pages/admin/Types_Overview.aspx">Types_Overview</a>
                                 <ul>
-                                    <li><a href="/pages/admin/Type_Add.aspx">Users_Add</a></li>
+                                    <li><a href="/pages/admin/Types_Add.aspx">Types_Add</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/pages/admin/User_Overview.aspx">Users_Overview</a>
+                            <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a>
                                 <ul>
-                                    <li><a href="/pages/admin/User_Add.aspx">Users_Add</a></li>
+                                    <li><a href="/pages/admin/Users_Add.aspx">Users_Add</a></li>
                                 </ul>
                             </li>
                         </ul>

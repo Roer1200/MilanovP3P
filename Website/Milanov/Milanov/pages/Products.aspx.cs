@@ -13,26 +13,26 @@ namespace Milanov.pages
 
         private void FillPage()
         {
-            ArrayList productList = new ArrayList();
+            ArrayList productsList = new ArrayList();
 
             if (!IsPostBack)
             {
-                productList = ConnectionClass.GetProductByCategory(1);
+                productsList = ConnectionClass.GetProductByCategory(1);
             }
             else
             {
-                productList = ConnectionClass.GetProductByCategory(Convert.ToInt32(DropDownList1.SelectedValue));
+                productsList = ConnectionClass.GetProductByCategory(Convert.ToInt32(DropDownList1.SelectedValue));
             }
 
             StringBuilder sb = new StringBuilder();
 
-            foreach (Product product in productList)
+            foreach (Products product in productsList)
             {
                 sb.Append(
                     string.Format(
-                        @"<table class='productTable'>
+                        @"<table class='productsTable'>
                 <tr>
-                    <th rowspan='6' width='150px'><a rel='fancybox' href='/images/product/{3}' title='{0}'><img runat='server' src='/images/product/{3}' height='100px' width='100px'/></th>
+                    <th rowspan='6' width='150px'><a rel='fancybox' href='/images/products/{3}' title='{0}'><img runat='server' src='/images/products/{3}' height='100px' width='100px'/></th>
                     <th width='50px'>Name: </th>
                     <td>{0}</td>
                 </tr> 

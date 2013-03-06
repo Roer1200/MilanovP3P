@@ -83,27 +83,27 @@
     <Content Include="images\facebook.png" />
     <Content Include="images\header.png" />
     <Content Include="images\lipsum.gif" />
-    <Content Include="images\product\1.jpg" />
-    <Content Include="images\product\2.jpg" />
-    <Content Include="images\product\3.jpg" />
-    <Content Include="images\product\4.jpg" />
-    <Content Include="images\product\5.jpg" />
-    <Content Include="images\product\6.jpg" />
-    <Content Include="images\product\7.jpg" />
-    <Content Include="images\product\8.jpg" />
+    <Content Include="images\products\1.jpg" />
+    <Content Include="images\products\2.jpg" />
+    <Content Include="images\products\3.jpg" />
+    <Content Include="images\products\4.jpg" />
+    <Content Include="images\products\5.jpg" />
+    <Content Include="images\products\6.jpg" />
+    <Content Include="images\products\7.jpg" />
+    <Content Include="images\products\8.jpg" />
     <Content Include="images\twitter.png" />
-    <Content Include="pages\admin\Category_Add.aspx" />
-    <Content Include="pages\admin\Category_Overview.aspx" />
-    <Content Include="pages\admin\Type_Add.aspx" />
-    <Content Include="pages\admin\Type_Overview.aspx" />
-    <Content Include="pages\admin\User_Add.aspx" />
-    <Content Include="pages\admin\User_Overview.aspx" />
+    <Content Include="pages\admin\Categories_Add.aspx" />
+    <Content Include="pages\admin\Categories_Overview.aspx" />
+    <Content Include="pages\admin\Types_Add.aspx" />
+    <Content Include="pages\admin\Types_Overview.aspx" />
+    <Content Include="pages\admin\Users_Add.aspx" />
+    <Content Include="pages\admin\Users_Overview.aspx" />
     <Content Include="pages\account\Login.aspx" />
     <Content Include="pages\account\Register.aspx" />
-    <Content Include="pages\admin\Product_Add.aspx" />
+    <Content Include="pages\admin\Products_Add.aspx" />
     <Content Include="pages\Home.aspx" />
-    <Content Include="pages\admin\Product_Overview.aspx" />
-    <Content Include="pages\Product.aspx" />
+    <Content Include="pages\admin\Products_Overview.aspx" />
+    <Content Include="pages\Products.aspx" />
     <Content Include="pages\Fancybox.aspx" />
     <Content Include="styles\menu.css" />
     <Content Include="styles\style_v1.css" />
@@ -120,9 +120,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Category.cs" />
+    <Compile Include="App_Code\Categories.cs" />
     <Compile Include="App_Code\ConnectionClass.cs" />
-    <Compile Include="App_Code\Type.cs" />
+    <Compile Include="App_Code\Types.cs" />
     <Compile Include="App_Code\Users.cs" />
     <Compile Include="BackEnd.Master.cs">
       <DependentUpon>BackEnd.Master</DependentUpon>
@@ -138,47 +138,47 @@
     <Compile Include="FrontEnd.Master.designer.cs">
       <DependentUpon>FrontEnd.Master</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Category_Add.aspx.cs">
-      <DependentUpon>Category_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Categories_Add.aspx.cs">
+      <DependentUpon>Categories_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Category_Add.aspx.designer.cs">
-      <DependentUpon>Category_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Categories_Add.aspx.designer.cs">
+      <DependentUpon>Categories_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Category_Overview.aspx.cs">
-      <DependentUpon>Category_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Categories_Overview.aspx.cs">
+      <DependentUpon>Categories_Overview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Category_Overview.aspx.designer.cs">
-      <DependentUpon>Category_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Categories_Overview.aspx.designer.cs">
+      <DependentUpon>Categories_Overview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Type_Add.aspx.cs">
-      <DependentUpon>Type_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Types_Add.aspx.cs">
+      <DependentUpon>Types_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Type_Add.aspx.designer.cs">
-      <DependentUpon>Type_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Types_Add.aspx.designer.cs">
+      <DependentUpon>Types_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Type_Overview.aspx.cs">
-      <DependentUpon>Type_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Types_Overview.aspx.cs">
+      <DependentUpon>Types_Overview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Type_Overview.aspx.designer.cs">
-      <DependentUpon>Type_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Types_Overview.aspx.designer.cs">
+      <DependentUpon>Types_Overview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\User_Add.aspx.cs">
-      <DependentUpon>User_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Users_Add.aspx.cs">
+      <DependentUpon>Users_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\User_Add.aspx.designer.cs">
-      <DependentUpon>User_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Users_Add.aspx.designer.cs">
+      <DependentUpon>Users_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\User_Overview.aspx.cs">
-      <DependentUpon>User_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Users_Overview.aspx.cs">
+      <DependentUpon>Users_Overview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\User_Overview.aspx.designer.cs">
-      <DependentUpon>User_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Users_Overview.aspx.designer.cs">
+      <DependentUpon>Users_Overview.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -194,12 +194,12 @@
     <Compile Include="pages\account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Product_Add.aspx.cs">
-      <DependentUpon>Product_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Products_Add.aspx.cs">
+      <DependentUpon>Products_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Product_Add.aspx.designer.cs">
-      <DependentUpon>Product_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Products_Add.aspx.designer.cs">
+      <DependentUpon>Products_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -208,19 +208,19 @@
     <Compile Include="pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Product_Overview.aspx.cs">
-      <DependentUpon>Product_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Products_Overview.aspx.cs">
+      <DependentUpon>Products_Overview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Product_Overview.aspx.designer.cs">
-      <DependentUpon>Product_Overview.aspx</DependentUpon>
+    <Compile Include="pages\admin\Products_Overview.aspx.designer.cs">
+      <DependentUpon>Products_Overview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="pages\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="pages\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Fancybox.aspx.cs">
       <DependentUpon>Fancybox.aspx</DependentUpon>
@@ -229,7 +229,7 @@
     <Compile Include="pages\Fancybox.aspx.designer.cs">
       <DependentUpon>Fancybox.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\Product.cs" />
+    <Compile Include="App_Code\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

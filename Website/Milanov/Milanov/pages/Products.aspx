@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="Milanov.pages.Shop" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="Milanov.pages.Shop" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Milanov - Shop</title>
@@ -32,7 +32,7 @@
         </asp:DropDownList>
         <asp:SqlDataSource ID="sds_category" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
-            SelectCommand="SELECT [id], [name] FROM [category] ORDER BY [name]">
+            SelectCommand="SELECT [id], [name] FROM [categories] ORDER BY [name]">
         </asp:SqlDataSource>
     </p>
     <p>

@@ -1,51 +1,51 @@
-CREATE TABLE category
+CREATE TABLE categories
 (
 id int PRIMARY KEY IDENTITY NOT NULL,
-name varchar(50) NOT NULL  /// unique maken
+name varchar(50) NOT NULL UNIQUE
 )
 
-CREATE TABLE product
+CREATE TABLE products
 (
 id int PRIMARY KEY IDENTITY NOT NULL,
 name varchar(50) NOT NULL,
-cat_id int FOREIGN KEY REFERENCES category(id) NOT NULL,
+cat_id int FOREIGN KEY REFERENCES categories(id) NOT NULL,
 price float NOT NULL,
-image varchar(255) NOT NULL,
+image varchar(50) NOT NULL,
 description text
 )
 
-CREATE TABLE type
+CREATE TABLE types
 (
 id int PRIMARY KEY IDENTITY NOT NULL,
-name varchar(50) NOT NULL // unique maken
+name varchar(50) NOT NULL UNIQUE
 )
 
-CREATE TABLE user
+CREATE TABLE users
 (
 id int PRIMARY KEY IDENTITY NOT NULL,
-username varchar(50) NOT NULL, // unique maken
+username varchar(50) NOT NULL UNIQUE,
 password varchar(50) NOT NULL,
-email varchar(255) NOT NULL, // unique maken
-typ_id int FOREIGN KEY REFERENCES type(id) NOT NULL
+email varchar(255) NOT NULL UNIQUE,
+typ_id int FOREIGN KEY REFERENCES types(id) NOT NULL
 )
 
 
 
 
-INSERT INTO [MilanovDB].[dbo].[category] ([name]) VALUES ('Natuur')
-INSERT INTO [MilanovDB].[dbo].[category] ([name]) VALUES ('Stad')
-INSERT INTO [MilanovDB].[dbo].[category] ([name]) VALUES ('Portret')
+INSERT INTO [MilanovDB].[dbo].[categories] ([name]) VALUES ('Natuur')
+INSERT INTO [MilanovDB].[dbo].[categories] ([name]) VALUES ('Stad')
+INSERT INTO [MilanovDB].[dbo].[categories] ([name]) VALUES ('Portret')
 
-INSERT INTO [MilanovDB].[dbo].[product]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje1', 1, 2.01, '../images/picture/1.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[product]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje2', 2, 2.02, '../images/picture/2.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[product]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje3', 3, 2.03, '../images/picture/3.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[product]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje4', 2, 2.04, '../images/picture/4.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[product]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje5', 1, 2.05, '../images/picture/5.jpg', 'omschrijving') 
+INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje1', 1, 2.01, '1.jpg', 'omschrijving') 
+INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje2', 2, 2.02, '2.jpg', 'omschrijving') 
+INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje3', 3, 2.03, '3.jpg', 'omschrijving') 
+INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje4', 2, 2.04, '4.jpg', 'omschrijving') 
+INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje5', 1, 2.05, '5.jpg', 'omschrijving') 
 
-INSERT INTO [MilanovDB].[dbo].[type] ([name]) VALUES ('administrator')
-INSERT INTO [MilanovDB].[dbo].[type] ([name]) VALUES ('regular')
-INSERT INTO [MilanovDB].[dbo].[type] ([name]) VALUES ('new')
+INSERT INTO [MilanovDB].[dbo].[types] ([name]) VALUES ('administrator')
+INSERT INTO [MilanovDB].[dbo].[types] ([name]) VALUES ('regular')
+INSERT INTO [MilanovDB].[dbo].[types] ([name]) VALUES ('new')
 
-INSERT INTO [MilanovDB].[dbo].[user]([username], [password], [email], [typ_id]) VALUES ('admin', 'P@ssword', 'admin@milanov.nl', '1') 
-INSERT INTO [MilanovDB].[dbo].[user]([username], [password], [email], [typ_id]) VALUES ('regular', 'P@ssword', 'regular@milanov.nl', '2') 
-INSERT INTO [MilanovDB].[dbo].[user]([username], [password], [email], [typ_id]) VALUES ('new', 'P@ssword', 'new@milanov.nl', '3') 
+INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [typ_id]) VALUES ('admin', 'P@ssword', 'admin@milanov.nl', '1') 
+INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [typ_id]) VALUES ('regular', 'P@ssword', 'regular@milanov.nl', '2') 
+INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [typ_id]) VALUES ('new', 'P@ssword', 'new@milanov.nl', '3') 

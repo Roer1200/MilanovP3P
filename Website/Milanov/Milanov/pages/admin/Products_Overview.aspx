@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="Picture_Overview.aspx.cs" Inherits="Milanov.pages.Picture_Overview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="Products_Overview.aspx.cs" Inherits="Milanov.pages.Picture_Overview" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -35,10 +35,10 @@
         </asp:GridView>
         <asp:SqlDataSource ID="sds_picture" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
-            DeleteCommand="DELETE FROM [product] WHERE [id] = @id" 
-            InsertCommand="INSERT INTO [product] ([name], [cat_id], [price], [image], [description]) VALUES (@name, @cat_id, @price,  @image, @description)" 
-            SelectCommand="SELECT * FROM [product]" 
-            UpdateCommand="UPDATE [product] SET [name] = @name, [cat_id] = @cat_id, [price] = @price, [image] = @image, [description] = @description WHERE [id] = @id">
+            DeleteCommand="DELETE FROM [products] WHERE [id] = @id" 
+            InsertCommand="INSERT INTO [products] ([name], [cat_id], [price], [image], [description]) VALUES (@name, @cat_id, @price,  @image, @description)" 
+            SelectCommand="SELECT * FROM [products]" 
+            UpdateCommand="UPDATE [products] SET [name] = @name, [cat_id] = @cat_id, [price] = @price, [image] = @image, [description] = @description WHERE [id] = @id">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>

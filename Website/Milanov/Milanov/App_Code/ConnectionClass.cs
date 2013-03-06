@@ -18,7 +18,7 @@ public static class ConnectionClass
     public static ArrayList GetProductByCategory(int productCategory)
     {
         ArrayList list = new ArrayList();
-        string query = string.Format("SELECT * FROM product WHERE cat_id LIKE '{0}'", productCategory);
+        string query = string.Format("SELECT * FROM products WHERE cat_id LIKE '{0}'", productCategory);
 
         try
         {
@@ -35,7 +35,7 @@ public static class ConnectionClass
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
-                Product product = new Product(id, name, cat_id, price, image, description);
+                Products product = new Products(id, name, cat_id, price, image, description);
                 list.Add(product);
             }
         }
@@ -48,10 +48,10 @@ public static class ConnectionClass
         return list;
     }
 
-    public static void AddProduct(Product product)
+    public static void AddProduct(Products product)
     {
         string query = string.Format(
-                @"INSERT INTO product VALUES ('{0}', '{1}', @price, '{2}', '{3}')",
+                @"INSERT INTO products VALUES ('{0}', '{1}', @price, '{2}', '{3}')",
                 product.Name, product.Cat_id, product.Image, product.Description);
         command.CommandText = query;
         command.Parameters.Add(new SqlParameter("@price", product.Price));
