@@ -17,10 +17,10 @@ namespace Milanov.pages.account
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             //Create a new user
-            User user = new User(txtUsername.Text, txtPassword.Text, txtEmail.Text, "user");
+            Users users = new Users(txtUsername.Text, txtPassword.Text, txtEmail.Text, 3);
 
             //Register the user and return a result message
-            lblResult.Text = ConnectionClass.RegisterUser(user);
+            lblResult.Text = ConnectionClass.RegisterUser(users);
         }
     }
 }

@@ -16,13 +16,13 @@ namespace Milanov.pages.account
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = ConnectionClass.LoginUser(txtUsername.Text, txtPassword.Text);
+            Users users = ConnectionClass.LoginUser(txtUsername.Text, txtPassword.Text);
 
-            if (user != null)
+            if (users != null)
             {
                 //Store login variables in session
-                Session["login"] = user.Username;
-                Session["type"] = user.Type;
+                Session["login"] = users.Username;
+                Session["type"] = users.Typ_id;
 
                 Response.Redirect("~/pages/Home.aspx");
             }

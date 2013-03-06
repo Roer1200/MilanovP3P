@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Milanov - Test</title>
+
     <!-- scripts -->  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
@@ -19,7 +20,7 @@
 	    });
 	</script>
 
-    <!-- stylesheets -->
+    <!--stylesheets-->
     <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 </asp:Content>
 
@@ -27,23 +28,18 @@
     <center>
         <table>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/1.jpg" title="test"><img src="../images/pictures/1.jpg" height="100px" width="100px"/></a></td>
-<<<<<<< HEAD:Website/Milanov/Milanov/pages/Fancybox.aspx
-                <td><a rel="fancybox" href="../images/pictures/2.jpg"><img src="~/images/pictures/2.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="~/images/pictures/3.jpg"><img src="~/images/pictures/3.jpg" height="100px" width="100px"/></a></td>
-=======
-                <td><a rel="fancybox" href="../images/pictures/2.jpg"><img src="../images/pictures/2.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/3.jpg"><img src="../images/pictures/3.jpg" height="100px" width="100px"/></a></td>
->>>>>>> a9e94b97640fe4b45e9a26f64a120ffe003c9d73:Website/Milanov/Milanov/pages/Test.aspx
+		        <td><a rel="fancybox" href="../images/pictures/1.jpg" title="test"><img src="../images/pictures/1.jpg" alt="1" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/pictures/2.jpg" title="test"><img src="../images/pictures/2.jpg" alt="2" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/pictures/3.jpg" title="test"><img src="../images/pictures/3.jpg" alt="3" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/4.jpg"><img src="../images/pictures/4.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/5.jpg"><img src="../images/pictures/5.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/6.jpg"><img src="../images/pictures/6.jpg" height="100px" width="100px"/></a></td>
+		        <td><a rel="fancybox" href="../images/pictures/4.jpg" title="test"><img src="../images/pictures/4.jpg" alt="4" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/pictures/5.jpg" title="test"><img src="../images/pictures/5.jpg" alt="5" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/pictures/6.jpg" title="test"><img src="../images/pictures/6.jpg" alt="6" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/7.jpg"><img src="../images/pictures/7.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/8.jpg"><img src="../images/pictures/8.jpg" height="100px" width="100px"/></a></td>        
+		        <td><a rel="fancybox" href="../images/pictures/7.jpg" title="test"><img src="../images/pictures/7.jpg" alt="7" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/pictures/8.jpg" title="test"><img src="../images/pictures/8.jpg" alt="8" height="100px" width="100px"/></a></td>        
 	        </tr>
         </table>
     </center>

@@ -68,8 +68,8 @@ namespace Milanov.pages
                 string image = "~/images/pictures/" + ddlImage.SelectedValue;
                 string description = txtDescription.Text;
 
-                Picture picture = new Picture(name, cat_id, price, image, description);
-                ConnectionClass.AddPicture(picture);
+                Product product = new Product(name, cat_id, price, image, description);
+                ConnectionClass.AddProduct(product);
 
                 lblResult.Text = "Upload new item succesvol!";
                 ClearTextFields();

@@ -15,10 +15,10 @@ public static class ConnectionClass
         command = new SqlCommand("", conn);
     }
 
-    public static ArrayList GetPictureByCategory(int pictureCategory)
+    public static ArrayList GetProductByCategory(int productCategory)
     {
         ArrayList list = new ArrayList();
-        string query = string.Format("SELECT * FROM product WHERE category LIKE '{0}'", pictureCategory);
+        string query = string.Format("SELECT * FROM product WHERE cat_id LIKE '{0}'", productCategory);
 
         try
         {
@@ -35,8 +35,8 @@ public static class ConnectionClass
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
-                Picture picture = new Picture(id, name, cat_id, price, image, description);
-                list.Add(picture);
+                Product product = new Product(id, name, cat_id, price, image, description);
+                list.Add(product);
             }
         }
 
@@ -52,9 +52,9 @@ public static class ConnectionClass
     {
         string query = string.Format(
                 @"INSERT INTO product VALUES ('{0}', '{1}', @price, '{2}', '{3}')",
-                picture.Name, picture.Cat_id, picture.Image, picture.Description);
+                product.Name, product.Cat_id, product.Image, product.Description);
         command.CommandText = query;
-        command.Parameters.Add(new SqlParameter("@price", picture.Price));
+        command.Parameters.Add(new SqlParameter("@price", product.Price));
         try
         {
             conn.Open();
@@ -67,7 +67,7 @@ public static class ConnectionClass
         }
     }
 
-    public static User LoginUser(string username, string password)
+    public static Users LoginUser(string username, string password)
     {
         //Check if user exists
         string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", username);
@@ -90,20 +90,20 @@ public static class ConnectionClass
                 {
                     //Passwords match. Login and password data are known to us.
                     //Retrieve further user data from the database
-                    query = string.Format("SELECT email, user_type FROM users WHERE username = '{0}'", username);
+                    query = string.Format("SELECT email, typ_id FROM users WHERE username = '{0}'", username);
                     command.CommandText = query;
 
                     SqlDataReader reader = command.ExecuteReader();
-                    User user = null;
+                    Users users = null;
 
                     while (reader.Read())
                     {
                         string email = reader.GetString(0);
-                        string type = reader.GetString(1);
+                        int typ_id = reader.GetInt32(1);
 
-                        user = new User(username, password, email, type);
+                        users = new Users(username, password, email, typ_id);
                     }
-                    return user;
+                    return users;
                 }
                 else
                 {
@@ -123,10 +123,10 @@ public static class ConnectionClass
             conn.Close();
         }
     }
-    public static string RegisterUser(User user)
+    public static string RegisterUser(Users users)
     {
         //Check if user exists
-        string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", user.Username);
+        string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", users.Username);
         command.CommandText = query;
 
         try
@@ -137,8 +137,8 @@ public static class ConnectionClass
             if (amountOfUsers < 1)
             {
                 //User does not exist, create a new user
-                query = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", user.Username, user.Password,
-                                      user.Email, user.Type);
+                query = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", users.Username, users.Password,
+                                      users.Email, users.Typ_id);
                 command.CommandText = query;
                 command.ExecuteNonQuery();
                 return "User registered!";

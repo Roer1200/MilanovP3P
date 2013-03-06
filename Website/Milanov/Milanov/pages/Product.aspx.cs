@@ -8,31 +8,31 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*FillPage();*/
+            FillPage();
         }
 
-        /*private void FillPage()
+        private void FillPage()
         {
-            ArrayList pictureList = new ArrayList();
+            ArrayList productList = new ArrayList();
 
             if (!IsPostBack)
             {
-                pictureList = ConnectionClass.GetPictureByCategory("%");
+                productList = ConnectionClass.GetProductByCategory(1);
             }
             else
             {
-                pictureList = ConnectionClass.GetPictureByCategory(DropDownList1.SelectedValue);
+                productList = ConnectionClass.GetProductByCategory(Convert.ToInt32(DropDownList1.SelectedValue));
             }
 
             StringBuilder sb = new StringBuilder();
 
-            foreach (Picture picture in pictureList)
+            foreach (Product product in productList)
             {
                 sb.Append(
                     string.Format(
-                        @"<table class='pictureTable'>
+                        @"<table class='productTable'>
                 <tr>
-                    <th rowspan='6' width='150px'><a rel='fancybox' href='{3}' title='{0}'><img runat='server' src='{3}' height='100px' width='100px'/></th>
+                    <th rowspan='6' width='150px'><a rel='fancybox' href='/images/product/{3}' title='{0}'><img runat='server' src='/images/product/{3}' height='100px' width='100px'/></th>
                     <th width='50px'>Name: </th>
                     <td>{0}</td>
                 </tr> 
@@ -52,7 +52,7 @@ namespace Milanov.pages
                 </tr>           
             
                </table>",
-                       picture.Name, picture.Category, picture.Price, picture.Image, picture.Description));
+                       product.Name, product.Cat_id, product.Price, product.Image, product.Description));
 
                 lblOutput.Text = sb.ToString();
             }
@@ -60,6 +60,6 @@ namespace Milanov.pages
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FillPage();
-        }*/
+        }
     }
 }

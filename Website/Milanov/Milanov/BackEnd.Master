@@ -9,8 +9,8 @@
     <!-- scripts -->    
 
     <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/styles/back/style_v1.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/back/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style_v1.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
 
     <!-- metatags? -->
 

@@ -83,14 +83,14 @@
     <Content Include="images\facebook.png" />
     <Content Include="images\header.png" />
     <Content Include="images\lipsum.gif" />
-    <Content Include="images\pictures\1.jpg" />
-    <Content Include="images\pictures\2.jpg" />
-    <Content Include="images\pictures\3.jpg" />
-    <Content Include="images\pictures\4.jpg" />
-    <Content Include="images\pictures\5.jpg" />
-    <Content Include="images\pictures\6.jpg" />
-    <Content Include="images\pictures\7.jpg" />
-    <Content Include="images\pictures\8.jpg" />
+    <Content Include="images\product\1.jpg" />
+    <Content Include="images\product\2.jpg" />
+    <Content Include="images\product\3.jpg" />
+    <Content Include="images\product\4.jpg" />
+    <Content Include="images\product\5.jpg" />
+    <Content Include="images\product\6.jpg" />
+    <Content Include="images\product\7.jpg" />
+    <Content Include="images\product\8.jpg" />
     <Content Include="images\twitter.png" />
     <Content Include="pages\admin\Category_Add.aspx" />
     <Content Include="pages\admin\Category_Overview.aspx" />
@@ -103,14 +103,12 @@
     <Content Include="pages\admin\Product_Add.aspx" />
     <Content Include="pages\Home.aspx" />
     <Content Include="pages\admin\Product_Overview.aspx" />
-    <Content Include="pages\Products.aspx" />
+    <Content Include="pages\Product.aspx" />
     <Content Include="pages\Fancybox.aspx" />
-    <Content Include="styles\back\menu.css" />
-    <Content Include="styles\back\style_v1.css" />
-    <Content Include="styles\front\menu.css" />
-    <Content Include="styles\front\style_v1.css" />
-    <Content Include="styles\front\style_v2.css" />
-    <Content Include="styles\front\style_v3.css" />
+    <Content Include="styles\menu.css" />
+    <Content Include="styles\style_v1.css" />
+    <Content Include="styles\style_v2.css" />
+    <Content Include="styles\style_v3.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -125,7 +123,7 @@
     <Compile Include="App_Code\Category.cs" />
     <Compile Include="App_Code\ConnectionClass.cs" />
     <Compile Include="App_Code\Type.cs" />
-    <Compile Include="App_Code\User.cs" />
+    <Compile Include="App_Code\Users.cs" />
     <Compile Include="BackEnd.Master.cs">
       <DependentUpon>BackEnd.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -217,12 +215,12 @@
     <Compile Include="pages\admin\Product_Overview.aspx.designer.cs">
       <DependentUpon>Product_Overview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Products.aspx.cs">
-      <DependentUpon>Products.aspx</DependentUpon>
+    <Compile Include="pages\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Products.aspx.designer.cs">
-      <DependentUpon>Products.aspx</DependentUpon>
+    <Compile Include="pages\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Fancybox.aspx.cs">
       <DependentUpon>Fancybox.aspx</DependentUpon>

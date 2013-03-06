@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="Milanov.pages.Shop" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="Milanov.pages.Shop" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Milanov - Shop</title>
-        <!-- scripts -->  
+
+    <!-- scripts -->  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
@@ -27,11 +28,11 @@
     <p>
         Select by category: 
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
-            DataSourceID="sds_category" DataTextField="category" DataValueField="category">
+            DataSourceID="sds_category" DataTextField="name" DataValueField="name">
         </asp:DropDownList>
         <asp:SqlDataSource ID="sds_category" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
-            SelectCommand="SELECT DISTINCT [cat_id] FROM [picture] ORDER BY [category]">
+            SelectCommand="SELECT [id], [name] FROM [category] ORDER BY [name]">
         </asp:SqlDataSource>
     </p>
     <p>
