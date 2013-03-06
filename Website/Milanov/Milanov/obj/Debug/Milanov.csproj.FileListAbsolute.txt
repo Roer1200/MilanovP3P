@@ -18,3 +18,8 @@ C:\HPcalculator\Website\Milanov\Milanov\bin\Milanov.pdb
 C:\HPcalculator\Website\Milanov\Milanov\obj\Debug\ResolveAssemblyReference.cache
 C:\HPcalculator\Website\Milanov\Milanov\obj\Debug\Milanov.dll
 C:\HPcalculator\Website\Milanov\Milanov\obj\Debug\Milanov.pdb
+C:\GitHub\Website\Milanov\Milanov\bin\Milanov.dll
+C:\GitHub\Website\Milanov\Milanov\bin\Milanov.pdb
+C:\GitHub\Website\Milanov\Milanov\obj\Debug\ResolveAssemblyReference.cache
+C:\GitHub\Website\Milanov\Milanov\obj\Debug\Milanov.dll
+C:\GitHub\Website\Milanov\Milanov\obj\Debug\Milanov.pdb
