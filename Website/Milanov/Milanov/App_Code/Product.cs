@@ -1,26 +1,26 @@
-﻿public class Picture
+﻿public class Product
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public string Category { get; set; }
+    public int Cat_id { get; set; }
     public double Price { get; set; }
     public string Image { get; set; }
     public string Description { get; set; }
 
-    public Picture(int id, string name, string category, double price, string image, string description)
+    public Product(int id, string name, int cat_id, double price, string image, string description)
     {
         this.Id = id;
         this.Name = name;
-        this.Category = category;
+        this.Cat_id = cat_id;
         this.Price = price;
         this.Image = image;
         this.Description = description;
     }
 
-    public Picture(string name, string category, double price, string image, string description)
+    public Product(string name, int cat_id, double price, string image, string description)
     {
         this.Name = name;
-        this.Category = category;
+        this.Cat_id = cat_id;
         this.Price = price;
         this.Image = image;
         this.Description = description;

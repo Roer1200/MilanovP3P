@@ -1,0 +1,89 @@
+﻿/* padding is 'binnen'
+ * margin is 'buiten'
+*/
+
+body 
+{
+    font-family: Verdana;
+    font-size: 12px;
+    background-color: #F6F2E6;
+}
+
+#container
+{
+    width: 1200px;
+    background-color: #F6F2E6;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+#header
+{
+    background-image: url('../images/header.png');
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+#social
+{
+    float: right;
+    margin: 5px 0px 0px 0px;
+}
+
+#content_area
+{
+    padding: 10px;
+    /*height: 400px; /* temporary height */
+    width: 1000px;
+    margin: 0px auto 5px auto;
+    background: #FCFCF8;
+    border:1px solid #D8EDE8;
+}
+
+#footer
+{
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    background-color: #03161B;
+    color: #90B5C6;
+    font-size: 10px;
+}
+
+.imgLeft
+{
+    float: left;
+    margin: 10px;
+}
+
+.imgRight
+{
+    float: right;
+    margin: 10px;
+}
+
+.headerTitle
+{
+    font-size: 59px;
+    font-family: Impact, Tahoma, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 30px 0px 0px 250px;
+    color: #1C637D !important;
+    white-space: nowrap;
+}
+
+.headerSlogan
+{
+    font-size: 22px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    padding: 0;
+    margin: 0px 0px 0px 250px;
+    color: #1C637D !important;
+}

@@ -62,13 +62,13 @@ namespace Milanov.pages
             try
             {
                 string name = txtName.Text;
-                string category = txtCategory.Text;
+                int cat_id = Convert.ToInt32(txtCategory.Text);
                 double price = Convert.ToDouble(txtPrice.Text);
                 price = price / 100;
                 string image = "~/images/pictures/" + ddlImage.SelectedValue;
                 string description = txtDescription.Text;
 
-                Picture picture = new Picture(name, category, price, image, description);
+                Picture picture = new Picture(name, cat_id, price, image, description);
                 ConnectionClass.AddPicture(picture);
 
                 lblResult.Text = "Upload new item succesvol!";

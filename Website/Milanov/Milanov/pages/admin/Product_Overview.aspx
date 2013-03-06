@@ -7,7 +7,7 @@
     <h3>Available Picture:</h3>
     <p>        
         <asp:LinkButton ID="LinkButton1" runat="server" 
-            PostBackUrl="/pages/Picture_Add.aspx">Voeg nieuwe foto toe</asp:LinkButton>
+            PostBackUrl="/pages/admin/Picture_Add.aspx">Voeg nieuwe foto toe</asp:LinkButton>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
@@ -18,7 +18,7 @@
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
+                <asp:BoundField DataField="cat_id" HeaderText="cat_id" SortExpression="cat_id" />
                 <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
                 <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
                 <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
@@ -35,23 +35,23 @@
         </asp:GridView>
         <asp:SqlDataSource ID="sds_picture" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
-            DeleteCommand="DELETE FROM [picture] WHERE [id] = @id" 
-            InsertCommand="INSERT INTO [picture] ([name], [category], [price], [image], [description]) VALUES (@name, @category, @price,  @image, @description)" 
-            SelectCommand="SELECT * FROM [picture]" 
-            UpdateCommand="UPDATE [picture] SET [name] = @name, [category] = @category, [price] = @price, [image] = @image, [description] = @description WHERE [id] = @id">
+            DeleteCommand="DELETE FROM [product] WHERE [id] = @id" 
+            InsertCommand="INSERT INTO [product] ([name], [cat_id], [price], [image], [description]) VALUES (@name, @cat_id, @price,  @image, @description)" 
+            SelectCommand="SELECT * FROM [product]" 
+            UpdateCommand="UPDATE [product] SET [name] = @name, [cat_id] = @cat_id, [price] = @price, [image] = @image, [description] = @description WHERE [id] = @id">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="name" Type="String" />
-                <asp:Parameter Name="category" Type="String" />
+                <asp:Parameter Name="cat_id" Type="String" />
                 <asp:Parameter Name="price" Type="Double" />
                 <asp:Parameter Name="image" Type="String" />
                 <asp:Parameter Name="description" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="name" Type="String" />
-                <asp:Parameter Name="category" Type="String" />
+                <asp:Parameter Name="cat_id" Type="String" />
                 <asp:Parameter Name="price" Type="Double" />
                 <asp:Parameter Name="image" Type="String" />
                 <asp:Parameter Name="description" Type="String" />

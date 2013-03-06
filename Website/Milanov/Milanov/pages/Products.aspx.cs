@@ -8,10 +8,10 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FillPage();
+            /*FillPage();*/
         }
 
-        private void FillPage()
+        /*private void FillPage()
         {
             ArrayList pictureList = new ArrayList();
 
@@ -60,6 +60,6 @@ namespace Milanov.pages
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FillPage();
-        }
+        }*/
     }
 }

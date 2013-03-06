@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="Milanov.pages.Test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="Fancybox.aspx.cs" Inherits="Milanov.pages.Test" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Milanov - Test</title>
@@ -27,8 +27,8 @@
     <center>
         <table>
 	        <tr>
-		        <td><a rel="fancybox" href="~/images/pictures/1.jpg" title="test"><img src="~/images/pictures/1.jpg" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="~/images/pictures/2.jpg"><img src="~/images/pictures/2.jpg" height="100px" width="100px"/></a></td>
+		        <td><a rel="fancybox" href="../images/pictures/1.jpg" title="test"><img src="../images/pictures/1.jpg" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/pictures/2.jpg"><img src="~/images/pictures/2.jpg" height="100px" width="100px"/></a></td>
                 <td><a rel="fancybox" href="~/images/pictures/3.jpg"><img src="~/images/pictures/3.jpg" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>

@@ -15,10 +15,10 @@ public static class ConnectionClass
         command = new SqlCommand("", conn);
     }
 
-    public static ArrayList GetPictureByCategory(string pictureCategory)
+    public static ArrayList GetPictureByCategory(int pictureCategory)
     {
         ArrayList list = new ArrayList();
-        string query = string.Format("SELECT * FROM picture WHERE category LIKE '{0}'", pictureCategory);
+        string query = string.Format("SELECT * FROM product WHERE category LIKE '{0}'", pictureCategory);
 
         try
         {
@@ -30,12 +30,12 @@ public static class ConnectionClass
             {
                 int id = reader.GetInt32(0);
                 string name = reader.GetString(1);
-                string category = reader.GetString(2);
+                int cat_id = reader.GetInt32(2);
                 double price = reader.GetDouble(3);
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
-                Picture picture = new Picture(id, name, category, price, image, description);
+                Picture picture = new Picture(id, name, cat_id, price, image, description);
                 list.Add(picture);
             }
         }
@@ -48,11 +48,11 @@ public static class ConnectionClass
         return list;
     }
 
-    public static void AddPicture(Picture picture)
+    public static void AddProduct(Product product)
     {
         string query = string.Format(
-                @"INSERT INTO picture VALUES ('{0}', '{1}', @price, '{2}', '{3}')",
-                picture.Name, picture.Category, picture.Image, picture.Description);
+                @"INSERT INTO product VALUES ('{0}', '{1}', @price, '{2}', '{3}')",
+                picture.Name, picture.Cat_id, picture.Image, picture.Description);
         command.CommandText = query;
         command.Parameters.Add(new SqlParameter("@price", picture.Price));
         try
@@ -70,7 +70,8 @@ public static class ConnectionClass
     public static User LoginUser(string username, string password)
     {
         //Check if user exists
-        string query = string.Format("SELECT COUNT(*) FROM MilanovDB.dbo.users WHERE username = '{0}'", username);
+        string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", username);
+        // string query = string.Format("SELECT COUNT(*) FROM MilanovDB.dbo.users WHERE username = '{0}'", username);
         command.CommandText = query;
 
         try
