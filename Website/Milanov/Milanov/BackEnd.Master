@@ -57,11 +57,7 @@
                                     <li><a href="/pages/admin/Types_Add.aspx">Types_Add</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a>
-                                <ul>
-                                    <li><a href="/pages/admin/Users_Add.aspx">Users_Add</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a></li>
                         </ul>
                     </li>
                 </ul>

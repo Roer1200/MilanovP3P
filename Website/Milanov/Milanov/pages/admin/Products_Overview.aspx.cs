@@ -12,7 +12,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((int)Session["type"] != 1)
+            if ((string)Session["type"] != "1")
             {
                 Response.Redirect("~/pages/account/Login.aspx");
             }

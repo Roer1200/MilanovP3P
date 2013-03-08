@@ -96,7 +96,6 @@
     <Content Include="pages\admin\Categories_Overview.aspx" />
     <Content Include="pages\admin\Types_Add.aspx" />
     <Content Include="pages\admin\Types_Overview.aspx" />
-    <Content Include="pages\admin\Users_Add.aspx" />
     <Content Include="pages\admin\Users_Overview.aspx" />
     <Content Include="pages\account\Login.aspx" />
     <Content Include="pages\account\Register.aspx" />
@@ -165,13 +164,6 @@
     </Compile>
     <Compile Include="pages\admin\Types_Overview.aspx.designer.cs">
       <DependentUpon>Types_Overview.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\admin\Users_Add.aspx.cs">
-      <DependentUpon>Users_Add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\admin\Users_Add.aspx.designer.cs">
-      <DependentUpon>Users_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\admin\Users_Overview.aspx.cs">
       <DependentUpon>Users_Overview.aspx</DependentUpon>

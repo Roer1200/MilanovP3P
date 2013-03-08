@@ -48,6 +48,25 @@ public static class ConnectionClass
         return list;
     }
 
+    #region Add *
+    public static void AddCategory(Categories category)
+    {
+        string query = string.Format(
+                @"INSERT INTO categories VALUES ('{0}')",
+                category.Name);
+        command.CommandText = query;
+        try
+        {
+            conn.Open();
+            command.ExecuteNonQuery();
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    }
+
     public static void AddProduct(Products product)
     {
         string query = string.Format(
@@ -66,6 +85,25 @@ public static class ConnectionClass
             command.Parameters.Clear();
         }
     }
+
+    public static void AddType(Types type)
+    {
+        string query = string.Format(
+                @"INSERT INTO types VALUES ('{0}')",
+                type.Name);
+        command.CommandText = query;
+        try
+        {
+            conn.Open();
+            command.ExecuteNonQuery();
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    }
+    #endregion
 
     public static Users LoginUser(string username, string password)
     {

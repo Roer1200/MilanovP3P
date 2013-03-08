@@ -28,18 +28,18 @@
     <center>
         <table>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/1.jpg" title="test"><img src="../images/pictures/1.jpg" alt="1" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/2.jpg" title="test"><img src="../images/pictures/2.jpg" alt="2" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/3.jpg" title="test"><img src="../images/pictures/3.jpg" alt="3" height="100px" width="100px"/></a></td>
+		        <td><a rel="fancybox" href="../images/products/1.jpg" title="test"><img src="../images/products/1.jpg" alt="1" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/products/2.jpg" title="test"><img src="../images/products/2.jpg" alt="2" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/products/3.jpg" title="test"><img src="../images/products/3.jpg" alt="3" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/4.jpg" title="test"><img src="../images/pictures/4.jpg" alt="4" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/5.jpg" title="test"><img src="../images/pictures/5.jpg" alt="5" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/6.jpg" title="test"><img src="../images/pictures/6.jpg" alt="6" height="100px" width="100px"/></a></td>
+		        <td><a rel="fancybox" href="../images/products/4.jpg" title="test"><img src="../images/products/4.jpg" alt="4" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/products/5.jpg" title="test"><img src="../images/products/5.jpg" alt="5" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/products/6.jpg" title="test"><img src="../images/products/6.jpg" alt="6" height="100px" width="100px"/></a></td>
 	        </tr>
 	        <tr>
-		        <td><a rel="fancybox" href="../images/pictures/7.jpg" title="test"><img src="../images/pictures/7.jpg" alt="7" height="100px" width="100px"/></a></td>
-                <td><a rel="fancybox" href="../images/pictures/8.jpg" title="test"><img src="../images/pictures/8.jpg" alt="8" height="100px" width="100px"/></a></td>        
+		        <td><a rel="fancybox" href="../images/products/7.jpg" title="test"><img src="../images/products/7.jpg" alt="7" height="100px" width="100px"/></a></td>
+                <td><a rel="fancybox" href="../images/products/8.jpg" title="test"><img src="../images/products/8.jpg" alt="8" height="100px" width="100px"/></a></td>        
 	        </tr>
         </table>
     </center>

@@ -8,7 +8,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["type"] != "administrator")
+            if ((string)Session["type"] != "1")
             {
                 Response.Redirect("~/pages/account/Login.aspx");
             }
@@ -19,7 +19,7 @@ namespace Milanov.pages
 
         private void showImages()
         {
-            string[] images = Directory.GetFiles(Server.MapPath("~/images/pictures/"));
+            string[] images = Directory.GetFiles(Server.MapPath("~/images/products/"));
 
             ArrayList imagelist = new ArrayList();
 

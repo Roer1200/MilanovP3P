@@ -19,8 +19,8 @@
             <asp:BoundField DataField="password" HeaderText="password" 
                 SortExpression="password" />
             <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-            <asp:BoundField DataField="user_type" HeaderText="user_type" 
-                SortExpression="user_type" />
+            <asp:BoundField DataField="typ_id" HeaderText="typ_id" 
+                SortExpression="typ_id" />
         </Columns>
         <FooterStyle BackColor="#CCCC99" />
         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -35,9 +35,9 @@
     <asp:SqlDataSource ID="sdsUsers" runat="server" 
         ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
         DeleteCommand="DELETE FROM [users] WHERE [id] = @id" 
-        InsertCommand="INSERT INTO [users] ([username], [password], [email], [user_type]) VALUES (@username, @password, @email, @user_type)" 
+        InsertCommand="INSERT INTO [users] ([username], [password], [email], [typ_id]) VALUES (@username, @password, @email, @typ_id)" 
         SelectCommand="SELECT * FROM [users]" 
-        UpdateCommand="UPDATE [users] SET [username] = @username, [password] = @password, [email] = @email, [user_type] = @user_type WHERE [id] = @id">
+        UpdateCommand="UPDATE [users] SET [username] = @username, [password] = @password, [email] = @email, [typ_id] = @typ_id WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>
@@ -45,13 +45,13 @@
             <asp:Parameter Name="username" Type="String" />
             <asp:Parameter Name="password" Type="String" />
             <asp:Parameter Name="email" Type="String" />
-            <asp:Parameter Name="user_type" Type="String" />
+            <asp:Parameter Name="typ_id" Type="Int32" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="username" Type="String" />
             <asp:Parameter Name="password" Type="String" />
             <asp:Parameter Name="email" Type="String" />
-            <asp:Parameter Name="user_type" Type="String" />
+            <asp:Parameter Name="typ_id" Type="Int32" />
             <asp:Parameter Name="id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>

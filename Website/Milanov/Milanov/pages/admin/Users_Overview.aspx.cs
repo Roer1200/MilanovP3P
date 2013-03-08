@@ -11,7 +11,7 @@ namespace Milanov.pages.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["type"] != "administrator")
+            if ((string)Session["type"] != "1")
             {
                 Response.Redirect("~/pages/account/Login.aspx");
             }

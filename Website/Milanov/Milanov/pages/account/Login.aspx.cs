@@ -22,7 +22,7 @@ namespace Milanov.pages.account
             {
                 //Store login variables in session
                 Session["login"] = users.Username;
-                Session["type"] = users.Typ_id;
+                Session["type"] = users.Typ_id.ToString();
 
                 Response.Redirect("~/pages/Home.aspx");
             }

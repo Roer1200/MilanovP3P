@@ -11,7 +11,34 @@ namespace Milanov.pages.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["type"] != "1")
+            {
+                Response.Redirect("~/pages/account/Login.aspx");
+            }
+        }
 
+        private void ClearTextFields()
+        {
+            txtName.Text = "";
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = txtName.Text;
+
+                Categories category = new Categories(name);
+                ConnectionClass.AddCategory(category);
+
+                lblResult.Text = "Upload new item succesvol!";
+                ClearTextFields();
+            }
+
+            catch (Exception)
+            {
+                lblResult.Text = "Upload new item failed!";                
+            }
         }
     }
 }
