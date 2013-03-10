@@ -10,7 +10,7 @@
 namespace Milanov.pages {
     
     
-    public partial class Picture_Add {
+    public partial class Products_Add {
         
         /// <summary>
         /// txtName control.

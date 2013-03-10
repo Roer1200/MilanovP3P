@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Milanov.pages
 {
-    public partial class Picture_Add : System.Web.UI.Page
+    public partial class Products_Add : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace Milanov.pages
             try
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
-                FileUpload1.SaveAs(Server.MapPath("~/images/pictures/") + filename);
+                FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);
                 lblResult.Text = "Image " + filename + " succesvol geupload!";
                 Page_Load(sender, e);
             }

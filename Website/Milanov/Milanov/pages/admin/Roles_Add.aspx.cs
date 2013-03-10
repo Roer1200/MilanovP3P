@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Milanov.pages.admin
 {
-    public partial class Type_Add : System.Web.UI.Page
+    public partial class Roles_Add : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["type"] != "1")
+            if ((string)Session["role"] != "1")
             {
                 Response.Redirect("~/pages/account/Login.aspx");
             }
@@ -28,8 +28,8 @@ namespace Milanov.pages.admin
             {
                 string name = txtName.Text;
 
-                Types type = new Types(name);
-                ConnectionClass.AddType(type);
+                Roles role = new Roles(name);
+                ConnectionClass.AddRole(role);
 
                 lblResult.Text = "Upload new item succesvol!";
                 ClearTextFields();

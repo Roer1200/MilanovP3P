@@ -91,10 +91,13 @@
     <Content Include="images\products\6.jpg" />
     <Content Include="images\products\7.jpg" />
     <Content Include="images\products\8.jpg" />
+    <Content Include="images\products\Desert.jpg" />
+    <Content Include="images\products\Jellyfish.jpg" />
+    <Content Include="images\products\Koala.jpg" />
     <Content Include="images\twitter.png" />
     <Content Include="pages\admin\Categories_Add.aspx" />
     <Content Include="pages\admin\Categories_Overview.aspx" />
-    <Content Include="pages\admin\Types_Add.aspx" />
+    <Content Include="pages\admin\Roles_Add.aspx" />
     <Content Include="pages\admin\Types_Overview.aspx" />
     <Content Include="pages\admin\Users_Overview.aspx" />
     <Content Include="pages\account\Login.aspx" />
@@ -121,7 +124,7 @@
   <ItemGroup>
     <Compile Include="App_Code\Categories.cs" />
     <Compile Include="App_Code\ConnectionClass.cs" />
-    <Compile Include="App_Code\Types.cs" />
+    <Compile Include="App_Code\Roles.cs" />
     <Compile Include="App_Code\Users.cs" />
     <Compile Include="BackEnd.Master.cs">
       <DependentUpon>BackEnd.Master</DependentUpon>
@@ -151,12 +154,12 @@
     <Compile Include="pages\admin\Categories_Overview.aspx.designer.cs">
       <DependentUpon>Categories_Overview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\admin\Types_Add.aspx.cs">
-      <DependentUpon>Types_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Roles_Add.aspx.cs">
+      <DependentUpon>Roles_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\Types_Add.aspx.designer.cs">
-      <DependentUpon>Types_Add.aspx</DependentUpon>
+    <Compile Include="pages\admin\Roles_Add.aspx.designer.cs">
+      <DependentUpon>Roles_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\admin\Types_Overview.aspx.cs">
       <DependentUpon>Types_Overview.aspx</DependentUpon>

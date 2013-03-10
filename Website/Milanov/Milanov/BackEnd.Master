@@ -52,9 +52,9 @@
                                     <li><a href="/pages/admin/Products_Add.aspx">Products_Add</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/pages/admin/Types_Overview.aspx">Types_Overview</a>
+                            <li><a href="/pages/admin/Roles_Overview.aspx">Roles_Overview</a>
                                 <ul>
-                                    <li><a href="/pages/admin/Types_Add.aspx">Types_Add</a></li>
+                                    <li><a href="/pages/admin/Roles_Add.aspx">Roles_Add</a></li>
                                 </ul>
                             </li>
                             <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a></li>

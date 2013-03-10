@@ -86,11 +86,11 @@ public static class ConnectionClass
         }
     }
 
-    public static void AddType(Types type)
+    public static void AddRole(Roles role)
     {
         string query = string.Format(
-                @"INSERT INTO types VALUES ('{0}')",
-                type.Name);
+                @"INSERT INTO roles VALUES ('{0}')",
+                role.Name);
         command.CommandText = query;
         try
         {

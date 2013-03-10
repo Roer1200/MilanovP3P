@@ -10,7 +10,7 @@
 namespace Milanov.pages.admin {
     
     
-    public partial class Type_Add {
+    public partial class Roles_Add {
         
         /// <summary>
         /// txtName control.
