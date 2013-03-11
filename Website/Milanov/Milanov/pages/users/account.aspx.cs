@@ -13,7 +13,7 @@ namespace Milanov.pages.users
         {
             if (Session["login"] != null)
             {
-                if ((string)Session["type"] != "1")
+                if ((string)Session["role"] != "1")
                 {
                     lblCU.Text = "Here we will add the user CMS. -> Current user is: " + Session["login"];                    
                 }

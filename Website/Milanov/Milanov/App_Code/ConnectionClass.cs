@@ -128,7 +128,7 @@ public static class ConnectionClass
                 {
                     //Passwords match. Login and password data are known to us.
                     //Retrieve further user data from the database
-                    query = string.Format("SELECT email, typ_id FROM users WHERE username = '{0}'", username);
+                    query = string.Format("SELECT email, rol_id FROM users WHERE username = '{0}'", username);
                     command.CommandText = query;
 
                     SqlDataReader reader = command.ExecuteReader();
@@ -137,9 +137,9 @@ public static class ConnectionClass
                     while (reader.Read())
                     {
                         string email = reader.GetString(0);
-                        int typ_id = reader.GetInt32(1);
+                        int rol_id = reader.GetInt32(1);
 
-                        users = new Users(username, password, email, typ_id);
+                        users = new Users(username, password, email, rol_id);
                     }
                     return users;
                 }
@@ -176,7 +176,7 @@ public static class ConnectionClass
             {
                 //User does not exist, create a new user
                 query = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", users.Username, users.Password,
-                                      users.Email, users.Typ_id);
+                                      users.Email, users.Rol_id);
                 command.CommandText = query;
                 command.ExecuteNonQuery();
                 return "User registered!";

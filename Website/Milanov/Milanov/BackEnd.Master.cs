@@ -16,7 +16,7 @@ namespace Milanov
                 lblLogin.Text = "Welcome " + Session["login"];
                 lblLogin.Visible = true;
                 lbLogin.Text = "Logout";
-                if ((string)Session["type"] != "1")
+                if ((string)Session["role"] != "1")
                 {
                     Response.Redirect("/pages/home.aspx");
                 }

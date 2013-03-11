@@ -14,7 +14,7 @@ image varchar(50) NOT NULL,
 description text
 )
 
-CREATE TABLE types
+CREATE TABLE roles
 (
 id int PRIMARY KEY IDENTITY NOT NULL,
 name varchar(50) NOT NULL UNIQUE
@@ -26,7 +26,7 @@ id int PRIMARY KEY IDENTITY NOT NULL,
 username varchar(50) NOT NULL UNIQUE,
 password varchar(50) NOT NULL,
 email varchar(255) NOT NULL UNIQUE,
-typ_id int FOREIGN KEY REFERENCES types(id) NOT NULL
+rol_id int FOREIGN KEY REFERENCES roles(id) NOT NULL
 )
 
 
@@ -42,10 +42,10 @@ INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [de
 INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje4', 2, 2.04, '4.jpg', 'omschrijving') 
 INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje5', 1, 2.05, '5.jpg', 'omschrijving') 
 
-INSERT INTO [MilanovDB].[dbo].[types] ([name]) VALUES ('administrator')
-INSERT INTO [MilanovDB].[dbo].[types] ([name]) VALUES ('regular')
-INSERT INTO [MilanovDB].[dbo].[types] ([name]) VALUES ('new')
+INSERT INTO [MilanovDB].[dbo].[roles] ([name]) VALUES ('administrator')
+INSERT INTO [MilanovDB].[dbo].[roles] ([name]) VALUES ('regular')
+INSERT INTO [MilanovDB].[dbo].[roles] ([name]) VALUES ('new')
 
-INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [typ_id]) VALUES ('admin', 'P@ssword', 'admin@milanov.nl', '1') 
-INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [typ_id]) VALUES ('regular', 'P@ssword', 'regular@milanov.nl', '2') 
-INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [typ_id]) VALUES ('new', 'P@ssword', 'new@milanov.nl', '3') 
+INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [rol_id]) VALUES ('admin', 'P@ssword', 'admin@milanov.nl', '1') 
+INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [rol_id]) VALUES ('regular', 'P@ssword', 'regular@milanov.nl', '2') 
+INSERT INTO [MilanovDB].[dbo].[users]([username], [password], [email], [rol_id]) VALUES ('new', 'P@ssword', 'new@milanov.nl', '3') 
