@@ -27,8 +27,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <p>
         Select by category: 
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
-            DataSourceID="sds_category" DataTextField="name" DataValueField="name">
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" 
+            DataSourceID="sds_category" DataTextField="name" DataValueField="id">
         </asp:DropDownList>
         <asp:SqlDataSource ID="sds_category" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 

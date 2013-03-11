@@ -2,7 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <asp:Label ID="lblAuth" runat="server" Text="Label" Visible="false"></asp:Label>
-    <asp:Label ID="lblCU" runat="server"></asp:Label>
-&nbsp; 
+    <asp:Label ID="lblCU" runat="server"></asp:Label> 
 </asp:Content>

@@ -11,16 +11,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["type"] != "1")
-            {
-                lblAuth.Text = "You have to login as an admin, you will be redirected to the home page in 3 seconds";
 
-                Response.AddHeader("REFRESH", "3;URL=/pages/Home.aspx");
-            }
-            else
-            {
-                lblAuth.Text = "Je bent ingelogd als admin.";
-            }
         }
     }
 }

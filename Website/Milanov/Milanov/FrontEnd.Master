@@ -9,7 +9,7 @@
     <!-- scripts -->    
 
     <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/styles/style_v3.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
 
     <!-- metatags? -->
@@ -25,8 +25,8 @@
                     <div id="menu">
                         <ul>
                             <li><a href="/pages/home.aspx">Home</a></li>
-                            <li><a href="/pages/fancybox.aspx">Fancybox</a></li>
-                            <li><a href="/pages/products.aspx">Products</a></li>
+                            <li><a href="/pages/products.aspx">Store</a></li>
+                            <li><a href="/pages/contact.aspx">Contact</a></li>
                             <li><a href="/pages/users/account.aspx">Account</a>
                                 <ul>
                                     <li><asp:Label ID="lblLogin" runat="server" Text="">lblLogin</asp:Label></li>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div id="header">
-                    <p class="headerTitle"><!--<a href="/pages/Home.aspx">-->Milanov<!--</a>--></p>
+                    <p class="headerTitle"><!--<a href="/pages/home.aspx">-->Milanov<!--</a>--></p>
                     <p class="headerSlogan">Fotografie</p>
                     <div id="login">
                         

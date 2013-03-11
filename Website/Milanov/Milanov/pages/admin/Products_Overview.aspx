@@ -1,13 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_overview.aspx.cs" Inherits="Milanov.pages.products_overview" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <h3>Available Picture:</h3>
-    <p>        
-        <asp:LinkButton ID="LinkButton1" runat="server" 
-            PostBackUrl="/pages/admin/Products_Add.aspx">Voeg nieuwe foto toe</asp:LinkButton>
+    <h3>Beschikbare producten:</h3>
+    <p>  
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
@@ -17,11 +12,11 @@
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                <asp:BoundField DataField="cname" HeaderText="category" SortExpression="cname" />
-                <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
-                <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
-                <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
+                <asp:BoundField DataField="name" HeaderText="Naam" SortExpression="name" />
+                <asp:BoundField DataField="cname" HeaderText="Categorie" SortExpression="cname" />
+                <asp:BoundField DataField="price" HeaderText="Prijs" SortExpression="price" />
+                <asp:BoundField DataField="image" HeaderText="Foto" SortExpression="image" />
+                <asp:BoundField DataField="description" HeaderText="Omschrijving" SortExpression="description" />
             </Columns>
             <FooterStyle BackColor="#CCCC99" />
             <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -37,18 +32,22 @@
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
             DeleteCommand="DELETE FROM [products] WHERE [id] = @id" 
             SelectCommand="SELECT p.id, p.name, c.name AS cname, p.price, p.image, p.description FROM products AS p INNER JOIN categories AS c ON p.cat_id = c.id"
-            UpdateCommand="UPDATE [products] SET [name] = @name, [cat_id] = @cat_id, [price] = @price, [image] = @image, [description] = @description WHERE [id] = @id">
+            UpdateCommand="UPDATE p SET p.name = @name, p.cat_id = c.id, p.price = @price, p.image = @image, p.description = @description FROM products AS p INNER JOIN categories AS c ON c.id = (SELECT id FROM categories WHERE name = @cname) WHERE p.id = @id">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
             <UpdateParameters>
                 <asp:Parameter Name="name" Type="String" />
-                <asp:Parameter Name="cat_id" Type="Int32" />
+                <asp:Parameter Name="cname" Type="String" />                
                 <asp:Parameter Name="price" Type="Double" />
                 <asp:Parameter Name="image" Type="String" />
                 <asp:Parameter Name="description" Type="String" />
                 <asp:Parameter Name="id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
+    </p>
+    <br />
+    <p>
+        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="/pages/admin/products_add.aspx">Klik hier om een nieuw product toe te voegen.</asp:LinkButton>
     </p>
 </asp:Content>

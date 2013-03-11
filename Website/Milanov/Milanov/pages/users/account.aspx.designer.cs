@@ -13,15 +13,6 @@ namespace Milanov.pages.users {
     public partial class account {
         
         /// <summary>
-        /// lblAuth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAuth;
-        
-        /// <summary>
         /// lblCU control.
         /// </summary>
         /// <remarks>

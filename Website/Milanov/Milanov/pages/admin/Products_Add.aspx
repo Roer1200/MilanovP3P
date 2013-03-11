@@ -1,8 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_add.aspx.cs" Inherits="Milanov.pages.products_add" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <h3>Voeg een nieuwe foto toe</h3>
 
@@ -22,7 +19,13 @@
                 <b>Category:</b>
             </td>
             <td>
-                <asp:TextBox ID="txtCategory" runat="server" Width="300px"></asp:TextBox>
+                <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="True" 
+                DataSourceID="sds_category" DataTextField="name" DataValueField="id">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="sds_category" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
+                SelectCommand="SELECT [id], [name] FROM [categories] ORDER BY [name]">
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>

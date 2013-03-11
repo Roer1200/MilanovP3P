@@ -1,8 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="roles_add.aspx.cs" Inherits="Milanov.pages.admin.roles_add" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <h3>Voeg een nieuwe foto toe</h3>
 

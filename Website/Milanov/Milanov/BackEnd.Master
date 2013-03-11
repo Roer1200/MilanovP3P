@@ -3,39 +3,66 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
     <title>Milanov - Administrator</title>
-
+    
     <!-- scripts -->    
 
     <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/styles/style_v4.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
 
     <!-- metatags? -->
-
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
-
-    <div id="container">
+<div id="container">
         <div id="form">
             <form id="form1" runat="server" >
-                <asp:Label ID="test" runat="server" Visible="true">
-                <div id="header">
-                    <h1>Milanov - Administratie</h1>
+                <div id="menubar">
+                    <div id="menu">
+                        <ul>
+                            <li><a href="/pages/home.aspx" target="_blank">Home</a></li>
+                            <li><a href="#">Bewerken</a>
+                                <ul>
+                                    <li><a href="/pages/admin/categories_overview.aspx">Categorieën</a></li>
+                                    <li><a href="/pages/admin/products_overview.aspx">Producten</a></li>
+                                    <li><a href="/pages/admin/roles_overview.aspx">Rollen</a></li>
+                                    <li><a href="/pages/admin/users_overview.aspx">Gebruikers</a></li>                                    
+                                </ul>
+                            </li>                            
+                            <li><a href="#">Account</a>
+                                <ul>
+                                    <li><asp:Label ID="lblLogin" runat="server" Text="">lblLogin</asp:Label></li>
+                                    <li><asp:LinkButton ID="lbLogin" runat="server" onclick="lbLogin_Click">lbLogin</asp:LinkButton></li>
+                                </ul>  
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="social">
+                        <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" alt="facebook" height="30px" width="30px" /></a>
+                        <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" alt="twitter" height="30px" width="30px" /></a>
+                    </div>
                 </div>
+
+                <div id="header">
+                    <p class="headerTitle"><!--<a href="/pages/home.aspx">-->Milanov<!--</a>--></p>
+                    <p class="headerSlogan">Fotografie</p>
+                    <div id="login">
+                        
+                    </div>
+                </div>
+
                 <div id="content_area">
                         <asp:ContentPlaceHolder ID="content" runat="server">
                         </asp:ContentPlaceHolder>                
                 </div>
-                </asp:Label>
             </form>
         </div>
+
         <div id="footer">
             <p>Copyright &copy; 2012. All Rights Reserved.<br />
             Designed by WYN.</p>
-        </div>
-    </div>        
+        </div> 
+    </div>    
 </body>
 </html>

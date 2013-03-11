@@ -17,7 +17,7 @@ namespace Milanov.pages
 
             if (!IsPostBack)
             {
-                productsList = ConnectionClass.GetProductByCategory(1);
+                lblOutput.Text = "Maak een selectie!";
             }
             else
             {
@@ -52,7 +52,7 @@ namespace Milanov.pages
                 </tr>           
             
                </table>",
-                       product.Name, product.Cat_id, product.Price, product.Image, product.Description));
+                       product.Name, DropDownList1.SelectedItem, product.Price, product.Image, product.Description));
 
                 lblOutput.Text = sb.ToString();
             }

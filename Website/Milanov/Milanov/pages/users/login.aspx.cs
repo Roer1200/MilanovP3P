@@ -24,7 +24,14 @@ namespace Milanov.pages.users
                 Session["login"] = users.Username;
                 Session["type"] = users.Typ_id.ToString();
 
-                Response.Redirect("~/pages/Home.aspx");
+                if ((string)Session["type"] != "1")
+                {
+                    Response.Redirect("~/pages/home.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/pages/administrator.aspx");
+                }
             }
             else
             {

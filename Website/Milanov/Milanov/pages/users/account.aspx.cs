@@ -11,16 +11,20 @@ namespace Milanov.pages.users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["login"] == null)
+            if (Session["login"] != null)
             {
-                lblAuth.Visible = true;
-                lblAuth.Text = "You have to login to view this page, you will be redirected to the home page in 3 seconds";
-
-                Response.AddHeader("REFRESH", "3;URL=/pages/Home.aspx");
+                if ((string)Session["type"] != "1")
+                {
+                    lblCU.Text = "Here we will add the user CMS. -> Current user is: " + Session["login"];                    
+                }
+                else
+                {
+                    Response.Redirect("/pages/administrator.aspx");
+                }
             }
             else
             {
-                lblCU.Text = "Here we will add the user CMS. -> Current user is: " + Session["login"];
+                Response.Redirect("/pages/users/login.aspx");              
             }
         }
     }

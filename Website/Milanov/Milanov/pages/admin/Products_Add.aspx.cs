@@ -8,15 +8,11 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["type"] != "1")
-            {
-                Response.Redirect("~/pages/account/Login.aspx");
-            }
             string selectedValue = ddlImage.SelectedValue;
             showImages();
             ddlImage.SelectedValue = selectedValue;
         }
-
+        
         private void showImages()
         {
             string[] images = Directory.GetFiles(Server.MapPath("~/images/products/"));
@@ -36,7 +32,6 @@ namespace Milanov.pages
         private void ClearTextFields()
         {
             txtName.Text = "";
-            txtCategory.Text = "";
             txtPrice.Text = "";
             txtDescription.Text = "";
         }
@@ -62,10 +57,9 @@ namespace Milanov.pages
             try
             {
                 string name = txtName.Text;
-                int cat_id = Convert.ToInt32(txtCategory.Text);
+                int cat_id = Convert.ToInt32(ddlCategory.SelectedValue);
                 double price = Convert.ToDouble(txtPrice.Text);
-                price = price / 100;
-                string image = "~/images/pictures/" + ddlImage.SelectedValue;
+                string image = ddlImage.SelectedValue;
                 string description = txtDescription.Text;
 
                 Products product = new Products(name, cat_id, price, image, description);
