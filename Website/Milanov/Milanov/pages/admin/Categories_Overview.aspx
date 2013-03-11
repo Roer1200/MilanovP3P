@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="Categories_Overview.aspx.cs" Inherits="Milanov.pages.admin.Categories_Overview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="categories_overview.aspx.cs" Inherits="Milanov.pages.admin.categories_overview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <asp:Label ID="lblAuth" runat="server" Text="Label" Visible="false"></asp:Label>
-
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
         AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
         BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 

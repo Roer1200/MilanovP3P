@@ -10,7 +10,7 @@
 namespace Milanov.pages {
     
     
-    public partial class Shop {
+    public partial class products {
         
         /// <summary>
         /// DropDownList1 control.

@@ -10,7 +10,7 @@
 namespace Milanov.pages.account {
     
     
-    public partial class Admin {
+    public partial class users_overview {
         
         /// <summary>
         /// GridView1 control.

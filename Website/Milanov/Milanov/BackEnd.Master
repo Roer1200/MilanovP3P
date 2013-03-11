@@ -4,13 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <!-- <title>Milanov</title> incase you only want the website name, uncomment this -->
+    <title>Milanov - Administrator</title>
 
     <!-- scripts -->    
 
     <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/styles/style_v1.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style_v4.css" />
 
     <!-- metatags? -->
 
@@ -18,72 +17,25 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
     <div id="container">
-        <div id="menubar">
-            <div id="menu">
-                <ul>
-                    <li><a href="/pages/Home.aspx">Home</a></li>
-                    <li> <!--class="has-sub"--><a href="/pages/Fancybox.aspx">Fancybox</a>
-                        <!--<ul>
-                            <li class="has-sub"><a href="#">Product 1</a>
-                            <ul>
-                                <li><a href="#">Sub Item</a></li>
-                                <li class="last"><a href="#">Sub Item</a></li>
-                            </ul>
-                            </li>
-                            <li class="has-sub"><a href="#">Product 2</a>
-                            <ul>
-                                <li><a href="#">Sub Item</a></li>
-                                <li class="last"><a href="#">Sub Item</a></li>
-                            </ul>
-                            </li>
-                        </ul>-->
-                    </li>
-                    <li><a href="/pages/Products.aspx">Products</a></li>
-                    <li><a href="#">Administrator</a>
-                        <ul>
-                            <li><a href="/pages/admin/Categories_Overview.aspx">Categories_Overview</a>
-                                <ul>
-                                    <li><a href="/pages/admin/Categories_Add.aspx">Categories_Add</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/pages/admin/Products_Overview.aspx">Products_Overview</a>
-                                <ul>
-                                    <li><a href="/pages/admin/Products_Add.aspx">Products_Add</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/pages/admin/Roles_Overview.aspx">Roles_Overview</a>
-                                <ul>
-                                    <li><a href="/pages/admin/Roles_Add.aspx">Roles_Add</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div id="social">
-                <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" alt="facebook" height="30px" width="30px" /></a>
-                <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" alt="twitter" height="30px" width="30px" /></a>
-            </div>
-        </div>
-
-        <div id="header">
-            <p class="headerTitle"><!--<a href="/pages/Home.aspx">-->Milanov<!--</a>--></p>
-            <p class="headerSlogan">Fotografie</p>
-        </div>
-
-        <div id="content_area">
+        <div id="form">
             <form id="form1" runat="server" >
-                <asp:ContentPlaceHolder ID="content" runat="server">
-                </asp:ContentPlaceHolder>
+                <asp:Label ID="test" runat="server" Visible="true">
+                <div id="header">
+                    <h1>Milanov - Administratie</h1>
+                </div>
+                <div id="content_area">
+                        <asp:ContentPlaceHolder ID="content" runat="server">
+                        </asp:ContentPlaceHolder>                
+                </div>
+                </asp:Label>
             </form>
         </div>
-
         <div id="footer">
             <p>Copyright &copy; 2012. All Rights Reserved.<br />
             Designed by WYN.</p>
-        </div> 
-    </div>    
+        </div>
+    </div>        
 </body>
 </html>

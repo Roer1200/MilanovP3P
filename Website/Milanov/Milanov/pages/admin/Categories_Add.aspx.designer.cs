@@ -10,7 +10,7 @@
 namespace Milanov.pages.admin {
     
     
-    public partial class Categories_Add {
+    public partial class categories_add {
         
         /// <summary>
         /// txtName control.

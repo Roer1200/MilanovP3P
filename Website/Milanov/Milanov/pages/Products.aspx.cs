@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Milanov.pages
 {
-    public partial class Shop : System.Web.UI.Page
+    public partial class products : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

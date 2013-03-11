@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Milanov.pages.admin
+namespace Milanov.pages
 {
-    public partial class Type_Overview : System.Web.UI.Page
+    public partial class contact : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

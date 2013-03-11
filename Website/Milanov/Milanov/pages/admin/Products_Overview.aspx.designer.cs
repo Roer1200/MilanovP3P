@@ -10,7 +10,7 @@
 namespace Milanov.pages {
     
     
-    public partial class Picture_Overview {
+    public partial class products_overview {
         
         /// <summary>
         /// LinkButton1 control.

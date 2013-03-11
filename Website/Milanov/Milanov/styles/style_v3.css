@@ -24,7 +24,8 @@ body
 
 #login
 {
-    float: right;   
+    float: right;  
+    margin: 90px 20px 0px auto; 
 }
 
 #social
@@ -35,11 +36,12 @@ body
 
 #header 
 {
-    background-image: url('../../images/header.png');
+    background-image: url('/images/header.png');
     background-repeat: no-repeat;
     height: 263px;
     width: 1200px;
     margin: 0px auto 0px auto;
+    border: 1px solid #000;
 }
 
 #content_area 

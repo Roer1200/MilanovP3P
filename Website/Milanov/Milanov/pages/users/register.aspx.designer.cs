@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milanov.pages.account {
+namespace Milanov.pages.users {
     
     
-    public partial class Register {
+    public partial class register {
         
         /// <summary>
         /// txtUsername control.

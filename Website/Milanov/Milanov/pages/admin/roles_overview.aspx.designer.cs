@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milanov.pages {
+namespace Milanov.pages.admin {
     
     
-    public partial class fancybox {
+    public partial class roles_overview {
     }
 }

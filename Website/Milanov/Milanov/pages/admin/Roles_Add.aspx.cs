@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Milanov.pages.admin
 {
-    public partial class Roles_Add : System.Web.UI.Page
+    public partial class roles_add : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

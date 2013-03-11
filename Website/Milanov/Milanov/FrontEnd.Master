@@ -24,43 +24,14 @@
                 <div id="menubar">
                     <div id="menu">
                         <ul>
-                            <li><a href="/pages/Home.aspx">Home</a></li>
-                            <li> <!--class="has-sub"--><a href="/pages/Fancybox.aspx">Fancybox</a>
-                                <!--<ul>
-                                    <li class="has-sub"><a href="#">Product 1</a>
-                                    <ul>
-                                        <li><a href="#">Sub Item</a></li>
-                                        <li class="last"><a href="#">Sub Item</a></li>
-                                    </ul>
-                                    </li>
-                                    <li class="has-sub"><a href="#">Product 2</a>
-                                    <ul>
-                                        <li><a href="#">Sub Item</a></li>
-                                        <li class="last"><a href="#">Sub Item</a></li>
-                                    </ul>
-                                    </li>
-                                </ul>-->
-                            </li>
-                            <li><a href="/pages/Products.aspx">Products</a></li>
-                            <li><a href="#">Administrator</a>
+                            <li><a href="/pages/home.aspx">Home</a></li>
+                            <li><a href="/pages/fancybox.aspx">Fancybox</a></li>
+                            <li><a href="/pages/products.aspx">Products</a></li>
+                            <li><a href="/pages/users/account.aspx">Account</a>
                                 <ul>
-                                    <li><a href="/pages/admin/Categories_Overview.aspx">Categories_Overview</a>
-                                        <ul>
-                                            <li><a href="/pages/admin/Categories_Add.aspx">Categories_Add</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/pages/admin/Products_Overview.aspx">Products_Overview</a>
-                                        <ul>
-                                            <li><a href="/pages/admin/Products_Add.aspx">Products_Add</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/pages/admin/Roles_Overview.aspx">Roles_Overview</a>
-                                        <ul>
-                                            <li><a href="/pages/admin/Roles_Add.aspx">Roles_Add</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/pages/admin/Users_Overview.aspx">Users_Overview</a></li>
-                                </ul>
+                                    <li><asp:Label ID="lblLogin" runat="server" Text="">lblLogin</asp:Label></li>
+                                    <li><asp:LinkButton ID="lbLogin" runat="server" onclick="lbLogin_Click">lbLogin</asp:LinkButton></li>
+                                </ul>                                
                             </li>
                         </ul>
                     </div>
@@ -73,9 +44,8 @@
                 <div id="header">
                     <p class="headerTitle"><!--<a href="/pages/Home.aspx">-->Milanov<!--</a>--></p>
                     <p class="headerSlogan">Fotografie</p>
-                                                            <div id="login">
-                        <asp:Label ID="lblLogin" runat="server" Text=""></asp:Label><br />
-                        <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                    <div id="login">
+                        
                     </div>
                 </div>
 

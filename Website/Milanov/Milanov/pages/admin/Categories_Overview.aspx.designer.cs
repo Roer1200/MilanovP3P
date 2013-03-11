@@ -10,7 +10,7 @@
 namespace Milanov.pages.admin {
     
     
-    public partial class Categories_Overview {
+    public partial class categories_overview {
         
         /// <summary>
         /// lblAuth control.

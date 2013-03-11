@@ -16,27 +16,27 @@ namespace Milanov
             {
                 lblLogin.Text = "Welcome " + Session["login"];
                 lblLogin.Visible = true;
-                LinkButton1.Text = "Logout";
+                lbLogin.Text = "Logout";
             }
             else
             {
                 lblLogin.Visible = false;
-                LinkButton1.Text = "Login";
+                lbLogin.Text = "Login";
             }
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void lbLogin_Click(object sender, EventArgs e)
         {
             //User logs in 
-            if (LinkButton1.Text == "Login")
+            if (lbLogin.Text == "Login")
             {
-                Response.Redirect("~/pages/account/Login.aspx");
+                Response.Redirect("~/pages/users/login.aspx");
             }
             else
             {
                 //User logs out
                 Session.Clear();
-                Response.Redirect("~/pages/Home.aspx");
+                Response.Redirect("~/pages/home.aspx");
             }
         }
     }
