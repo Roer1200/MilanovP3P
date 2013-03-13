@@ -10,7 +10,27 @@
             GridLines="Vertical" Width="858px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:TemplateField HeaderText="Edit">
+                <ItemTemplate>
+                <asp:Button ID="editbutton" runat="server" CommandName="Edit" Text="Edit" />
+                </ItemTemplate>
+                <EditItemTemplate>  
+                <asp:Button ID="LinkButton2" CommandName="Update" Text="Confirm"     
+                runat="server"/>     
+                <asp:Button ID="LinkButton3" CommandName="Cancel" Text="Cancel" 
+                runat="server"/>           
+                </EditItemTemplate> 
+                </asp:TemplateField>
+
+
+                <asp:TemplateField HeaderText="Delete">
+                <ItemTemplate>
+                <asp:Button ID="deleteButton" runat="server" CommandName="Delete" Text="Delete"
+                OnClientClick="return confirm('Are you sure you want to delete this product?');" />
+                </ItemTemplate>
+                </asp:TemplateField>
+
+
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="name" HeaderText="Naam" SortExpression="name" />
                 <asp:BoundField DataField="cname" HeaderText="Categorie" SortExpression="cname" />
@@ -49,5 +69,6 @@
     <br />
     <p>
         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="/pages/admin/products_add.aspx">Klik hier om een nieuw product toe te voegen.</asp:LinkButton>
+        
     </p>
 </asp:Content>
