@@ -35,7 +35,7 @@ namespace Milanov.pages.users
             }
             else
             {
-                lblError.Text = "Login failed";
+                lblError.Text = "Inloggen mislukt, wachtwoord vergeten? Klik <a href='/pages/users/password_recovery.aspx'>hier</a>";
             }
         }
 

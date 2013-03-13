@@ -193,4 +193,48 @@ public static class ConnectionClass
             conn.Close();
         }
     }
+
+    public static string ForgotPassword(string username, string email)
+    {
+        //Check if user exists
+        string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", username);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            int amountOfUsers = (int)command.ExecuteScalar();
+
+            if (amountOfUsers == 1)
+            {
+                //User exists, check if the passwords match
+                query = string.Format("SELECT email FROM users WHERE username = '{0}'", username);
+                command.CommandText = query;
+                string dbEmail = command.ExecuteScalar().ToString();
+
+                if (dbEmail == email)
+                {
+                    //Username and email matches
+                    query = string.Format("SELECT password FROM users WHERE username = '{0}'", username);
+                    command.CommandText = query;
+                    string password = command.ExecuteScalar().ToString();
+                    return password;
+                }
+                else
+                {
+                    //Email does not match username
+                    return null;
+                }
+            }
+            else
+            {
+                //User does not exist
+                return null;
+            }
+        }
+        finally
+        {
+            conn.Close();
+        }
+    }
 }

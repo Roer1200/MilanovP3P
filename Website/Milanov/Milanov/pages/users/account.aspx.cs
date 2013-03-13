@@ -15,7 +15,7 @@ namespace Milanov.pages.users
             {
                 if ((string)Session["role"] != "1")
                 {
-                    lblCU.Text = "Here we will add the user CMS. -> Current user is: " + Session["login"];                    
+                    lblCU.Text = "Here we will add the user CMS. -> Current user is: " + Session["login"]; 
                 }
                 else
                 {
@@ -26,6 +26,46 @@ namespace Milanov.pages.users
             {
                 Response.Redirect("/pages/users/login.aspx");              
             }
+        }
+
+        protected void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            if (txtPcurrent.Visible != true && txtPnew.Visible != true && txtPconfirm.Visible != true)
+            {
+                txtPcurrent.Visible = true;
+                txtPnew.Visible = true;
+                txtPconfirm.Visible = true;
+                btnPsubmit.Visible = true;
+            }
+            else
+            {
+                txtPcurrent.Visible = false;
+                txtPnew.Visible = false;
+                txtPconfirm.Visible = false;
+                btnPsubmit.Visible = false;
+            }
+        }
+
+        protected void btnPsubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnChangeEmail_Click(object sender, EventArgs e)
+        {
+            if (email.Visible != true)
+            {
+                email.Visible = true;
+            }
+            else
+            {
+                email.Visible = false;
+            }
+        }
+
+        protected void btnEsubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

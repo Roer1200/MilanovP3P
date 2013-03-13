@@ -26,9 +26,9 @@ namespace Milanov.pages
                 eMailMessage.Subject = "Milanov: " + HttpUtility.HtmlEncode(txtSubject.Text);
 
                 eMailMessage.Body = "<b>Naam:</b> " + HttpUtility.HtmlEncode(txtName.Text) + "<br />" +
-                                    "E-mail: " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
-                                    "Onderwerp: " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" + 
-                                    "Bericht: " + HttpUtility.HtmlEncode(txtMessage.Text);
+                                    "<b>E-mail:</b> " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
+                                    "<b>Onderwerp:</b> " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" +
+                                    "<b>Bericht:</b> <br />" + HttpUtility.HtmlEncode(txtMessage.Text.ToString());
                 eMailMessage.IsBodyHtml = true;
 
                 eMailMessage.Priority = MailPriority.Normal;
@@ -42,7 +42,6 @@ namespace Milanov.pages
             {
                 lblSend.Text = "De mail is niet verzonden, onze excuses voor het ongemak.";
             }
-
         }
     }
 }
