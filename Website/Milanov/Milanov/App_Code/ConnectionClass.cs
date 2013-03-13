@@ -157,10 +157,11 @@ public static class ConnectionClass
         }
         finally
         {
-
             conn.Close();
         }
     }
+
+
     public static string RegisterUser(Users users)
     {
         //Check if user exists

@@ -41,6 +41,6 @@
     </p>
     <br />
     <p>
-        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="/pages/admin/categories_add.aspx">Klik hier om een nieuwe categorie toe te voegen.</asp:LinkButton>
+        <asp:LinkButton ID="lbtnAdd" runat="server" PostBackUrl="/pages/admin/categories_add.aspx">Klik hier om een nieuwe categorie toe te voegen.</asp:LinkButton>
     </p>
 </asp:Content>

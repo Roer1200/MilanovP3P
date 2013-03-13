@@ -47,8 +47,6 @@ body
 {
     background-color: #FCFCF8;
     border:1px solid #D8EDE8;
-    min-height: 100%; /*hoogte om op te vullen tot footer */
-    height: auto;
     width: 1000px;
     margin: 0px auto 0px auto;
     padding: 10px 10px 100px 10px;   /* Height + top/bottom padding of the footer */   

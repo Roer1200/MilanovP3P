@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
 
 namespace Milanov.pages
 {
@@ -11,6 +12,36 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btnSend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MailMessage eMailMessage = new MailMessage();
+                eMailMessage.From = new MailAddress(HttpUtility.HtmlEncode(txtEmail.Text));
+                eMailMessage.To.Add(new MailAddress("nhlemailtest@gmail.com"));
+
+                eMailMessage.Subject = "Milanov: " + HttpUtility.HtmlEncode(txtSubject.Text);
+
+                eMailMessage.Body = "<b>Naam:</b> " + HttpUtility.HtmlEncode(txtName.Text) + "<br />" +
+                                    "E-mail: " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
+                                    "Onderwerp: " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" + 
+                                    "Bericht: " + HttpUtility.HtmlEncode(txtMessage.Text);
+                eMailMessage.IsBodyHtml = true;
+
+                eMailMessage.Priority = MailPriority.Normal;
+
+                SmtpClient mSmtpClient = new SmtpClient();
+                mSmtpClient.Send(eMailMessage);
+
+                lblSend.Text = "Uw bericht is verzonden, eventueel antwoord zal worden verstuurd naar: " + txtEmail.Text;
+            }
+            catch (Exception)
+            {
+                lblSend.Text = "De mail is niet verzonden, onze excuses voor het ongemak.";
+            }
 
         }
     }

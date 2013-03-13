@@ -111,7 +111,6 @@
     <Content Include="pages\admin\products_overview.aspx" />
     <Content Include="pages\products.aspx" />
     <Content Include="pages\fancybox.aspx" />
-    <Content Include="styles\style_be.css" />
     <Content Include="styles\menu.css" />
     <Content Include="styles\style.css" />
     <Content Include="Web.config">

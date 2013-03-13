@@ -17,5 +17,5 @@
     </table>
     <asp:Label ID="lblResult" runat="server" Text=""></asp:Label><br />
     <asp:Button ID="btnSave" runat="server" Text="Opslaan" onclick="btnSave_Click" /></asp:Button>
-    <asp:Button ID="btnBack" runat="server" Text="Terug" OnClientClick="JavaScript: windows.history.back(1); return false;" /></asp:Button>
+    <asp:Button ID="btnBack" runat="server" Text="Terug" CausesValidation="false" OnClick="btnBack_Click"></asp:Button>
 </asp:Content>

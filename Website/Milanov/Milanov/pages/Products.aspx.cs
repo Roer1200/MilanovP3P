@@ -17,7 +17,7 @@ namespace Milanov.pages
 
             if (!IsPostBack)
             {
-                lblOutput.Text = "Maak een selectie!";
+                productsList = ConnectionClass.GetProductByCategory(Convert.ToInt32(DropDownList1.DataValueField[0]));
             }
             else
             {
@@ -57,6 +57,7 @@ namespace Milanov.pages
                 lblOutput.Text = sb.ToString();
             }
         }
+
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FillPage();

@@ -38,5 +38,10 @@ namespace Milanov.pages.users
                 lblError.Text = "Login failed";
             }
         }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/users/register.aspx");
+        }
     }
 }

@@ -26,7 +26,6 @@
                                 <ul>
                                     <li><a href="/pages/admin/categories_overview.aspx">Categorieën</a></li>
                                     <li><a href="/pages/admin/products_overview.aspx">Producten</a></li>
-                                    <li><a href="/pages/admin/roles_overview.aspx">Rollen</a></li>
                                     <li><a href="/pages/admin/users_overview.aspx">Gebruikers</a></li>                                    
                                 </ul>
                             </li>                            

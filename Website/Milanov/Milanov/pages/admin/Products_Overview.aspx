@@ -4,29 +4,52 @@
     <h3>Beschikbare producten:</h3>
     <p>  
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
-            AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
-            BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
-            CellSpacing="4" DataKeyNames="id" DataSourceID="sds_products" ForeColor="Black" 
-            GridLines="Vertical" Width="858px">
-            <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="name" HeaderText="Naam" SortExpression="name" />
-                <asp:BoundField DataField="cname" HeaderText="Categorie" SortExpression="cname" />
-                <asp:BoundField DataField="price" HeaderText="Prijs" SortExpression="price" />
-                <asp:BoundField DataField="image" HeaderText="Foto" SortExpression="image" />
-                <asp:BoundField DataField="description" HeaderText="Omschrijving" SortExpression="description" />
-            </Columns>
-            <FooterStyle BackColor="#CCCC99" />
-            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-            <RowStyle BackColor="#F7F7DE" />
-            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#FBFBF2" />
-            <SortedAscendingHeaderStyle BackColor="#848384" />
-            <SortedDescendingCellStyle BackColor="#EAEAD3" />
-            <SortedDescendingHeaderStyle BackColor="#575357" />
+        AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
+        BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
+        CellSpacing="4" DataKeyNames="id" DataSourceID="sds_products" ForeColor="Black" 
+        GridLines="Vertical" Width="900px">
+        <Columns>
+            <asp:TemplateField HeaderText="Opties">
+                <ItemTemplate>
+                    <asp:Button ID="btnEdit" runat="server" CommandName="Edit" Text="Bewerken" />
+                    <asp:Button ID="btnDelete" runat="server" CommandName="Delete" Text="Verwijderen" 
+                    OnClientClick="return confirm('Weet u zeker dat u dit products wilt verwijderen?');" />
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" />
+                    <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Annuleer" />
+                </EditItemTemplate>
+            </asp:TemplateField>
+
+            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+            <asp:BoundField DataField="name" HeaderText="Naam" SortExpression="name" />
+            <asp:TemplateField HeaderText="Categorie" SortExpression="cname">
+                <ItemTemplate>
+                    <asp:Label ID="lblCname" runat="server" Text='<%# Bind("cname") %>'></asp:Label>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <asp:DropDownList ID="ddlCategories" runat="server" DataSourceID="sds_categories" 
+                    DataTextField="name" DataValueField="name" SelectedValue='<%# Bind("cname") %>'>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="sds_categories" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
+                    SelectCommand="SELECT [name] FROM [categories] ORDER BY [name]">
+                    </asp:SqlDataSource>
+                </EditItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField DataField="price" HeaderText="Prijs" SortExpression="price" />
+            <asp:BoundField DataField="image" HeaderText="Foto" SortExpression="image" />
+            <asp:BoundField DataField="description" HeaderText="Omschrijving" SortExpression="description" />
+        </Columns>
+        <FooterStyle BackColor="#CCCC99" />
+        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+        <RowStyle BackColor="#F7F7DE" />
+        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#FBFBF2" />
+        <SortedAscendingHeaderStyle BackColor="#848384" />
+        <SortedDescendingCellStyle BackColor="#EAEAD3" />
+        <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
         <asp:SqlDataSource ID="sds_products" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
@@ -48,6 +71,6 @@
     </p>
     <br />
     <p>
-        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="/pages/admin/products_add.aspx">Klik hier om een nieuw product toe te voegen.</asp:LinkButton>
+        <asp:LinkButton ID="lbAdd" runat="server" PostBackUrl="/pages/admin/products_add.aspx">Klik hier om een nieuw product toe te voegen.</asp:LinkButton>
     </p>
 </asp:Content>

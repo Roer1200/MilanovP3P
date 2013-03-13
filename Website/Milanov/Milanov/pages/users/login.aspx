@@ -24,11 +24,15 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="btnLogin" runat="server" Text="Login" 
-                    onclick="btnLogin_Click" /><br />
-                <asp:Label ID="lblError" runat="server" Text=""></asp:Label><br />
-                <asp:LinkButton ID="LinkButton2" runat="server" 
-                    PostBackUrl="~/pages/account/Register.aspx">Register</asp:LinkButton>
+                <asp:Button ID="btnLogin" runat="server" Text="Inloggen" OnClick="btnLogin_Click" />                         
+            </td>
+            <td>
+                <asp:Button ID="Button1" runat="server" Text="Registeren" CausesValidation="false" OnClick="btnRegister_Click" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Label ID="lblError" runat="server" ></asp:Label><br />  
             </td>
         </tr>
     </table>

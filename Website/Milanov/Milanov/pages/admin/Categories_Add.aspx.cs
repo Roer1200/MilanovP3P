@@ -37,5 +37,10 @@ namespace Milanov.pages.admin
                 lblResult.Text = "Upload new item failed!";                
             }
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/admin/categories_overview.aspx");
+        }
     }
 }

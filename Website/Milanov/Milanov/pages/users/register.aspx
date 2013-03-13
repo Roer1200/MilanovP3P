@@ -34,12 +34,14 @@
             <td><b>E-mail: </b></td>
             <td>
                 <asp:TextBox ID="txtEmail" runat="server" Width="250px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="txtEmail" ErrorMessage="*">
+                </asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidatorEmail" runat="server" 
                     ErrorMessage="Invalid E-mail" ControlToValidate="txtEmail" ForeColor="Red" 
-                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                    ControlToValidate="txtEmail" ErrorMessage="*"></asp:RequiredFieldValidator>
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+                </asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
