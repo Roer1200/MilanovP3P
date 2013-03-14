@@ -19,7 +19,7 @@ namespace Milanov.pages.users
                 }
                 else
                 {
-                    Response.Redirect("/pages/administrator.aspx");
+                    Response.Redirect("/pages/admin/administrator.aspx");
                 }
             }
             else

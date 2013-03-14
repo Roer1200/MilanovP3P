@@ -21,7 +21,7 @@
                 <div id="menubar">
                     <div id="menu">
                         <ul>
-                            <li><a href="/pages/home.aspx" target="_blank">Home</a></li>
+                            <li><a href="/pages/admin/administrator.aspx">Admin</a></li>
                             <li><a href="#">Bewerken</a>
                                 <ul>
                                     <li><a href="/pages/admin/categories_overview.aspx">Categorieën</a></li>
@@ -35,6 +35,7 @@
                                     <li><asp:LinkButton ID="lbLogin" runat="server" onclick="lbLogin_Click">lbLogin</asp:LinkButton></li>
                                 </ul>  
                             </li>
+                            <li><a href="/pages/home.aspx" target="_blank">Home</a></li>
                         </ul>
                     </div>
                     <div id="social">

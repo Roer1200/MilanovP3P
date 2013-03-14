@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Text;
 
-namespace Milanov.pages
+namespace Milanov.pages.store
 {
     public partial class products : System.Web.UI.Page
     {
@@ -32,7 +32,7 @@ namespace Milanov.pages
                     string.Format(
                         @"<table class='productsTable'>
                 <tr>
-                    <th rowspan='6' width='150px'><a rel='fancybox' href='/images/products/{3}' title='{0}'><img runat='server' src='/images/products/{3}' height='100px' width='100px'/></th>
+                    <th rowspan='6' width='150px'><a href='/pages/store/product_details.aspx?id=' title='{0}'><img runat='server' src='/images/products/{3}' height='100px' width='100px'/></th>
                     <th width='50px'>Name: </th>
                     <td>{0}</td>
                 </tr> 

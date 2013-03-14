@@ -26,11 +26,11 @@ namespace Milanov.pages.users
 
                 if ((string)Session["role"] != "1")
                 {
-                    Response.Redirect("~/pages/home.aspx");
+                    Response.Redirect("/pages/home.aspx");
                 }
                 else
                 {
-                    Response.Redirect("~/pages/administrator.aspx");
+                    Response.Redirect("/pages/admin/administrator.aspx");
                 }
             }
             else

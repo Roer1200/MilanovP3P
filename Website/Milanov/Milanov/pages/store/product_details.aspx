@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="products.aspx.cs" Inherits="Milanov.pages.products" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="product_details.aspx.cs" Inherits="Milanov.pages.store.product_details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Milanov - Shop</title>
+    <title>Milanov - Product</title>
 
     <!-- scripts -->  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
@@ -23,19 +23,5 @@
     <!-- stylesheets -->
     <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <p>
-        Select by category: 
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" 
-            DataSourceID="sds_category" DataTextField="name" DataValueField="id">
-        </asp:DropDownList>
-        <asp:SqlDataSource ID="sds_category" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
-            SelectCommand="SELECT [id], [name] FROM [categories] ORDER BY [name]">
-        </asp:SqlDataSource>
-    </p>
-    <p>
-        <asp:Label ID="lblOutput" runat="server" Text="Label"></asp:Label>
-    </p>
 </asp:Content>

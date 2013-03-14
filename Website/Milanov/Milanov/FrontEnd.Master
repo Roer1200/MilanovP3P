@@ -31,7 +31,7 @@
                     <div id="menu">
                         <ul>
                             <li><a href="/pages/home.aspx">Home</a></li>
-                            <li><a href="/pages/products.aspx">Store</a></li>
+                            <li><a href="/pages/store/products.aspx">Store</a></li>
                             <li><a href="/pages/contact.aspx">Contact</a></li>
                             <li><a href="/pages/users/account.aspx">Account</a>
                                 <ul>
