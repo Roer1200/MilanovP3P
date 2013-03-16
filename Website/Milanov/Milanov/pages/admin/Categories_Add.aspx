@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="categories_add.aspx.cs" Inherits="Milanov.pages.admin.categories_add" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <h3>Voeg een nieuwe foto toe</h3>
+    <h3>Voeg een nieuwe categorie toe:</h3>
 
     <table cellspacing="15" class="pictureTable">
         <tr>
             <td style="width: 80px">
-                <b>Name:</b>
+                <b>Naam:</b>
             </td>
             <td>
                 <asp:TextBox ID="txtName" runat="server" Width="300px"></asp:TextBox>

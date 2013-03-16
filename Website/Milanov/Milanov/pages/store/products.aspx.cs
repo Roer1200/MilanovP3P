@@ -17,11 +17,11 @@ namespace Milanov.pages.store
 
             if (!IsPostBack)
             {
-                productsList = ConnectionClass.GetProductByCategory(Convert.ToInt32(DropDownList1.DataValueField[0]));
+                productsList = ConnectionClass.GetProductByCategory("%");
             }
             else
             {
-                productsList = ConnectionClass.GetProductByCategory(Convert.ToInt32(DropDownList1.SelectedValue));
+                productsList = ConnectionClass.GetProductByCategory(DropDownList1.SelectedValue);
             }
 
             StringBuilder sb = new StringBuilder();
@@ -30,34 +30,29 @@ namespace Milanov.pages.store
             {
                 sb.Append(
                     string.Format(
-                        @"<table class='productsTable'>
+                        @"<table class='productTable'>
                 <tr>
-                    <th rowspan='6' width='150px'><a href='/pages/store/product_details.aspx?id=' title='{0}'><img runat='server' src='/images/products/{3}' height='100px' width='100px'/></th>
-                    <th width='50px'>Name: </th>
+                    <th rowspan='6' width='150px'><a rel='fancybox' href='/images/products/{3}' title='{0}'><img runat='server' src='/images/products/{3}'/></th>
+                    <th width='50px'>Naam:</th>
                     <td>{0}</td>
                 </tr> 
 
                 <tr>
-                    <th>Category: </th>
+                    <th>Categorie:</th>
                     <td>{1}</td>
                 </tr>
 
                 <tr>
-                    <th>Price: </th>
+                    <th>Prijs:</th>
                     <td>€ {2}</td>
-                </tr>
-
-                <tr>
-                    <td colspan='2'>{4}</td>
-                </tr>           
+                </tr>         
             
                </table>",
-                       product.Name, DropDownList1.SelectedItem, product.Price, product.Image, product.Description));
+                       product.Name, product.Cat_id, product.Price, product.Image));
 
                 lblOutput.Text = sb.ToString();
             }
         }
-
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FillPage();

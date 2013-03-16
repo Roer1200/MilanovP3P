@@ -17,31 +17,39 @@ namespace Milanov.pages
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            try
+            if (!txtName.Text.Contains("<"))
             {
-                MailMessage eMailMessage = new MailMessage();
-                eMailMessage.From = new MailAddress(HttpUtility.HtmlEncode(txtEmail.Text));
-                eMailMessage.To.Add(new MailAddress("nhlemailtest@gmail.com"));
+                try
+                {                
+                    MailMessage eMailMessage = new MailMessage();
+                    eMailMessage.From = new MailAddress(HttpUtility.HtmlEncode(txtEmail.Text));
+                    eMailMessage.To.Add(new MailAddress("nhlemailtest@gmail.com"));
 
-                eMailMessage.Subject = "Milanov: " + HttpUtility.HtmlEncode(txtSubject.Text);
+                    eMailMessage.Subject = "Milanov: " + HttpUtility.HtmlEncode(txtSubject.Text);
 
-                eMailMessage.Body = "<b>Naam:</b> " + HttpUtility.HtmlEncode(txtName.Text) + "<br />" +
-                                    "<b>E-mail:</b> " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
-                                    "<b>Onderwerp:</b> " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" +
-                                    "<b>Bericht:</b> <br />" + HttpUtility.HtmlEncode(txtMessage.Text.ToString());
-                eMailMessage.IsBodyHtml = true;
+                    eMailMessage.Body = "<b>Naam:</b> " + HttpUtility.HtmlEncode(txtName.Text) + "<br />" +
+                                        "<b>E-mail:</b> " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
+                                        "<b>Onderwerp:</b> " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" +
+                                        "<b>Bericht:</b> <br />" + HttpUtility.HtmlEncode(txtMessage.Text.ToString());
+                    eMailMessage.IsBodyHtml = true;
 
-                eMailMessage.Priority = MailPriority.Normal;
+                    eMailMessage.Priority = MailPriority.Normal;
 
-                SmtpClient mSmtpClient = new SmtpClient();
-                mSmtpClient.Send(eMailMessage);
+                    SmtpClient mSmtpClient = new SmtpClient();
+                    mSmtpClient.Send(eMailMessage);
 
-                lblSend.Text = "Uw bericht is verzonden, eventueel antwoord zal worden verstuurd naar: " + txtEmail.Text;
+                    lblSend.Text = "Uw bericht is verzonden, eventueel antwoord zal worden verstuurd naar: " + txtEmail.Text;
+                }
+                catch (Exception)
+                {
+                    lblSend.Text = "De mail is niet verzonden, onze excuses voor het ongemak.";
+                }
+                
             }
-            catch (Exception)
+            else
             {
-                lblSend.Text = "De mail is niet verzonden, onze excuses voor het ongemak.";
-            }
+                lblSend.Text = "Het is niet toegestaan om gebruik te maken van '<' en/of '>'.";
+            }            
         }
     }
 }

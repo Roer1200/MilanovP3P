@@ -13,13 +13,13 @@ namespace Milanov.pages {
     public partial class home {
         
         /// <summary>
-        /// Img3 control.
+        /// Img1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img3;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
         /// Img2 control.
@@ -31,12 +31,39 @@ namespace Milanov.pages {
         protected global::System.Web.UI.HtmlControls.HtmlImage Img2;
         
         /// <summary>
-        /// Img1 control.
+        /// Img3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img3;
+        
+        /// <summary>
+        /// Img4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img4;
+        
+        /// <summary>
+        /// Img5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img5;
+        
+        /// <summary>
+        /// Img6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img6;
     }
 }

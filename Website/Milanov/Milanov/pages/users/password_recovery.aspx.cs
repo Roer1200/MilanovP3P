@@ -19,16 +19,18 @@ namespace Milanov.pages.users
         {
             string password = ConnectionClass.ForgotPassword(txtUsername.Text, txtEmail.Text);
 
-            try
+            if (!password.Contains("Wachtwoord is niet verzonden"))
             {
+                try
+                {
                 MailMessage eMailMessage = new MailMessage();
                 eMailMessage.From = new MailAddress(HttpUtility.HtmlEncode("nhlemailtest@gmail.com"));
                 eMailMessage.To.Add(new MailAddress(txtEmail.Text));
 
                 eMailMessage.Subject = "Uw wachtwoord";
 
-                eMailMessage.Body = "Beste " + HttpUtility.HtmlEncode(txtUsername.Text) + "<br /><br />" +
-                                    "Uw wachtwoord is: " + password + "<br /><br />" +
+                eMailMessage.Body = "Beste " + HttpUtility.HtmlEncode(txtUsername.Text) + ",<br /><br />" +
+                                    "Uw wachtwoord is: <b>" + password + "</b><br /><br />" +
                                     "Met vriendelijke groet," + "<br />" +
                                     "Milanov";
                 eMailMessage.IsBodyHtml = true;
@@ -37,10 +39,18 @@ namespace Milanov.pages.users
 
                 SmtpClient mSmtpClient = new SmtpClient();
                 mSmtpClient.Send(eMailMessage);
+
+                lblOutput.Text = "Uw wachtwoord is verzonden naar " + txtEmail.Text + ".";
+                }
+
+                catch (Exception)
+                {
+                    lblOutput.Text = "Er is iets fout gegaan, neem contact op met de websitebeheerder.";
+                }
             }
-            catch (Exception)
+            else
             {
-                Console.WriteLine("??");
+                lblOutput.Text = password;
             }
         }
     }

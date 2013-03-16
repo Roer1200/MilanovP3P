@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_add.aspx.cs" Inherits="Milanov.pages.products_add" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <h3>Voeg een nieuwe foto toe</h3>
+    <h3>Voeg een nieuw product toe:</h3>
 
     <table cellspacing="15" class="pictureTable">
         <tr>
             <td style="width: 80px">
-                <b>Name:</b>
+                <b>Naam:</b>
             </td>
             <td>
                 <asp:TextBox ID="txtName" runat="server" Width="300px"></asp:TextBox>
@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <td style="width: 80px">
-                <b>Category:</b>
+                <b>Categorie:</b>
             </td>
             <td>
                 <asp:DropDownList ID="ddlCategory" runat="server" AutoPostBack="True" 
@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td style="width: 80px">
-                <b>Price:</b>
+                <b>Prijs:</b>
             </td>
             <td>
                 <asp:TextBox ID="txtPrice" runat="server" Width="300px"></asp:TextBox>
@@ -38,20 +38,20 @@
         </tr>
         <tr>
             <td style="width: 80px">
-                <b>Image:</b>
+                <b>Foto:</b>
             </td>
             <td>
                 <asp:DropDownList ID="ddlImage" runat="server" Width="300px">
                 </asp:DropDownList>
                 <br/>
                 <asp:FileUpload ID="FileUpload1" runat="server" /> 
-                <asp:Button ID="btnUploadImage" runat="server" Text="Upload Image" 
+                <asp:Button ID="btnUploadImage" runat="server" Text="Upload" 
                     onclick="btnUploadImage_Click" CausesValidation="False" /> 
             </td>            
         </tr>
         <tr>
             <td style="width: 80px">
-                <b>Description:</b>
+                <b>Omschrijving:</b>
             </td>
             <td>
                 <asp:TextBox ID="txtDescription" runat="server" Height="98px" TextMode="MultiLine" Width="332px"></asp:TextBox>
@@ -60,5 +60,6 @@
     </table>
     <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     <br />
-    <asp:Button ID="btnSave" runat="server" Text="Save" onclick="btnSave_Click" />
+    <asp:Button ID="btnSave" runat="server" Text="Opslaan" onclick="btnSave_Click" />
+    <asp:Button ID="btnBack" runat="server" Text="Terug" CausesValidation="false" OnClick="btnBack_Click"></asp:Button>
 </asp:Content>

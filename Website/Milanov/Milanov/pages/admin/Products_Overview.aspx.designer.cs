@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milanov.pages {
+namespace Milanov.pages.admin {
     
     
     public partial class products_overview {

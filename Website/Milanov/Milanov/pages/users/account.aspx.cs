@@ -13,13 +13,14 @@ namespace Milanov.pages.users
         {
             if (Session["login"] != null)
             {
+                lblCU.Text = "Welcome <b>" + Session["login"] + "</b>!";
                 if ((string)Session["role"] != "1")
                 {
-                    lblCU.Text = "Here we will add the user CMS. -> Current user is: " + Session["login"]; 
+                    btnCMS.Visible = false;
                 }
                 else
                 {
-                    Response.Redirect("/pages/admin/administrator.aspx");
+                    btnCMS.Visible = true;
                 }
             }
             else
@@ -28,44 +29,85 @@ namespace Milanov.pages.users
             }
         }
 
-        protected void btnChangePassword_Click(object sender, EventArgs e)
+        #region ShowUserInfo
+        protected void btnInfo_Click(object sender, EventArgs e)
         {
-            if (txtPcurrent.Visible != true && txtPnew.Visible != true && txtPconfirm.Visible != true)
+            if (tblInfo.Visible != true)
             {
-                txtPcurrent.Visible = true;
-                txtPnew.Visible = true;
-                txtPconfirm.Visible = true;
-                btnPsubmit.Visible = true;
+                string email = ConnectionClass.GetEmail(Session["login"].ToString());
+                string role = ConnectionClass.GetRole(Session["login"].ToString());
+
+                lblUsername.Text = "" + Session["login"];
+                lblEmail.Text = email;
+                lblRole.Text = role;
+                tblInfo.Visible = true;
             }
             else
             {
-                txtPcurrent.Visible = false;
-                txtPnew.Visible = false;
-                txtPconfirm.Visible = false;
-                btnPsubmit.Visible = false;
+                tblInfo.Visible = false;
+            }
+        }
+        #endregion
+
+        #region ChangePassword
+        protected void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            if (tblPassword.Visible != true)
+            {
+                lblPoutput.Text = "";
+                tblPassword.Visible = true;
+            }
+            else
+            {
+                tblPassword.Visible = false;
             }
         }
 
         protected void btnPsubmit_Click(object sender, EventArgs e)
         {
+            lblPoutput.Text = ConnectionClass.ChangePassword(Session["Login"].ToString(), txtPcurrent.Text, txtPnew.Text);
+        }
+        #endregion
 
+        #region ChangeEmail
+        private void ClearEmailTextFields()
+        {
+            txtEcurrent.Text = "";
+            txtEnew.Text = "";
+            txtEconfirm.Text = "";
         }
 
         protected void btnChangeEmail_Click(object sender, EventArgs e)
         {
-            if (email.Visible != true)
+            if (tblEmail.Visible != true)
             {
-                email.Visible = true;
+                lblEoutput.Text = "";
+                tblEmail.Visible = true;
             }
             else
             {
-                email.Visible = false;
+                tblEmail.Visible = false;
             }
         }
 
         protected void btnEsubmit_Click(object sender, EventArgs e)
         {
+            lblEoutput.Text = ConnectionClass.ChangeEmail(Session["Login"].ToString(), txtEcurrent.Text, txtEnew.Text);
 
+            if (lblEoutput.Text == "Uw mail adres is aangepast!")
+            {
+                if (tblInfo.Visible == true)
+                {
+                    tblInfo.Visible = false;
+                }
+                ClearEmailTextFields();
+            }
+        }
+        #endregion
+
+        protected void btnCMS_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/admin/administrator.aspx");
         }
     }
 }

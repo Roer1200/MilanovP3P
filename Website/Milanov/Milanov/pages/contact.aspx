@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <b>Contact</b>
+    <h3>Contact</h3>
     <p>
         Milanov<br />
         Straatnaam XX<br />

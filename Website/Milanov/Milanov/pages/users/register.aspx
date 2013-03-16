@@ -5,6 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+    <h3>Registreren:</h3>
     <table cellspacing="4" cellpadding="4">
         <tr>
             <td><b>Username: </b></td>
@@ -45,7 +46,7 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <asp:Button ID="btnRegister" runat="server" Text="Register" onclick="btnRegister_Click" /><br />
                 <asp:CompareValidator ID="CompareValidator1" runat="server" 
                     ControlToCompare="txtConfirm" ControlToValidate="txtPassword" 

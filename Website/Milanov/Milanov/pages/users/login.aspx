@@ -5,9 +5,12 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+    <h3>Inloggen:</h3>
     <table>
         <tr>
-            <td><b>Username: </b></td>
+            <td>
+                <b>Gebruikersnaam:</b>
+            </td>
             <td>
                 <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -15,7 +18,9 @@
             </td>
         </tr>
         <tr>
-            <td><b>Password: </b></td>
+            <td>
+                <b>Password:</b>
+            </td>
             <td>
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 

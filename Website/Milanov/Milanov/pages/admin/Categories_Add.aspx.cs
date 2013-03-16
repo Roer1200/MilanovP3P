@@ -21,20 +21,16 @@ namespace Milanov.pages.admin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            // Create a new category
+            Categories category = new Categories(txtName.Text);
+
+            // Save the category and return a result message
+            lblResult.Text = ConnectionClass.AddCategory(category);
+
+            // If category is added -> ClearTextFields
+            if (lblResult.Text == "Categorie toegevoegd!")
             {
-                string name = txtName.Text;
-
-                Categories category = new Categories(name);
-                ConnectionClass.AddCategory(category);
-
-                lblResult.Text = "Upload new item succesvol!";
                 ClearTextFields();
-            }
-
-            catch (Exception)
-            {
-                lblResult.Text = "Upload new item failed!";                
             }
         }
 

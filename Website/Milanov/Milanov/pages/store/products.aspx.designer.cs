@@ -22,15 +22,6 @@ namespace Milanov.pages.store {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// lblOutput control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOutput;
-        
-        /// <summary>
         /// sds_category control.
         /// </summary>
         /// <remarks>
@@ -40,12 +31,12 @@ namespace Milanov.pages.store {
         protected global::System.Web.UI.WebControls.SqlDataSource sds_category;
         
         /// <summary>
-        /// ListView1 control.
+        /// lblOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.Label lblOutput;
     }
 }

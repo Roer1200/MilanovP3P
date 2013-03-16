@@ -15,7 +15,7 @@ public static class ConnectionClass
         command = new SqlCommand("", conn);
     }
 
-    public static ArrayList GetProductByCategory(int productCategory)
+    public static ArrayList GetProductByCategory(string productCategory)
     {
         ArrayList list = new ArrayList();
         string query = string.Format("SELECT * FROM products WHERE cat_id LIKE '{0}'", productCategory);
@@ -48,24 +48,37 @@ public static class ConnectionClass
         return list;
     }
 
-    #region Add *
-    public static void AddCategory(Categories category)
+    public static string AddCategory(Categories category)
     {
-        string query = string.Format(
-                @"INSERT INTO categories VALUES ('{0}')",
-                category.Name);
+        // Check if category exists
+        string query = string.Format("SELECT COUNT(*) FROM categories WHERE name = '{0}'", category.Name);
         command.CommandText = query;
+
         try
         {
             conn.Open();
-            command.ExecuteNonQuery();
+            int amountOfCategorys = (int)command.ExecuteScalar();
+
+            if (amountOfCategorys < 1)
+            {
+                // Category does not exists, create a new category
+                query = string.Format(@"INSERT INTO categories VALUES ('{0}')", category.Name);
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                return "Categorie toegevoegd!";
+            }
+            else
+            {
+                // Category exists
+                return "Deze categorie bestaat al, categorie niet toegevoegd.";
+            }            
         }
         finally
         {
             conn.Close();
             command.Parameters.Clear();
         }
-    }
+    } // Klaar
 
     public static void AddProduct(Products product)
     {
@@ -103,7 +116,6 @@ public static class ConnectionClass
             command.Parameters.Clear();
         }
     }
-    #endregion
 
     public static Users LoginUser(string username, string password)
     {
@@ -160,39 +172,42 @@ public static class ConnectionClass
             conn.Close();
         }
     }
-
-
+    
     public static string RegisterUser(Users users)
     {
         //Check if user exists
-        string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", users.Username);
-        command.CommandText = query;
+        string queryA = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", users.Username);
+        command.CommandText = queryA;
+        string queryB = string.Format("SELECT COUNT(*) FROM users WHERE email = '{0}'", users.Email);
+        command.CommandText = queryB;
 
         try
         {
             conn.Open();
             int amountOfUsers = (int)command.ExecuteScalar();
+            int amountOfEmail = (int)command.ExecuteScalar();
 
-            if (amountOfUsers < 1)
+            if (amountOfUsers < 1 && amountOfEmail < 1)
             {
-                //User does not exist, create a new user
-                query = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", users.Username, users.Password,
+                //User and or email does not exist, create a new user
+                queryA = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", users.Username, users.Password,
                                       users.Email, users.Rol_id);
-                command.CommandText = query;
+                command.CommandText = queryA;
                 command.ExecuteNonQuery();
-                return "User registered!";
+                return "Uw account is aangemaakt!";
             }
             else
             {
-                //User exists
-                return "A user with this name already exists";
+                //User and/or email exists
+                return "Een gebruiker met deze naam en/of e-mail bestaat al, het account is niet aangemaakt.";
             }
         }
         finally
         {
             conn.Close();
+            command.Parameters.Clear();
         }
-    }
+    } // Klaar
 
     public static string ForgotPassword(string username, string email)
     {
@@ -207,7 +222,7 @@ public static class ConnectionClass
 
             if (amountOfUsers == 1)
             {
-                //User exists, check if the passwords match
+                //User exists, check if the emails match
                 query = string.Format("SELECT email FROM users WHERE username = '{0}'", username);
                 command.CommandText = query;
                 string dbEmail = command.ExecuteScalar().ToString();
@@ -223,13 +238,13 @@ public static class ConnectionClass
                 else
                 {
                     //Email does not match username
-                    return null;
+                    return "Wachtwoord is niet verzonden, e-mail komt niet overeen met de gebruikersnaam.";
                 }
             }
             else
             {
                 //User does not exist
-                return null;
+                return "Wachtwoord is niet verzonden, gebruiker bestaat niet.";
             }
         }
         finally
@@ -237,4 +252,131 @@ public static class ConnectionClass
             conn.Close();
         }
     }
+
+    public static string GetEmail(string username)
+    {
+        string query = string.Format("SELECT email FROM users WHERE username = '{0}'", username);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            string dbEmail = command.ExecuteScalar().ToString();
+            return dbEmail;
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    } // Klaar
+
+    public static string GetRole(string username)
+    {
+        string query = string.Format("SELECT r.name FROM users AS u INNER JOIN roles AS r ON u.rol_id = r.id WHERE username = '{0}'", username);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            string dbRole = command.ExecuteScalar().ToString();
+            return dbRole;
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    } // Klaar
+
+    public static string ChangePassword(string username, string Pcurrent, string Pnew)
+    {
+        string query = string.Format("SELECT password FROM users WHERE username = '{0}'", username);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            string dbPassword = command.ExecuteScalar().ToString();
+
+            if (dbPassword == Pcurrent)
+            {
+                // Passwords match
+                query = string.Format("UPDATE users SET password = '{0}' WHERE username = '{1}'", Pnew, username);
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                return "Het wachtwoord is aangepast, de volgende keer dat u inlogt moet u gebruik maken van dit nieuwe wachtwoord.";
+            }
+            else
+            {
+                // Passwords do not match
+                return "Het huidige wachtwoord komt niet overeen.";
+            }
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    } // Klaar
+
+    public static string ChangeEmail(string username, string Ecurrent, string Enew)
+    {
+        string query = string.Format("SELECT email FROM users WHERE username = '{0}'", username);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            string dbEmail = command.ExecuteScalar().ToString();
+
+            if (dbEmail == Ecurrent)
+            {
+                // Emails match
+                query = string.Format("UPDATE users SET email = '{0}' WHERE username = '{1}'", Enew, username);
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                return "Uw mail adres is aangepast!";
+            }
+            else
+            {
+                // Emails do not match
+                return "De huidige e-mail komt niet overeen!";
+            }
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    }
+
+    public static string GetInUseImages(string image)
+    {
+        string query = string.Format("SELECT COUNT(*) FROM products WHERE image = '{0}'", image);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            int amountOfImages = (int)command.ExecuteScalar();
+
+            if (amountOfImages == 0)
+            {
+                // Image is not in use, add to delete list
+                return image;
+            }
+            else
+            {
+                // Image is in use, don't add to delete list
+                return null;
+            }
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    }
+
 }

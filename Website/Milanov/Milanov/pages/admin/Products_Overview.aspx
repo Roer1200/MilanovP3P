@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_overview.aspx.cs" Inherits="Milanov.pages.products_overview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_overview.aspx.cs" Inherits="Milanov.pages.admin.products_overview" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <h3>Beschikbare producten:</h3>
+    <h3>Producten:</h3>
     <p>  
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
         AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
@@ -13,7 +13,7 @@
                 <ItemTemplate>
                     <asp:Button ID="btnEdit" runat="server" CommandName="Edit" Text="Bewerken" />
                     <asp:Button ID="btnDelete" runat="server" CommandName="Delete" Text="Verwijderen" 
-                    OnClientClick="return confirm('Weet u zeker dat u dit products wilt verwijderen?');" />
+                    OnClientClick="return confirm('Weet u zeker dat u dit product wilt verwijderen?');" />
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" />
@@ -38,13 +38,14 @@
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="price" HeaderText="Prijs" SortExpression="price" />
-            <asp:BoundField DataField="image" HeaderText="Foto" SortExpression="image" />
+            <asp:BoundField DataField="image" HeaderText="Foto" SortExpression="image" />           
             <asp:BoundField DataField="description" HeaderText="Omschrijving" SortExpression="description" />
         </Columns>
         <FooterStyle BackColor="#CCCC99" />
         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
         <RowStyle BackColor="#F7F7DE" />
+        <AlternatingRowStyle BackColor="White" />
         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
         <SortedAscendingCellStyle BackColor="#FBFBF2" />
         <SortedAscendingHeaderStyle BackColor="#848384" />

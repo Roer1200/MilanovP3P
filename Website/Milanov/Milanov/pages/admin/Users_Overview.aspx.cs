@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Milanov.pages.account
+namespace Milanov.pages.admin
 {
     public partial class users_overview : System.Web.UI.Page
     {

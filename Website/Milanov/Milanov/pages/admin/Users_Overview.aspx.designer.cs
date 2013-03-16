@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milanov.pages.account {
+namespace Milanov.pages.admin {
     
     
     public partial class users_overview {

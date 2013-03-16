@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO;
 
-namespace Milanov.pages
+namespace Milanov.pages.admin
 {
     public partial class products_add : System.Web.UI.Page
     {
@@ -42,13 +42,14 @@ namespace Milanov.pages
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
                 FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);
-                lblResult.Text = "Image " + filename + " succesvol geupload!";
+                lblResult.Text = "Foto " + filename + " succesvol geupload!";
                 Page_Load(sender, e);
+                ddlImage.SelectedValue = "" + filename;
             }
 
             catch (Exception)
             {                
-                lblResult.Text = "Upload image failed!";
+                lblResult.Text = "Upload foto mislukt!";
             }
         }
 
@@ -65,14 +66,19 @@ namespace Milanov.pages
                 Products product = new Products(name, cat_id, price, image, description);
                 ConnectionClass.AddProduct(product);
 
-                lblResult.Text = "Upload new item succesvol!";
+                lblResult.Text = "Upload nieuw product succesvol!";
                 ClearTextFields();
             }
 
             catch (Exception)
             {
-                lblResult.Text = "Upload new item failed!";                
+                lblResult.Text = "Upload new product mislukt!";                
             }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/admin/products_overview.aspx");
         }
     }
 }
