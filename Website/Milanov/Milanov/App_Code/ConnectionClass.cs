@@ -48,6 +48,39 @@ public static class ConnectionClass
         return list;
     }
 
+    public static ArrayList GetProductDetails(string productId)
+    {
+        ArrayList list = new ArrayList();
+        string query = string.Format("SELECT * FROM products WHERE id LIKE '{0}'", productId);
+
+        try
+        {
+            conn.Open();
+            command.CommandText = query;
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string name = reader.GetString(1);
+                int cat_id = reader.GetInt32(2);
+                double price = reader.GetDouble(3);
+                string image = reader.GetString(4);
+                string description = reader.GetString(5);
+
+                Products product = new Products(id, name, cat_id, price, image, description);
+                list.Add(product);
+            }
+        }
+
+        finally
+        {
+            conn.Close();
+        }
+
+        return list;
+    }
+
     public static string AddCategory(Categories category)
     {
         // Check if category exists
@@ -253,42 +286,6 @@ public static class ConnectionClass
         }
     }
 
-    public static string GetEmail(string username)
-    {
-        string query = string.Format("SELECT email FROM users WHERE username = '{0}'", username);
-        command.CommandText = query;
-
-        try
-        {
-            conn.Open();
-            string dbEmail = command.ExecuteScalar().ToString();
-            return dbEmail;
-        }
-        finally
-        {
-            conn.Close();
-            command.Parameters.Clear();
-        }
-    } // Klaar
-
-    public static string GetRole(string username)
-    {
-        string query = string.Format("SELECT r.name FROM users AS u INNER JOIN roles AS r ON u.rol_id = r.id WHERE username = '{0}'", username);
-        command.CommandText = query;
-
-        try
-        {
-            conn.Open();
-            string dbRole = command.ExecuteScalar().ToString();
-            return dbRole;
-        }
-        finally
-        {
-            conn.Close();
-            command.Parameters.Clear();
-        }
-    } // Klaar
-
     public static string ChangePassword(string username, string Pcurrent, string Pnew)
     {
         string query = string.Format("SELECT password FROM users WHERE username = '{0}'", username);
@@ -351,32 +348,39 @@ public static class ConnectionClass
         }
     }
 
-    public static string GetInUseImages(string image)
+    public static string GetEmail(string username)
     {
-        string query = string.Format("SELECT COUNT(*) FROM products WHERE image = '{0}'", image);
+        string query = string.Format("SELECT email FROM users WHERE username = '{0}'", username);
         command.CommandText = query;
 
         try
         {
             conn.Open();
-            int amountOfImages = (int)command.ExecuteScalar();
-
-            if (amountOfImages == 0)
-            {
-                // Image is not in use, add to delete list
-                return image;
-            }
-            else
-            {
-                // Image is in use, don't add to delete list
-                return null;
-            }
+            string dbEmail = command.ExecuteScalar().ToString();
+            return dbEmail;
         }
         finally
         {
             conn.Close();
             command.Parameters.Clear();
         }
-    }
+    } // Klaar
 
+    public static string GetRole(string username)
+    {
+        string query = string.Format("SELECT r.name FROM users AS u INNER JOIN roles AS r ON u.rol_id = r.id WHERE username = '{0}'", username);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            string dbRole = command.ExecuteScalar().ToString();
+            return dbRole;
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    } // Klaar    
 }

@@ -85,6 +85,7 @@
     <Content Include="images\header.png" />
     <Content Include="images\knop.png" />
     <Content Include="images\lipsum.gif" />
+    <Content Include="images\not-found.jpg" />
     <Content Include="images\products\1.jpg" />
     <Content Include="images\products\2.jpg" />
     <Content Include="images\products\3.jpg" />
@@ -99,13 +100,14 @@
     <Content Include="images\icon_p.png" />
     <Content Include="images\twitter.png" />
     <Content Include="images\icon_u.png" />
+    <Content Include="not-found.aspx" />
     <Content Include="pages\admin\administrator.aspx" />
     <Content Include="pages\admin\categories_add.aspx" />
     <Content Include="pages\admin\categories_overview.aspx" />
     <Content Include="pages\admin\users_overview.aspx" />
     <Content Include="pages\contact.aspx" />
     <Content Include="pages\store\products.aspx" />
-    <Content Include="pages\store\product_details.aspx" />
+    <Content Include="pages\store\product.aspx" />
     <Content Include="pages\users\account.aspx" />
     <Content Include="pages\users\login.aspx" />
     <Content Include="pages\users\password_recovery.aspx" />
@@ -143,6 +145,13 @@
     </Compile>
     <Compile Include="FrontEnd.Master.designer.cs">
       <DependentUpon>FrontEnd.Master</DependentUpon>
+    </Compile>
+    <Compile Include="not-found.aspx.cs">
+      <DependentUpon>not-found.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="not-found.aspx.designer.cs">
+      <DependentUpon>not-found.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\admin\administrator.aspx.cs">
       <DependentUpon>administrator.aspx</DependentUpon>
@@ -186,12 +195,12 @@
     <Compile Include="pages\store\products.aspx.designer.cs">
       <DependentUpon>products.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\store\product_details.aspx.cs">
-      <DependentUpon>product_details.aspx</DependentUpon>
+    <Compile Include="pages\store\product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\store\product_details.aspx.designer.cs">
-      <DependentUpon>product_details.aspx</DependentUpon>
+    <Compile Include="pages\store\product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\users\account.aspx.cs">
       <DependentUpon>account.aspx</DependentUpon>

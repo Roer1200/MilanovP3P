@@ -111,9 +111,31 @@ form
     padding: 0px;
 }
 
-.productTable
+.productsTable
 {
     width: 400px;
+    height: auto;
+    margin: 10px auto 10px auto;    
+    border: 3px solid #E3E3E3;
+    border-radius: 10px;
+    moz-border-radius: 10px;
+}
+
+.productsTable tr th, .productsTable tr td
+{
+    text-align: left;
+}
+
+.productsTable img
+{
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.productTable
+{
+    width: 800px;
     height: auto;
     margin: 10px auto 10px auto;    
     border: 3px solid #E3E3E3;

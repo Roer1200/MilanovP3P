@@ -8,54 +8,78 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FillPage();
-        }
-
-        private void FillPage()
-        {
-            ArrayList productsList = new ArrayList();
-
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
-                productsList = ConnectionClass.GetProductByCategory("%");
-            }
-            else
-            {
-                productsList = ConnectionClass.GetProductByCategory(DropDownList1.SelectedValue);
-            }
+                string categoryId = Request.QueryString["categoryId"];
+                if (!String.IsNullOrEmpty(categoryId))
+                {
+                    ArrayList productsList = new ArrayList();
+                    productsList = ConnectionClass.GetProductByCategory(categoryId.ToString());
 
-            StringBuilder sb = new StringBuilder();
+                    StringBuilder sb = new StringBuilder();
 
-            foreach (Products product in productsList)
-            {
-                sb.Append(
-                    string.Format(
-                        @"<table class='productTable'>
-                <tr>
-                    <th rowspan='6' width='150px'><a rel='fancybox' href='/images/products/{3}' title='{0}'><img runat='server' src='/images/products/{3}'/></th>
-                    <th width='50px'>Naam:</th>
-                    <td>{0}</td>
-                </tr> 
+                    foreach (Products product in productsList)
+                    {
+                        sb.Append(
+                            string.Format(
+                                @"<table class='productsTable'>
+                        <tr>
+                            <th rowspan='3' width='150px'><a href='/pages/store//product.aspx?productId={0}'><img runat='server' src='/images/products/{4}' alt='{1}'/></th>
+                            <th width='50px'>Naam:</th>
+                            <td>{1}</td>
+                        </tr> 
 
-                <tr>
-                    <th>Categorie:</th>
-                    <td>{1}</td>
-                </tr>
+                        <tr>
+                            <th>Categorie:</th>
+                            <td>{2}</td>
+                        </tr>
 
-                <tr>
-                    <th>Prijs:</th>
-                    <td>€ {2}</td>
-                </tr>         
+                        <tr>
+                            <th>Prijs:</th>
+                            <td>€ {3}</td>
+                        </tr>         
             
-               </table>",
-                       product.Name, product.Cat_id, product.Price, product.Image));
+                       </table>",
+                               product.Id, product.Name, product.Cat_id, product.Price, product.Image));
 
-                lblOutput.Text = sb.ToString();
+                        lblOutput.Text = sb.ToString();
+                    }
+                }
+                else
+                {
+                    ArrayList productsList = new ArrayList();
+                    productsList = ConnectionClass.GetProductByCategory("%");
+
+                    StringBuilder sb = new StringBuilder();
+
+                    foreach (Products product in productsList)
+                    {
+                        sb.Append(
+                            string.Format(
+                                @"<table class='productsTable'>
+                        <tr>
+                            <th rowspan='6' width='150px'><a href='/pages/store//product.aspx?productId={0}'><img runat='server' src='/images/products/{4}' alt='{1}'/></th>
+                            <th width='50px'>Naam:</th>
+                            <td>{1}</td>
+                        </tr> 
+
+                        <tr>
+                            <th>Categorie:</th>
+                            <td>{2}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Prijs:</th>
+                            <td>€ {3}</td>
+                        </tr>         
+            
+                       </table>",
+                               product.Id, product.Name, product.Cat_id, product.Price, product.Image));
+
+                        lblOutput.Text = sb.ToString();
+                    }
+                }
             }
-        }
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillPage();
         }
     }
 }

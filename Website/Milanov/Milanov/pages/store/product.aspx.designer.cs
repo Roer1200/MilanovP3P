@@ -10,25 +10,7 @@
 namespace Milanov.pages.store {
     
     
-    public partial class products {
-        
-        /// <summary>
-        /// lvCategories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvCategories;
-        
-        /// <summary>
-        /// sds_category control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sds_category;
+    public partial class product_details {
         
         /// <summary>
         /// lblOutput control.

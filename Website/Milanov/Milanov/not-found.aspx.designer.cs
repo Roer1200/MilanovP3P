@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milanov.pages.store
+namespace Milanov
 {
 
 
-    public partial class product_details
+    public partial class not_found
     {
     }
 }
