@@ -107,7 +107,6 @@
     <Content Include="pages\admin\categories_overview.aspx" />
     <Content Include="pages\admin\users_overview.aspx" />
     <Content Include="pages\contact.aspx" />
-    <Content Include="pages\store\AddToCart.aspx" />
     <Content Include="pages\store\products.aspx" />
     <Content Include="pages\store\product.aspx" />
     <Content Include="pages\store\shoppingcart.aspx" />
@@ -135,7 +134,6 @@
     <Compile Include="App_Code\Categories.cs" />
     <Compile Include="App_Code\ConnectionClass.cs" />
     <Compile Include="App_Code\Roles.cs" />
-    <Content Include="App_Code\ShoppingCartActions.cs" />
     <Compile Include="App_Code\Users.cs" />
     <Compile Include="BackEnd.Master.cs">
       <DependentUpon>BackEnd.Master</DependentUpon>
@@ -192,13 +190,6 @@
     </Compile>
     <Compile Include="pages\contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\store\AddToCart.aspx.cs">
-      <DependentUpon>AddToCart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\store\AddToCart.aspx.designer.cs">
-      <DependentUpon>AddToCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\store\products.aspx.cs">
       <DependentUpon>products.aspx</DependentUpon>

@@ -19,14 +19,11 @@ namespace Milanov.pages.store
         {
             if (Session["Cart"] != null)
             {
-                List<int> Cart = (List<int>)Session["Cart"];
-                ArrayList cartList = new ArrayList();
+                List<string> productList = (List<string>)Session["Cart"];
                 double totalPrice = 0;
+                ArrayList cartList = new ArrayList();
 
-                foreach (int c in Cart)
-                {
-                    cartList = ConnectionClass.GetProductDetails(c.ToString());
-                }
+                    cartList = ConnectionClass.GetProductDetailss(productList);
 
                 StringBuilder sb = new StringBuilder();
 
@@ -46,6 +43,7 @@ namespace Milanov.pages.store
                     lblOutput.Text = sb.ToString();
                 }
 
+                debug.Text = productList.Count.ToString();
                 ltrPrice.Text = totalPrice.ToString();
             }
             else

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 public static class ConnectionClass
 {
@@ -47,6 +48,8 @@ public static class ConnectionClass
 
         return list;
     }
+    
+
 
     public static ArrayList GetProductDetails(string productId)
     {
@@ -76,6 +79,43 @@ public static class ConnectionClass
         finally
         {
             conn.Close();
+        }
+
+        return list;
+    }
+
+    public static ArrayList GetProductDetailss(List<string> productId)
+    {
+        ArrayList list = new ArrayList();
+
+        foreach (string p in productId)
+        {
+            string query = string.Format("SELECT * FROM products WHERE id LIKE '{0}'", p);
+
+            try
+            {
+                conn.Open();
+                command.CommandText = query;
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string name = reader.GetString(1);
+                    int cat_id = reader.GetInt32(2);
+                    double price = reader.GetDouble(3);
+                    string image = reader.GetString(4);
+                    string description = reader.GetString(5);
+
+                    Products product = new Products(id, name, cat_id, price, image, description);
+                    list.Add(product);
+                }
+            }
+
+            finally
+            {
+                conn.Close();
+            }
         }
 
         return list;

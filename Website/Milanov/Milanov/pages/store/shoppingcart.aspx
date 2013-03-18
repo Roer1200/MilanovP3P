@@ -12,7 +12,7 @@
             <td>Artikel</td>
             <td>Subtotaal</td>
         </tr>
-        <asp:Label ID="lblOutput" runat="server" Text="Helaas, dit product bestaat niet meer."></asp:Label>
+        <asp:Label ID="lblOutput" runat="server" Text="FOUT!!!!"></asp:Label>
         <tr>
             <td colspan="4" align="right">
                 <asp:Button ID="btnCheckOut" runat="server" Text="Bestelling afronden" />
@@ -24,5 +24,6 @@
             </td>
         </tr>
     </table>
+    <asp:Literal ID="debug" runat="server"></asp:Literal>
     
 </asp:Content>

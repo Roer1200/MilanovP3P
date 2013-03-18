@@ -24,4 +24,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <asp:Label ID="lblOutput" runat="server" Text="Helaas, dit product bestaat niet meer."></asp:Label>
+    <asp:Button ID="btnAddToCart" runat="server" Text="Bestel" Visible="false" Onclick="btnAddToCart_Click" />
 </asp:Content>
