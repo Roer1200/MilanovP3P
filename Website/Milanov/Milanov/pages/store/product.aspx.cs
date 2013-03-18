@@ -64,9 +64,13 @@ namespace Milanov.pages.store
             {
                 ProductsInCart = new List<string>();
             }
-            ProductsInCart.Add(productId);
-            Session["Cart"] = ProductsInCart;
+            if (!ProductsInCart.Contains(productId))
+            {
+                ProductsInCart.Add(productId);
+                Session["Cart"] = ProductsInCart;
+            }
             Response.Redirect("~/pages/store/shoppingcart.aspx");
+
         }
     }
 }

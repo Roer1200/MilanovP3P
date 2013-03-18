@@ -84,7 +84,7 @@ public static class ConnectionClass
         return list;
     }
 
-    public static ArrayList GetProductDetailss(List<string> productId)
+    public static ArrayList GetShopProducts(List<string> productId)
     {
         ArrayList list = new ArrayList();
 

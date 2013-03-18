@@ -11,73 +11,34 @@ namespace Milanov.pages.store
         {
             if (!Page.IsPostBack)
             {
+                string delId = Request.QueryString["delId"];
+                if (!String.IsNullOrEmpty(delId))
+                {
+                    List<string> delList = (List<string>)Session["Cart"];
+                    if (delList != null && delList.Contains(delId))
+                    {
+                        delList.Remove(delId);
+                        Session["Cart"] = delList;
+                    }
+                }
                 GetProductsFromCart();
             }
         }
 
         private void GetProductsFromCart()
         {
+            StringBuilder sb = new StringBuilder();
+            double totalPrice = 0.00;
+
             if (Session["Cart"] != null)
             {
                 List<string> productList = (List<string>)Session["Cart"];
-                double totalPrice = 0;
-                ArrayList cartList = new ArrayList();
 
-                    cartList = ConnectionClass.GetProductDetailss(productList);
-
-                StringBuilder sb = new StringBuilder();
-
-                foreach (Products product in cartList)
+                if (productList.Count > 0)
                 {
-                    totalPrice += product.Price;
-                    sb.Append(
-                        string.Format(
-                            @"<tr>
-                            <td><a href='/pages/store/shoppingcart.aspx?delId={0}'>V</a></td>
-                            <td><img src='/images/products/{4}' alt='{1}' height='40px' width='40px' /></td>
-                            <td><a href='/pages/store/product.aspx?productId={0}'>{1}</td>
-                            <td>&euro; {3}</td>
-                                </tr>",
-                            product.Id, product.Name, product.Cat_id, product.Price, product.Image));
-
-                    lblOutput.Text = sb.ToString();
-                }
-
-                debug.Text = productList.Count.ToString();
-                ltrPrice.Text = totalPrice.ToString();
-            }
-            else
-            {
-                lblOutput.Text = "Het winkelmandje is leeg.";
-            }
-        }
-    }
-}
-                /*protected void lbtnEmpty_Click(object sender, EventArgs e)
-            {
-                List<int> ProductsInCart = (List<int>)Session["cart"];
-                ProductsInCart.Clear();
-                Session["cart"] = ProductsInCart;
-                GetProductsFromCart();
-            }
-
-            private void GetProductsFromCart()
-            {
-                if (Session["cart"] != null)
-                {
-                    List<int> Cart = new List<int>();
-                    Cart = (List<int>)Session["cart"];
-
-                    double totalPrice = 0;
 
                     ArrayList cartList = new ArrayList();
-
-                    foreach (int c in Cart)
-                    {
-                        cartList = ConnectionClass.GetProductDetails(c.ToString());
-                    }
-
-                    StringBuilder sb = new StringBuilder();
+                    cartList = ConnectionClass.GetShopProducts(productList);
 
                     foreach (Products product in cartList)
                     {
@@ -85,20 +46,65 @@ namespace Milanov.pages.store
                         sb.Append(
                             string.Format(
                                 @"<tr>
-                                <td><a href='/pages/store/shoppingcart.aspx?delId={0}'>V</a></td>
-                                <td><img src='/images/products/{4}' alt='{1}' height='40px' width='40px' /></td>
-                                <td><a href='/pages/store/product.aspx?productId={0}'>{1}</td>
-                                <td>&euro; {3}</td>
-                                    </tr>",
+                            <td><a href='/pages/store/shoppingcart.aspx?delId={0}'>V</a></td>
+                            <td><img src='/images/products/{4}' alt='{1}' height='40px' width='40px' /></td>
+                            <td><a href='/pages/store/product.aspx?productId={0}'>{1}</td>
+                            <td>&euro; {3}</td>
+                                </tr>",
                                 product.Id, product.Name, product.Cat_id, product.Price, product.Image));
 
-                        lblOutput.Text = sb.ToString();                    
+
                     }
-                
-                    ltrPrice.Text = totalPrice.ToString();
+
+                    lblOutput.Text = sb.ToString() + "!null";
+                    debug.Text = productList.Count.ToString() + "!null";
+                    ltrPrice.Text = totalPrice.ToString() + "!null";
                 }
                 else
                 {
-                    lblOutput.Text = "Het winkelmandje is leeg.";
+                    sb.Append(
+                            string.Format(@"
+                            <tr>
+                                <td colspan='4'>Het winkelmandje is leeg. !> 0</td>
+                            </tr>"));
+
+                    lblOutput.Text = sb.ToString();
+                    ltrPrice.Text = totalPrice.ToString();
                 }
-            }*/
+            }
+            else
+            {
+                sb.Append(
+                        string.Format(@"
+                            <tr>
+                                <td colspan='4'>Het winkelmandje is leeg.</td>
+                            </tr>"));
+
+                lblOutput.Text = sb.ToString();
+                ltrPrice.Text = totalPrice.ToString();
+            }
+        }
+
+        protected void lbtnEmpty_Click(object sender, EventArgs e)
+        {
+            if (Session["Cart"] != null)
+            {
+                List<string> delList = (List<string>)Session["Cart"];
+                if (delList.Count > 0)
+                {
+                    delList.Clear();
+                    Session["Cart"] = delList;
+                }
+            }
+            GetProductsFromCart();
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            if (!lblOutput.Text.Contains("Het winkelmandje is leeg."))
+            {
+                Response.Redirect("~/pages/store/checkout.aspx");
+            }
+        }
+    }
+}
