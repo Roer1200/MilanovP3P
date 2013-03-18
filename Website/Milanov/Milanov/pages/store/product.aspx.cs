@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Milanov.pages.store
@@ -37,11 +38,14 @@ namespace Milanov.pages.store
                         <tr>
                             <th>Prijs:</th>
                             <td>€ {3}</td>
-                        </tr>         
+                        </tr>
+                        <tr>
+                            <td colspan='2'><a href='/pages/store/AddToCart.aspx?productID={0}'>Bestel</a>
             
                         </table>",
                                 product.Id, product.Name, product.Cat_id, product.Price, product.Image));
 
+                        /*btnAddToCart.Visible = true;*/
                         lblOutput.Text = sb.ToString();
 
                         this.Title = product.Name;
@@ -53,5 +57,17 @@ namespace Milanov.pages.store
                 }
             }
         }
+
+        /*protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            string productId = Request.QueryString["productId"];
+            List<int> ProductsInCart = (List<int>)Session["Cart"];
+            if (ProductsInCart == null)
+            {
+                ProductsInCart = new List<int>();
+            }
+            ProductsInCart.Add(Convert.ToInt32(productId));
+            Session["Cart"] = ProductsInCart;
+        }*/
     }
 }

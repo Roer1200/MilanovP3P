@@ -85,6 +85,7 @@
     <Content Include="images\header.png" />
     <Content Include="images\knop.png" />
     <Content Include="images\lipsum.gif" />
+    <Content Include="images\mini_cart.png" />
     <Content Include="images\not-found.jpg" />
     <Content Include="images\products\1.jpg" />
     <Content Include="images\products\2.jpg" />
@@ -106,8 +107,10 @@
     <Content Include="pages\admin\categories_overview.aspx" />
     <Content Include="pages\admin\users_overview.aspx" />
     <Content Include="pages\contact.aspx" />
+    <Content Include="pages\store\AddToCart.aspx" />
     <Content Include="pages\store\products.aspx" />
     <Content Include="pages\store\product.aspx" />
+    <Content Include="pages\store\shoppingcart.aspx" />
     <Content Include="pages\users\account.aspx" />
     <Content Include="pages\users\login.aspx" />
     <Content Include="pages\users\password_recovery.aspx" />
@@ -115,6 +118,7 @@
     <Content Include="pages\admin\products_add.aspx" />
     <Content Include="pages\home.aspx" />
     <Content Include="pages\admin\products_overview.aspx" />
+    <Content Include="scripts\rightClick.js" />
     <Content Include="styles\menu.css" />
     <Content Include="styles\style.css" />
     <Content Include="Web.config">
@@ -131,6 +135,7 @@
     <Compile Include="App_Code\Categories.cs" />
     <Compile Include="App_Code\ConnectionClass.cs" />
     <Compile Include="App_Code\Roles.cs" />
+    <Content Include="App_Code\ShoppingCartActions.cs" />
     <Compile Include="App_Code\Users.cs" />
     <Compile Include="BackEnd.Master.cs">
       <DependentUpon>BackEnd.Master</DependentUpon>
@@ -188,6 +193,13 @@
     <Compile Include="pages\contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\store\AddToCart.aspx.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\store\AddToCart.aspx.designer.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\store\products.aspx.cs">
       <DependentUpon>products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,6 +213,13 @@
     </Compile>
     <Compile Include="pages\store\product.aspx.designer.cs">
       <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\store\shoppingcart.aspx.cs">
+      <DependentUpon>shoppingcart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\store\shoppingcart.aspx.designer.cs">
+      <DependentUpon>shoppingcart.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\users\account.aspx.cs">
       <DependentUpon>account.aspx</DependentUpon>
@@ -260,6 +279,7 @@
   <ItemGroup>
     <Content Include="BackEnd.Master" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

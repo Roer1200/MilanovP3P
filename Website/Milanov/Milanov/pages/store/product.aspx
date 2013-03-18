@@ -23,5 +23,5 @@
     <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <asp:Label ID="lblOutput" runat="server" Text="Helaas, dit product bestaat niet meer."></asp:Label> 
+    <asp:Label ID="lblOutput" runat="server" Text="Helaas, dit product bestaat niet meer."></asp:Label>
 </asp:Content>

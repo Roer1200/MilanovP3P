@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
 
+    <!-- scripts -->
+    <script type="text/javascript" src="scripts/rightClick.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

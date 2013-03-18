@@ -155,6 +155,12 @@ form
     width: 100px;
 }
 
+.cartTable
+{
+    border: 1px solid #000;
+    width: 750px;
+    margin: 10px auto 10px auto;
+}
 .cmsIcon
 {
     font-size: 10px;

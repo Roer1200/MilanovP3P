@@ -383,4 +383,37 @@ public static class ConnectionClass
             command.Parameters.Clear();
         }
     } // Klaar    
+
+    public static ArrayList ShoppingItem(string productId)
+    {
+        ArrayList list = new ArrayList();
+        string query = string.Format("SELECT * FROM products WHERE id LIKE '{0}'", productId);
+
+        try
+        {
+            conn.Open();
+            command.CommandText = query;
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string name = reader.GetString(1);
+                int cat_id = reader.GetInt32(2);
+                double price = reader.GetDouble(3);
+                string image = reader.GetString(4);
+                string description = reader.GetString(5);
+
+                Products product = new Products(id, name, cat_id, price, image, description);
+                list.Add(product);
+            }
+        }
+
+        finally
+        {
+            conn.Close();
+        }
+
+        return list;
+    }
 }
