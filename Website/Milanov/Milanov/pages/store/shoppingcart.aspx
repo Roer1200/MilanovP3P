@@ -7,15 +7,17 @@
     
     <table class="cartTable">
         <tr>
-            <td>Verwijderen</td>
-            <td></td>
-            <td>Artikel</td>
-            <td>Subtotaal</td>
+            <th>Verwijderen</th>
+            <th></th>
+            <th>Artikel</th>
+            <th>Subtotaal</th>
         </tr>
         <asp:Label ID="lblOutput" runat="server" Text="FOUT!!!!"></asp:Label>
         <tr>
             <td colspan="4" align="right">
-                Totaal: &euro; <asp:Literal ID="ltrPrice" runat="server" Text="fout"></asp:Literal>
+                Totaal: &euro; <asp:Literal ID="ltrPrice" runat="server" Text="fout"></asp:Literal><br />
+                <asp:Literal ID="ltrDiscount" runat="server" Visible="false" Text="fout"></asp:Literal><br />
+                <asp:Literal ID="ltrDiscPrice" runat="server" Visible="false" Text="fout"></asp:Literal>
             </td>
         </tr>
         <tr>

@@ -26,7 +26,7 @@ namespace Milanov.pages.store
                             string.Format(
                                 @"<table class='productTable'>
                         <tr>
-                            <th rowspan='3' width='150px'><a href='/images/products/{4}' rel='fancybox' title='{1}'><img runat='server' src='/images/products/{4}' alt='{1}'/></a></th>
+                            <th rowspan='4' width='150px'><a href='/images/preview/{4}' rel='fancybox' title='{1}'><img runat='server' src='/images/preview/{4}' alt='{1}'/></a></th>
                             <th width='50px'>Naam:</th>
                             <td>{1}</td>
                         </tr> 
@@ -40,9 +40,14 @@ namespace Milanov.pages.store
                             <th>Prijs:</th>
                             <td>€ {3}</td>
                         </tr>
+
+                        <tr>
+                            <th valign='top'>Omschrijving:</th>
+                            <td>{5}</td>
+                        </tr>
             
                         </table>",
-                                product.Id, product.Name, product.Cat_id, product.Price, product.Image));
+                                product.Id, product.Name, product.Cname, product.Price, product.Image, product.Description));
 
                         btnAddToCart.Visible = true;
                         lblOutput.Text = sb.ToString();

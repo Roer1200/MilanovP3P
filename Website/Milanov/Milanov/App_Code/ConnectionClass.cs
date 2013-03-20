@@ -19,7 +19,8 @@ public static class ConnectionClass
     public static ArrayList GetProductByCategory(string productCategory)
     {
         ArrayList list = new ArrayList();
-        string query = string.Format("SELECT * FROM products WHERE cat_id LIKE '{0}'", productCategory);
+        // string query = string.Format("SELECT * FROM products WHERE cat_id LIKE '{0}'", productCategory);
+        string query = string.Format("SELECT p.id, p.name, c.name AS cname, p.price, p.image, p.description FROM products AS p INNER JOIN categories AS c ON p.cat_id = c.id WHERE p.cat_id LIKE '{0}'", productCategory);
 
         try
         {
@@ -31,12 +32,14 @@ public static class ConnectionClass
             {
                 int id = reader.GetInt32(0);
                 string name = reader.GetString(1);
-                int cat_id = reader.GetInt32(2);
+                //int cat_id = reader.GetInt32(2);
+                string cname = reader.GetString(2);
                 double price = reader.GetDouble(3);
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
-                Products product = new Products(id, name, cat_id, price, image, description);
+                //Products product = new Products(id, name, cat_id, price, image, description);
+                Products product = new Products(id, name, cname, price, image, description);
                 list.Add(product);
             }
         }
@@ -52,7 +55,8 @@ public static class ConnectionClass
     public static ArrayList GetProductDetails(string productId)
     {
         ArrayList list = new ArrayList();
-        string query = string.Format("SELECT * FROM products WHERE id LIKE '{0}'", productId);
+        //string query = string.Format("SELECT * FROM products WHERE id LIKE '{0}'", productId);
+        string query = string.Format("SELECT p.id, p.name, c.name AS cname, p.price, p.image, p.description FROM products AS p INNER JOIN categories AS c ON p.cat_id = c.id WHERE p.id LIKE '{0}'", productId);
 
         try
         {
@@ -64,12 +68,14 @@ public static class ConnectionClass
             {
                 int id = reader.GetInt32(0);
                 string name = reader.GetString(1);
-                int cat_id = reader.GetInt32(2);
+                // int cat_id = reader.GetInt32(2);
+                string cname = reader.GetString(2);
                 double price = reader.GetDouble(3);
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
-                Products product = new Products(id, name, cat_id, price, image, description);
+                //Products product = new Products(id, name, cat_id, price, image, description);
+                Products product = new Products(id, name, cname, price, image, description);
                 list.Add(product);
             }
         }

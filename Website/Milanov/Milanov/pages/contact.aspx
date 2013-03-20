@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="Milanov.pages.contact" %>
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Milanov - Contact</title>
 </asp:Content>
@@ -48,15 +52,14 @@
         </tr>
         <tr>
             <td>Uw bericht: </td>
-            <td>
+            <td>                
                 <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Height="200px" Width="400px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ErrorMessage="*" ControlToValidate="txtMessage"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
-    <asp:Button ID="btnSend" runat="server" Text="Verzenden" 
-        onclick="btnSend_Click" />
-    <input id="Reset" type="reset" value="Wis velden" /><br />
+    <asp:Button ID="btnSend" runat="server" Text="Verzenden" OnClick="btnSend_Click" />
+    <asp:Button ID="btnReset" runat="server" Text="Wis velden" CausesValidation="false" OnClick="btnReset_Click" /><br />
     <asp:Label ID="lblSend" runat="server"></asp:Label>
 </asp:Content>

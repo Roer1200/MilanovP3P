@@ -4,16 +4,19 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <p>
+    <p class="storeSidebar">
+        <b>Filter op categorie:</b><br /><br />
+
+        <a href="products.aspx">Alle producten</a><br />
         <asp:ListView ID="lvCategories" runat="server" DataSourceID="sds_category">
             <ItemTemplate>
-                <a href="products.aspx?categoryId=<%# Eval("id") %>"><%# Eval("name") %></a>
+                <a href="products.aspx?categoryId=<%# Eval("cid") %>"><%# Eval("cname") %></a>
             </ItemTemplate>
-            <ItemSeparatorTemplate> - </ItemSeparatorTemplate>
+            <ItemSeparatorTemplate><br /></ItemSeparatorTemplate>
         </asp:ListView>
         <asp:SqlDataSource ID="sds_category" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
-            SelectCommand="SELECT [id], [name] FROM [categories] ORDER BY [name]">
+            SelectCommand="SELECT DISTINCT c.id AS cid, c.name AS cname FROM categories AS c INNER JOIN products AS p ON c.id = p.cat_id ORDER BY c.name">
         </asp:SqlDataSource>
         
     </p>

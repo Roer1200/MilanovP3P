@@ -24,7 +24,7 @@ namespace Milanov.pages.store
                             string.Format(
                                 @"<table class='productsTable'>
                         <tr>
-                            <th rowspan='3' width='150px'><a href='/pages/store//product.aspx?productId={0}'><img runat='server' src='/images/products/{4}' alt='{1}'/></th>
+                            <th rowspan='3' width='150px'><a href='/pages/store//product.aspx?productId={0}'><img runat='server' src='/images/preview/{4}' alt='{1}'/></th>
                             <th width='50px'>Naam:</th>
                             <td>{1}</td>
                         </tr> 
@@ -40,7 +40,7 @@ namespace Milanov.pages.store
                         </tr>         
             
                        </table>",
-                               product.Id, product.Name, product.Cat_id, product.Price, product.Image));
+                               product.Id, product.Name, product.Cname, product.Price, product.Image));
 
                         lblOutput.Text = sb.ToString();
                     }
@@ -58,7 +58,7 @@ namespace Milanov.pages.store
                             string.Format(
                                 @"<table class='productsTable'>
                         <tr>
-                            <th rowspan='6' width='150px'><a href='/pages/store/product.aspx?productId={0}'><img runat='server' src='/images/products/{4}' alt='{1}'/></th>
+                            <th rowspan='6' width='150px'><a href='/pages/store/product.aspx?productId={0}'><img runat='server' src='/images/preview/{4}' alt='{1}'/></th>
                             <th width='50px'>Naam:</th>
                             <td>{1}</td>
                         </tr> 
@@ -74,7 +74,7 @@ namespace Milanov.pages.store
                         </tr>         
             
                        </table>",
-                               product.Id, product.Name, product.Cat_id, product.Price, product.Image));
+                               product.Id, product.Name, product.Cname, product.Price, product.Image));
 
                         lblOutput.Text = sb.ToString();
                     }

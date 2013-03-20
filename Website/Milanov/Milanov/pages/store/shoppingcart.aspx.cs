@@ -7,8 +7,10 @@ namespace Milanov.pages.store
 {
     public partial class shoppingcart : System.Web.UI.Page
     {
+        double _TotalPrice = 0.00;
+
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {                    
             if (!Page.IsPostBack)
             {
                 string delId = Request.QueryString["delId"];
@@ -28,7 +30,6 @@ namespace Milanov.pages.store
         private void GetProductsFromCart()
         {
             StringBuilder sb = new StringBuilder();
-            double totalPrice = 0.00;
 
             if (Session["Cart"] != null)
             {
@@ -42,23 +43,23 @@ namespace Milanov.pages.store
 
                     foreach (Products product in cartList)
                     {
-                        totalPrice += product.Price;
+                        _TotalPrice += product.Price;
                         sb.Append(
                             string.Format(
                                 @"<tr>
-                            <td><a href='/pages/store/shoppingcart.aspx?delId={0}'>V</a></td>
-                            <td><img src='/images/products/{4}' alt='{1}' height='40px' width='40px' /></td>
+                            <td><a href='/pages/store/shoppingcart.aspx?delId={0}'><img src='/images/trash.png' alt='trash' /></a></td>
+                            <td><img src='/images/preview/{3}' alt='{1}' height='40px' width='40px' /></td>
                             <td><a href='/pages/store/product.aspx?productId={0}'>{1}</td>
-                            <td>&euro; {3}</td>
+                            <td>&euro; {2}</td>
                                 </tr>",
-                                product.Id, product.Name, product.Cat_id, product.Price, product.Image));
+                                product.Id, product.Name, product.Price, product.Image));
 
 
                     }
 
                     lblOutput.Text = sb.ToString() + "!null";
                     debug.Text = productList.Count.ToString() + "!null";
-                    ltrPrice.Text = totalPrice.ToString() + "!null";
+                    checkForDiscount();
                 }
                 else
                 {
@@ -69,7 +70,7 @@ namespace Milanov.pages.store
                             </tr>"));
 
                     lblOutput.Text = sb.ToString();
-                    ltrPrice.Text = totalPrice.ToString();
+                    ltrPrice.Text = _TotalPrice.ToString();
                 }
             }
             else
@@ -81,7 +82,7 @@ namespace Milanov.pages.store
                             </tr>"));
 
                 lblOutput.Text = sb.ToString();
-                ltrPrice.Text = totalPrice.ToString();
+                ltrPrice.Text = _TotalPrice.ToString();
             }
         }
 
@@ -104,6 +105,30 @@ namespace Milanov.pages.store
             if (!lblOutput.Text.Contains("Het winkelmandje is leeg."))
             {
                 Response.Redirect("~/pages/store/checkout.aspx");
+            }
+        }
+
+        private void checkForDiscount()
+        {
+            if ((string)Session["role"] == "2" && _TotalPrice > 0)
+            {
+                double originalPrice = _TotalPrice;
+                double discountPrice = ((_TotalPrice / 100) * 5); // 5% korting
+
+                _TotalPrice = ((_TotalPrice / 100) * 95); // 5% korting voor vaste klanten
+                discountPrice = Math.Round(discountPrice, 2);
+                _TotalPrice = Math.Round(_TotalPrice, 2);
+                ltrPrice.Text = originalPrice.ToString();
+                ltrDiscount.Visible = true;
+                ltrDiscPrice.Visible = true;
+                ltrDiscount.Text = "Korting: 5% -> &euro; " + discountPrice.ToString();
+                ltrDiscPrice.Text = "Uw prijs: &euro; " + _TotalPrice.ToString();
+            }
+            else
+            {
+                ltrPrice.Text = _TotalPrice.ToString();
+                ltrDiscount.Visible = false;
+                ltrDiscPrice.Visible = false;
             }
         }
     }

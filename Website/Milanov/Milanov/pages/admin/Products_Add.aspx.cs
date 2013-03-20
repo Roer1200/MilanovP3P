@@ -48,9 +48,16 @@ namespace Milanov.pages.admin
                 ddlImage.SelectedValue = filename.ToString();
 
                 // Add preview layer
+                int opacity = 128; // 50% opaque (0 = invisible, 255 = fully opaque)
                 Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
                 Graphics graphicImage = Graphics.FromImage(bitmapImage);
-                graphicImage.DrawString("", new Font("Verdana", 40, FontStyle.Regular), SystemBrushes.WindowText, new Point((bitmapImage.Width / 3), (bitmapImage.Height / 2)));
+                for (int i = 1; i < 4; i++)
+                {
+                    for (int j = 1; j < 4; j++)
+                    {
+                        graphicImage.DrawString("© Milanov", new Font("Verdana", 20, FontStyle.Bold), new SolidBrush(Color.FromArgb(opacity, Color.WhiteSmoke)), new Point(((bitmapImage.Width / 5) * j), ((bitmapImage.Height / 4) * i)));
+                    }
+                }
                 bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
             }
 
