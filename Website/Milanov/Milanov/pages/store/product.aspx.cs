@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
 namespace Milanov.pages.store
 {
@@ -45,7 +46,7 @@ namespace Milanov.pages.store
 
                         btnAddToCart.Visible = true;
                         lblOutput.Text = sb.ToString();
-
+                        
                         this.Title = product.Name;
                     }
                 }   

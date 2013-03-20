@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_add.aspx.cs" Inherits="Milanov.pages.products_add" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="products_add.aspx.cs" Inherits="Milanov.pages.admin.products_add" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <h3>Voeg een nieuw product toe:</h3>

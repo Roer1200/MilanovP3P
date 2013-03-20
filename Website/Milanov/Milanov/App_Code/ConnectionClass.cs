@@ -49,8 +49,6 @@ public static class ConnectionClass
         return list;
     }
     
-
-
     public static ArrayList GetProductDetails(string productId)
     {
         ArrayList list = new ArrayList();

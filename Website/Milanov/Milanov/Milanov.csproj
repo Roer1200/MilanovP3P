@@ -88,7 +88,7 @@
     <Content Include="images\mini_cart.png" />
     <Content Include="images\not-found.jpg" />
     <Content Include="images\products\1.jpg" />
-    <Content Include="images\products\2.jpg" />
+    <Content Include="images\preview\2.jpg" />
     <Content Include="images\products\3.jpg" />
     <Content Include="images\products\4.jpg" />
     <Content Include="images\products\5.jpg" />

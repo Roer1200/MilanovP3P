@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
+using System.Drawing;
 
 namespace Milanov.pages.admin
 {
@@ -41,10 +42,16 @@ namespace Milanov.pages.admin
             try
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
-                FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);
+                FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);          
                 lblResult.Text = "Foto " + filename + " succesvol geupload!";
                 Page_Load(sender, e);
-                ddlImage.SelectedValue = "" + filename;
+                ddlImage.SelectedValue = filename.ToString();
+
+                // Add preview layer
+                Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
+                Graphics graphicImage = Graphics.FromImage(bitmapImage);
+                graphicImage.DrawString("", new Font("Verdana", 40, FontStyle.Regular), SystemBrushes.WindowText, new Point((bitmapImage.Width / 3), (bitmapImage.Height / 2)));
+                bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
             }
 
             catch (Exception)
