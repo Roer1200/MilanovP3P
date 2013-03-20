@@ -28,7 +28,7 @@ namespace Milanov.pages
                 eMailMessage.Body = "<b>Naam:</b> " + HttpUtility.HtmlEncode(txtName.Text) + "<br />" +
                                     "<b>E-mail:</b> " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
                                     "<b>Onderwerp:</b> " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" +
-                                    "<b>Bericht:</b> <br />" + HttpUtility.HtmlEncode(txtMessage.Text.ToString());
+                                    "<b>Bericht:</b> <br />" + HttpUtility.HtmlEncode(txtMessage.Content);
                 eMailMessage.IsBodyHtml = true;
 
                 eMailMessage.Priority = MailPriority.Normal;
@@ -54,7 +54,7 @@ namespace Milanov.pages
             txtName.Text = "";
             txtEmail.Text = "";
             txtSubject.Text = "";
-            txtMessage.Text = "";
+            txtMessage.Content = "";
         }
     }
 }

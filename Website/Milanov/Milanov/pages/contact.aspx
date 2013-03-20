@@ -9,6 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <h3>Contact</h3>
     <p>
         Milanov<br />
@@ -27,6 +28,7 @@
                 <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ErrorMessage="*" ControlToValidate="txtName"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td>E-mail: </td>
@@ -43,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <td>Onderwerp: </td>
+            <td>Onderwerp:</td>
             <td>
                 <asp:TextBox ID="txtSubject" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -53,7 +55,7 @@
         <tr>
             <td>Uw bericht: </td>
             <td>                
-                <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Height="200px" Width="400px"></asp:TextBox>
+                <cc1:Editor ID="txtMessage" runat="server" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ErrorMessage="*" ControlToValidate="txtMessage"></asp:RequiredFieldValidator>
             </td>
