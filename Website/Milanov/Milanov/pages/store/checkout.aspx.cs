@@ -33,10 +33,10 @@ namespace Milanov.pages.store
         {
             StringBuilder sb = new StringBuilder();
 
-            NameValueCollection imageExtensions = new NameValueCollection();
+            /*NameValueCollection imageExtensions = new NameValueCollection();
             imageExtensions.Add(".jpg", "image/jpeg");
             imageExtensions.Add(".gif", "image/gif");
-            imageExtensions.Add(".png", "image/png");
+            imageExtensions.Add(".png", "image/png");*/
 
             if (boughtList.Count > 0)
             {
@@ -47,14 +47,14 @@ namespace Milanov.pages.store
                 foreach (Products product in cartList)
                 {
                     sb.Append(string.Format(@"<img src='/images/products/{1}' alt='{0}' height='20%' width='20%' />", product.Name, product.Image));
-                    string ext = "." + product.Image.Substring(product.Image.LastIndexOf(@".") + 1);
+                    /*string ext = "." + product.Image.Substring(product.Image.LastIndexOf(@".") + 1);
                     if (imageExtensions.AllKeys.Contains(ext))
                     {
                         Response.ContentType = imageExtensions.Get(ext);
                         Response.AppendHeader("Content-Disposition", "attachment; filename=" + product.Image);
                         Response.TransmitFile(Server.MapPath("~/images/products/" + product.Image));
                         Response.End();
-                    }
+                    }*/
                 }
 
                 lblImage.Text = sb.ToString();

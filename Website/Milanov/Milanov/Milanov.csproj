@@ -204,7 +204,6 @@
     <Compile Include="pages\store\product.aspx.designer.cs">
       <DependentUpon>product.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\store\Response.cs" />
     <Compile Include="pages\store\shoppingcart.aspx.cs">
       <DependentUpon>shoppingcart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
