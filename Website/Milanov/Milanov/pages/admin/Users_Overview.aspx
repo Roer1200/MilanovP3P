@@ -6,8 +6,8 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
-            DataKeyNames="id" DataSourceID="sdsUsers" ForeColor="Black" 
-            GridLines="Vertical" Width="566px" 
+            CellSpacing="4" DataKeyNames="id" DataSourceID="sds_Users" ForeColor="Black" 
+            GridLines="Vertical" Width="900px" 
             OnRowDeleting="GridView1_RowDeleting"
             OnRowEditing="GridView1_RowEditing">            
             <Columns>
@@ -15,7 +15,7 @@
                     <ItemTemplate>
                         <asp:Button ID="btnEdit" runat="server" CommandName="Edit" Text="Bewerken" />
                         <asp:Button ID="btnDelete" runat="server" CommandName="Delete" Text="Verwijderen" 
-                        OnClientClick="return confirm('Weet u zeker dat u dit products wilt verwijderen?');" />
+                        OnClientClick="return confirm('Weet u zeker dat u deze gebruiker wilt verwijderen?');" />
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" />
@@ -52,7 +52,7 @@
             <SortedDescendingCellStyle BackColor="#EAEAD3" />
             <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
-        <asp:SqlDataSource ID="sdsUsers" runat="server" 
+        <asp:SqlDataSource ID="sds_users" runat="server" 
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
             DeleteCommand="DELETE FROM [users] WHERE [id] = @id AND id <> 1" 
             SelectCommand="SELECT u.id, u.username, u.email, r.name AS rname FROM users AS u INNER JOIN roles AS r ON u.rol_id = r.id" 
@@ -66,5 +66,7 @@
             </UpdateParameters>
         </asp:SqlDataSource>
     </p>
-    <asp:Label ID="lblError" runat="server" Visible="false" Text="ERROR"></asp:Label>
+    <p>
+        <asp:Label ID="lblError" runat="server" Visible="false" Text="ERROR"></asp:Label>
+    </p>
 </asp:Content>

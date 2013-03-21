@@ -11,6 +11,7 @@ namespace Milanov.pages.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

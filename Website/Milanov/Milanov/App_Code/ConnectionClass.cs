@@ -460,4 +460,33 @@ public static class ConnectionClass
 
         return list;
     }
+
+    public static bool GetInUseCategories(string categoryId)
+    {
+        // Check if category is in use
+        string query = string.Format("SELECT COUNT(*) FROM products WHERE cat_id = '{0}'", categoryId);
+        command.CommandText = query;
+
+        try
+        {
+            conn.Open();
+            int amountOfCategorys = (int)command.ExecuteScalar();
+
+            if (amountOfCategorys > 0)
+            {
+                // Category in use
+                return true;
+            }
+            else
+            {
+                // Category not in use
+                return false;
+            }            
+        }
+        finally
+        {
+            conn.Close();
+            command.Parameters.Clear();
+        }
+    } // Klaar
 }

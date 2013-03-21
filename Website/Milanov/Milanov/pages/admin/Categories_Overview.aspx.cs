@@ -11,7 +11,24 @@ namespace Milanov.pages.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+             //   <asp:BoundField DataField="name" HeaderText="Naam" SortExpression="name" />
+        }
 
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            TableCell cell = GridView1.Rows[e.RowIndex].Cells[1];
+            bool error = ConnectionClass.GetInUseCategories(cell.Text);
+
+            if (error == true)
+            {
+                lblError.Visible = true;
+                lblError.Text = "Deze categorie is in gebruik door één of meerdere producten en kan hierdoor niet worden verwijderd.";
+            }
+            else
+            {
+                lblError.Visible = false;
+            }
         }
     }
 }

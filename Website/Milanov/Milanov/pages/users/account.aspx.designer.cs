@@ -139,6 +139,15 @@ namespace Milanov.pages.users {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
+        /// btnPsubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPsubmit;
+        
+        /// <summary>
         /// lblPoutput control.
         /// </summary>
         /// <remarks>
@@ -146,15 +155,6 @@ namespace Milanov.pages.users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPoutput;
-        
-        /// <summary>
-        /// CompareValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator3;
         
         /// <summary>
         /// CompareValidator4 control.
@@ -166,13 +166,13 @@ namespace Milanov.pages.users {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator4;
         
         /// <summary>
-        /// btnPsubmit control.
+        /// CompareValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPsubmit;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator3;
         
         /// <summary>
         /// btnChangeEmail control.
@@ -274,6 +274,15 @@ namespace Milanov.pages.users {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
+        /// btnEsubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEsubmit;
+        
+        /// <summary>
         /// lblEoutput control.
         /// </summary>
         /// <remarks>
@@ -281,15 +290,6 @@ namespace Milanov.pages.users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEoutput;
-        
-        /// <summary>
-        /// CompareValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// CompareValidator2 control.
@@ -301,13 +301,13 @@ namespace Milanov.pages.users {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
         
         /// <summary>
-        /// btnEsubmit control.
+        /// CompareValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEsubmit;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// btnCMS control.

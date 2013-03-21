@@ -76,18 +76,20 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell ColumnSpan="2">
-                <asp:Label ID="lblPoutput" runat="server"></asp:Label>
-                <asp:CompareValidator ID="CompareValidator3" runat="server" 
-                    ControlToCompare="txtPconfirm" ControlToValidate="txtPnew" 
-                    ErrorMessage="Wachtwoorden moeten overeenkomen." ForeColor="Red"></asp:CompareValidator>
-                <asp:CompareValidator ID="CompareValidator4" runat="server" 
-                    ControlToCompare="txtPnew" ControlToValidate="txtPcurrent" 
-                    ErrorMessage="Het nieuwe wachtwoord mag niet hetzelfde zijn als het huidige wachtwoord." Operator="NotEqual" ForeColor="Red"></asp:CompareValidator>
+                   <asp:Button ID="btnPsubmit" runat="server" Text="Wijzigen"  OnClick="btnPsubmit_Click" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell ColumnSpan="2">
-                   <asp:Button ID="btnPsubmit" runat="server" Text="Wijzigen"  OnClick="btnPsubmit_Click" />
+                <asp:Label ID="lblPoutput" runat="server"></asp:Label>
+                <asp:CompareValidator ID="CompareValidator4" runat="server" 
+                    ControlToCompare="txtPnew" ControlToValidate="txtPcurrent" 
+                    ErrorMessage="Het nieuwe wachtwoord mag niet hetzelfde zijn als het huidige wachtwoord." Operator="NotEqual" ForeColor="Red">
+                </asp:CompareValidator><br />
+                <asp:CompareValidator ID="CompareValidator3" runat="server" 
+                    ControlToCompare="txtPconfirm" ControlToValidate="txtPnew" 
+                    ErrorMessage="Wachtwoorden moeten overeenkomen." ForeColor="Red">
+                </asp:CompareValidator>                
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
@@ -147,23 +149,26 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell ColumnSpan="2">
-                <asp:Label ID="lblEoutput" runat="server"></asp:Label>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                    ControlToCompare="txtEconfirm" ControlToValidate="txtEnew" 
-                    ErrorMessage="E-mail adressen moeten overeenkomen" ForeColor="Red"></asp:CompareValidator>
-                <asp:CompareValidator ID="CompareValidator2" runat="server" 
-                    ControlToCompare="txtEnew" ControlToValidate="txtEcurrent" 
-                    ErrorMessage="Het nieuwe e-mail adres mag niet hetzelfde zijn als de huidige e-mail." Operator="NotEqual" ForeColor="Red"></asp:CompareValidator>
+                   <asp:Button ID="btnEsubmit" runat="server" Text="Wijzigen" OnClick="btnEsubmit_Click" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell ColumnSpan="2">
-                   <asp:Button ID="btnEsubmit" runat="server" Text="Wijzigen" OnClick="btnEsubmit_Click" />
+                <asp:Label ID="lblEoutput" runat="server"></asp:Label>                
+                <asp:CompareValidator ID="CompareValidator2" runat="server" 
+                    ControlToCompare="txtEnew" ControlToValidate="txtEcurrent" 
+                    ErrorMessage="Het nieuwe e-mail adres mag niet hetzelfde zijn als de huidige e-mail." Operator="NotEqual" ForeColor="Red">
+                </asp:CompareValidator><br />
+                <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                    ControlToCompare="txtEconfirm" ControlToValidate="txtEnew" 
+                    ErrorMessage="E-mail adressen moeten overeenkomen" ForeColor="Red">
+                </asp:CompareValidator>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
     </p>
+
     <p>
-    <asp:Button ID="btnCMS" runat="server" Text="Beheergedeelte" OnClick="btnCMS_Click" />
+    <asp:Button ID="btnCMS" runat="server" Text="Beheergedeelte" CausesValidation="false" OnClick="btnCMS_Click" />
     </p>
 </asp:Content>

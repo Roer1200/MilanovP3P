@@ -55,6 +55,7 @@ namespace Milanov.pages.users
             if (tblPassword.Visible != true)
             {
                 lblPoutput.Text = "";
+                tblEmail.Visible = false;
                 tblPassword.Visible = true;
             }
             else
@@ -82,6 +83,7 @@ namespace Milanov.pages.users
             if (tblEmail.Visible != true)
             {
                 lblEoutput.Text = "";
+                tblPassword.Visible = false;
                 tblEmail.Visible = true;
             }
             else

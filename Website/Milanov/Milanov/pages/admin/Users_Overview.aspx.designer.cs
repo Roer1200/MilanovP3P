@@ -22,13 +22,13 @@ namespace Milanov.pages.admin {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// sdsUsers control.
+        /// sds_users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsUsers;
+        protected global::System.Web.UI.WebControls.SqlDataSource sds_users;
         
         /// <summary>
         /// lblError control.
