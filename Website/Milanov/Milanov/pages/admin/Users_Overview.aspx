@@ -7,7 +7,9 @@
             AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
             DataKeyNames="id" DataSourceID="sdsUsers" ForeColor="Black" 
-            GridLines="Vertical" Width="566px">            
+            GridLines="Vertical" Width="566px" 
+            OnRowDeleting="GridView1_RowDeleting"
+            OnRowEditing="GridView1_RowEditing">            
             <Columns>
                 <asp:TemplateField HeaderText="Opties">
                     <ItemTemplate>
@@ -55,7 +57,6 @@
             DeleteCommand="DELETE FROM [users] WHERE [id] = @id AND id <> 1" 
             SelectCommand="SELECT u.id, u.username, u.email, r.name AS rname FROM users AS u INNER JOIN roles AS r ON u.rol_id = r.id" 
             UpdateCommand="UPDATE u SET u.rol_id = r.id FROM users AS u INNER JOIN roles AS r ON r.id = (SELECT id FROM roles WHERE name = @rname) WHERE u.id = @id AND u.id <> 1">
-
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
@@ -65,4 +66,5 @@
             </UpdateParameters>
         </asp:SqlDataSource>
     </p>
+    <asp:Label ID="lblError" runat="server" Visible="false" Text="ERROR"></asp:Label>
 </asp:Content>

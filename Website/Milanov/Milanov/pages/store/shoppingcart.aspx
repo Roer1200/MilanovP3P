@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="shoppingcart.aspx.cs" Inherits="Milanov.pages.store.shoppingcart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StoreEnd.Master" AutoEventWireup="true" CodeBehind="shoppingcart.aspx.cs" Inherits="Milanov.pages.store.shoppingcart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">    
@@ -26,5 +26,5 @@
             </td>
         </tr>
     </table>
-    <asp:Literal ID="debug" runat="server"></asp:Literal>
+    <asp:Label ID="lblError" runat="server" Visible="false" Text="ERROR"></asp:Label>
 </asp:Content>

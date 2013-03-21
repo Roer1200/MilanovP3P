@@ -23,7 +23,7 @@
     <br />
     <table>
         <tr>
-            <td>Naam: </td>
+            <td style="width: 90px">Naam: </td>
             <td>
                 <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -31,7 +31,7 @@
             </td>
         </tr>
         <tr>
-            <td>E-mail: </td>
+            <td style="width: 90px">E-mail: </td>
             <td>
                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
@@ -45,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <td>Onderwerp:</td>
+            <td style="width: 90px">Onderwerp:</td>
             <td>
                 <asp:TextBox ID="txtSubject" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -53,11 +53,11 @@
             </td>
         </tr>
         <tr>
-            <td>Uw bericht: </td>
+            <td style="width: 90px">Uw bericht: </td>
             <td>                
-                <cc1:Editor ID="txtMessage" runat="server" />
+                <cc1:Editor ID="txtMessage" runat="server" Width="740px"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                    ErrorMessage="*" ControlToValidate="txtMessage"></asp:RequiredFieldValidator>
+                    ErrorMessage="U bent verplicht een bericht te schrijven." ControlToValidate="txtMessage"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>

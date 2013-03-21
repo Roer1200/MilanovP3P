@@ -12,7 +12,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace Milanov.pages
                 eMailMessage.Body = "<b>Naam:</b> " + HttpUtility.HtmlEncode(txtName.Text) + "<br />" +
                                     "<b>E-mail:</b> " + HttpUtility.HtmlEncode(txtEmail.Text) + "<br />" +
                                     "<b>Onderwerp:</b> " + HttpUtility.HtmlEncode(txtSubject.Text) + "<br />" +
-                                    "<b>Bericht:</b> <br />" + HttpUtility.HtmlEncode(txtMessage.Content);
+                                    "<b>Bericht:</b> <br />" + HttpUtility.HtmlDecode(txtMessage.Content);
                 eMailMessage.IsBodyHtml = true;
 
                 eMailMessage.Priority = MailPriority.Normal;

@@ -58,7 +58,6 @@ namespace Milanov.pages.store
                     }
 
                     lblOutput.Text = sb.ToString() + "!null";
-                    debug.Text = productList.Count.ToString() + "!null";
                     checkForDiscount();
                 }
                 else
@@ -105,6 +104,11 @@ namespace Milanov.pages.store
             if (!lblOutput.Text.Contains("Het winkelmandje is leeg."))
             {
                 Response.Redirect("~/pages/store/checkout.aspx");
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "Er moet eerst een product worden toegevoegd.";
             }
         }
 

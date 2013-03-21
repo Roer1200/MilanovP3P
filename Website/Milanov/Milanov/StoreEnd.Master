@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StoreEnd.Master.cs" Inherits="Milanov.StoreEnd" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Milanov</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/menu.css" />
+
+    <!-- scripts -->
+    <script type="text/javascript" src="/scripts/rightClick.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server" >
+    <div id="container">        
+        <div id="menubar">
+            <div id="menu">
+                <ul>
+                    <li><a href="/pages/home.aspx">Home</a></li>
+                    <li><a href="/pages/store/products.aspx">Winkel</a></li>
+                    <li><a href="/pages/contact.aspx">Contact</a></li>
+                    <li><a href="/pages/users/account.aspx">Account</a>
+                        <ul>
+                            <li><asp:Label ID="lblLogin" runat="server" Text="">lblLogin</asp:Label></li>
+                            <li><asp:LinkButton ID="lbLogin" runat="server" CausesValidation="false" onclick="lbLogin_Click">lbLogin</asp:LinkButton></li>
+                        </ul>                                
+                    </li>
+                </ul>
+            </div>                
+        </div>
+
+        <div id="social">
+            <a href="http://www.facebook.com" target="_blank"><img src="/images/facebook.png" alt="facebook" height="30px" width="30px" /></a>
+            <a href="http://www.twitter.com" target="_blank"><img src="/images/twitter.png" alt="twitter" height="30px" width="30px" /></a>
+        </div>
+
+        <div id="header">
+            <p class="headerTitle">Milanov</p>
+            <p class="headerSlogan">Fotografie</p>
+        </div>
+
+        <div id="content_area">
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>                
+        </div>
+
+        <div id="footer">
+            Copyright &copy; 2012. All Rights Reserved.<br />
+            Designed by WYN.
+        </div>
+    </div>
+</form>
+</body>
+</html>

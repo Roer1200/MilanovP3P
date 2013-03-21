@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Milanov
 {
-    public partial class BackEnd : System.Web.UI.MasterPage
+    public partial class StoreEnd : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,11 +17,6 @@ namespace Milanov
                 lblLogin.Text = "Welcome " + Session["login"];
                 lblLogin.Visible = true;
                 lbLogin.Text = "Logout";
-                // If user is not admin, send him to home
-                if ((string)Session["role"] != "1")
-                {
-                    Response.Redirect("/pages/home.aspx");
-                }
             }
             else
             {

@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="product.aspx.cs" Inherits="Milanov.pages.store.product_details" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StoreEnd.Master" AutoEventWireup="true" CodeBehind="product.aspx.cs" Inherits="Milanov.pages.store.product_details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
     <!-- scripts -->  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
@@ -22,7 +21,9 @@
     <!-- stylesheets -->
     <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <asp:Label ID="lblOutput" runat="server" Text="Helaas, dit product bestaat niet meer."></asp:Label>
     <asp:Button ID="btnAddToCart" runat="server" Text="Bestel" Visible="false" Onclick="btnAddToCart_Click" />
+    <asp:Button ID="btnBack" runat="server" Text="Terug" Visible="false" OnClientClick="JavaScript: window.history.back(1); return false;" />
 </asp:Content>
