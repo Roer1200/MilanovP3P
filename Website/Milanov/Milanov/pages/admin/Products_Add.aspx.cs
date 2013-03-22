@@ -42,23 +42,33 @@ namespace Milanov.pages.admin
             try
             {
                 string filename = Path.GetFileName(FileUpload1.FileName);
-                FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);          
-                lblResult.Text = "Foto " + filename + " succesvol geupload!";
-                Page_Load(sender, e);
-                ddlImage.SelectedValue = filename.ToString();
 
-                // Add preview layer
-                int opacity = 128; // 50% opaque (0 = invisible, 255 = fully opaque)
-                Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
-                Graphics graphicImage = Graphics.FromImage(bitmapImage);
-                for (int i = 1; i < 4; i++)
+                if (ddlImage.Items.FindByText(filename) != null)
                 {
-                    for (int j = 1; j < 4; j++)
-                    {
-                        graphicImage.DrawString("© Milanov", new Font("Verdana", 20, FontStyle.Bold), new SolidBrush(Color.FromArgb(opacity, Color.WhiteSmoke)), new Point(((bitmapImage.Width / 5) * j), ((bitmapImage.Height / 4) * i)));
-                    }
+                    lblResult.Text = "Foto " + filename + " is al in gebruik, kies een andere naam.";
                 }
-                bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
+                else
+                {
+                    FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);          
+                    lblResult.Text = "Foto " + filename + " succesvol geupload!";
+                    Page_Load(sender, e);
+                    ddlImage.SelectedValue = filename.ToString();
+
+                    // Add preview layer
+                    int opacity = 128; // 50% opaque (0 = invisible, 255 = fully opaque)
+                    Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
+                    Graphics graphicImage = Graphics.FromImage(bitmapImage);
+                    for (int i = 1; i < 4; i++)
+                    {
+                        for (int j = 1; j < 4; j++)
+                        {
+                            graphicImage.DrawString("© Milanov", new Font("Verdana", 20, FontStyle.Bold), new SolidBrush(Color.FromArgb(opacity, Color.WhiteSmoke)), new Point(((bitmapImage.Width / 5) * j), ((bitmapImage.Height / 4) * i)));
+                        }
+                    }
+                    bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
+
+                    lblResult.Text = "Foto " + filename + " succesvol geupload!";
+                }
             }
 
             catch (Exception)

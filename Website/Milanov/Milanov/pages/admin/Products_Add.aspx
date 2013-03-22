@@ -11,7 +11,8 @@
             <td>
                 <asp:TextBox ID="txtName" runat="server" Width="300px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ControlToValidate="txtName" ErrorMessage="*"></asp:RequiredFieldValidator>
+                    ControlToValidate="txtName" ErrorMessage="*">
+                </asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -34,6 +35,15 @@
             </td>
             <td>
                 <asp:TextBox ID="txtPrice" runat="server" Width="300px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="txtPrice" ErrorMessage="*">
+                </asp:RequiredFieldValidator>
+                <asp:RangeValidator
+                    ID="RangeValidatorPrice" runat="server" 
+                    ControlToValidate="txtPrice" ForeColor="Red" 
+                    Type="Double" MinimumValue="0,01" MaximumValue="9999,99" ErrorMessage="Invalid Price">
+                </asp:RangeValidator>
+
             </td>
         </tr>
         <tr>
@@ -46,7 +56,7 @@
                 <br/>
                 <asp:FileUpload ID="FileUpload1" runat="server" /> 
                 <asp:Button ID="btnUploadImage" runat="server" Text="Upload" 
-                    onclick="btnUploadImage_Click" CausesValidation="False" /> 
+                    onclick="btnUploadImage_Click" CausesValidation="False" />
             </td>            
         </tr>
         <tr>
@@ -55,6 +65,9 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDescription" runat="server" Height="98px" TextMode="MultiLine" Width="332px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="txtDescription" ErrorMessage="*">
+                </asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
