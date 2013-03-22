@@ -18,20 +18,13 @@
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" />
-                        <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Annuleer" />
+                        <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" CausesValidation="false" Text="Annuleer" />
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="id" SortExpression="id">
-                    <ItemTemplate>
-                        <asp:Label ID="lblAId" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:Label ID="lblBId" runat="server" Text='<%# Bind("id") %>'></asp:Label>
-                    </EditItemTemplate>
-                </asp:TemplateField>
+                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
 
-                <asp:TemplateField HeaderText="Naam" SortExpression="Naam">
+                <asp:TemplateField HeaderText="Naam" SortExpression="name">
                     <ItemTemplate>
                         <asp:Label ID="lblName" runat="server" Text='<%# Bind("name") %>'></asp:Label>
                     </ItemTemplate>

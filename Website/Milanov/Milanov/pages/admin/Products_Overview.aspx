@@ -7,7 +7,7 @@
         AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
         BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
         CellSpacing="4" DataKeyNames="id" DataSourceID="sds_products" ForeColor="Black" 
-        GridLines="Vertical" Width="900px">
+        GridLines="Vertical" Width="1000px">
         <Columns>
             <asp:TemplateField HeaderText="Opties">
                 <ItemTemplate>
@@ -17,12 +17,24 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" />
-                    <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Annuleer" />
+                    <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" CausesValidation="false" Text="Annuleer" />
                 </EditItemTemplate>
             </asp:TemplateField>
 
             <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-            <asp:BoundField DataField="name" HeaderText="Naam" SortExpression="name" />
+
+            <asp:TemplateField HeaderText="Naam" SortExpression="name">
+                    <ItemTemplate>
+                        <asp:Label ID="lblName" runat="server" Text='<%# Bind("name") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:Textbox ID="txtName" runat="server" Text='<%# Bind("name") %>'></asp:Textbox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                            ControlToValidate="txtName" ErrorMessage="*">
+                        </asp:RequiredFieldValidator>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Categorie" SortExpression="cname">
                 <ItemTemplate>
                     <asp:Label ID="lblCname" runat="server" Text='<%# Bind("cname") %>'></asp:Label>
@@ -37,9 +49,47 @@
                     </asp:SqlDataSource>
                 </EditItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="price" HeaderText="Prijs" SortExpression="price" />
-            <asp:BoundField DataField="image" HeaderText="Foto" SortExpression="image" />           
-            <asp:BoundField DataField="description" HeaderText="Omschrijving" SortExpression="description" />
+
+            <asp:TemplateField HeaderText="Prijs" SortExpression="price">
+                <ItemTemplate>
+                    <asp:Label ID="lblPrice" runat="server" Text='<%# Bind("price") %>'></asp:Label>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <asp:Textbox ID="txtPrice" runat="server" Text='<%# Bind("price") %>'></asp:Textbox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="txtPrice" ErrorMessage="*">
+                    </asp:RequiredFieldValidator>
+                    <asp:RangeValidator
+                        ID="RangeValidatorPrice" runat="server" 
+                        ControlToValidate="txtPrice" ForeColor="Red" 
+                        Type="Double" MinimumValue="0,01" MaximumValue="9999,99" ErrorMessage="Invalid Price">
+                    </asp:RangeValidator>
+                </EditItemTemplate>
+            </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Foto" SortExpression="image">
+                <ItemTemplate>
+                    <asp:Label ID="lblImage" runat="server" Text='<%# Bind("image") %>'></asp:Label>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <asp:Textbox ID="txtImage" runat="server" Text='<%# Bind("image") %>'></asp:Textbox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ControlToValidate="txtImage" ErrorMessage="*">
+                    </asp:RequiredFieldValidator>
+                </EditItemTemplate>
+            </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Omschrijving" SortExpression="description">
+                <ItemTemplate>
+                    <asp:Label ID="lblDescription" runat="server" Text='<%# Bind("description") %>'></asp:Label>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <asp:Textbox ID="txtDescription" runat="server" Text='<%# Bind("description") %>' TextMode="MultiLine"></asp:Textbox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        ControlToValidate="txtDescription" ErrorMessage="*">
+                    </asp:RequiredFieldValidator>
+                </EditItemTemplate>
+            </asp:TemplateField>
         </Columns>
         <FooterStyle BackColor="#CCCC99" />
         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />

@@ -47,8 +47,8 @@ namespace Milanov.pages.store
                 foreach (Products product in cartList)
                 {
                     sb.Append(string.Format(@"<img src='/images/products/{1}' alt='{0}' height='20%' width='20%' />", product.Name, product.Image));
-                    /*string ext = "." + product.Image.Substring(product.Image.LastIndexOf(@".") + 1);
-                    if (imageExtensions.AllKeys.Contains(ext))
+                    string ext = "." + product.Image.Substring(product.Image.LastIndexOf(@".") + 1);
+                    /*if (imageExtensions.AllKeys.Contains(ext))
                     {
                         Response.ContentType = imageExtensions.Get(ext);
                         Response.AppendHeader("Content-Disposition", "attachment; filename=" + product.Image);
