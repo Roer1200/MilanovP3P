@@ -62,7 +62,7 @@
                     <asp:RangeValidator
                         ID="RangeValidatorPrice" runat="server" 
                         ControlToValidate="txtPrice" ForeColor="Red" 
-                        Type="Double" MinimumValue="0,01" MaximumValue="9999,99" ErrorMessage="Invalid Price">
+                        Type="Currency" MinimumValue="0,01" MaximumValue="9999,99" ErrorMessage="Invalid Price">
                     </asp:RangeValidator>
                 </EditItemTemplate>
             </asp:TemplateField>
@@ -113,7 +113,7 @@
             <UpdateParameters>
                 <asp:Parameter Name="name" Type="String" />
                 <asp:Parameter Name="cname" Type="String" />                
-                <asp:Parameter Name="price" Type="Double" />
+                <asp:Parameter Name="price" Type="Decimal" />
                 <asp:Parameter Name="image" Type="String" />
                 <asp:Parameter Name="description" Type="String" />
                 <asp:Parameter Name="id" Type="Int32" />

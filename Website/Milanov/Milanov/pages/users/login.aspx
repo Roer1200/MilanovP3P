@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Milanov.pages.users.login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Milanov - Login</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
@@ -35,10 +34,8 @@
                 <asp:Button ID="Button1" runat="server" Text="Registeren" CausesValidation="false" OnClick="btnRegister_Click" />
             </td>
         </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="lblError" runat="server" ></asp:Label><br />  
-            </td>
-        </tr>
     </table>
+    <p>
+        <asp:Label ID="lblError" runat="server" ></asp:Label>
+    </p>
 </asp:Content>

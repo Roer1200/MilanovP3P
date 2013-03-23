@@ -41,7 +41,7 @@
                 <asp:RangeValidator
                     ID="RangeValidatorPrice" runat="server" 
                     ControlToValidate="txtPrice" ForeColor="Red" 
-                    Type="Double" MinimumValue="0,01" MaximumValue="9999,99" ErrorMessage="Invalid Price">
+                    Type="Currency" MinimumValue="0,01" MaximumValue="9999,99" ErrorMessage="Invalid Price">
                 </asp:RangeValidator>
 
             </td>
@@ -71,8 +71,9 @@
             </td>
         </tr>
     </table>
-    <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
-    <br />
     <asp:Button ID="btnSave" runat="server" Text="Opslaan" onclick="btnSave_Click" />
     <asp:Button ID="btnBack" runat="server" Text="Terug" CausesValidation="false" OnClick="btnBack_Click"></asp:Button>
+    <p>
+            <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+    </p>
 </asp:Content>

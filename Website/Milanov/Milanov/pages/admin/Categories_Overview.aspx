@@ -7,7 +7,7 @@
             AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
             CellSpacing="4" DataKeyNames="id" DataSourceID="sds_categories" ForeColor="Black" 
-            GridLines="Vertical" Width="900px"
+            GridLines="Vertical" Width="1000px"
             OnRowDeleting="GridView1_RowDeleting">
             <Columns>
                 <asp:TemplateField HeaderText="Opties">

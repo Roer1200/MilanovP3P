@@ -54,7 +54,7 @@ form
 {
     background-color: #FCFCF8;
     border: 1px solid #D8EDE8;
-	/* Firefox */
+    /* Firefox */
     min-height: -moz-calc(100% - 375px);
     /* WebKit */
     min-height: -webkit-calc(100% - 375px);
@@ -119,12 +119,13 @@ form
 
 .productsTable
 {
-
+    float: left;
     width: 400px;
     margin: 0px 0px 10px 10px;  
     border: 3px solid #E3E3E3;
     border-radius: 10px;
     moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 .productsTable tr th, .productsTable tr td
@@ -147,6 +148,7 @@ form
     border: 3px solid #E3E3E3;
     border-radius: 10px;
     moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 .productTable tr th, .productTable tr td
@@ -160,19 +162,6 @@ form
     height: 100px;
     width: 100px;
 }
-
-/*.cartTable
-{
-    border: 1px solid #000;
-    width: 750px;
-    margin: 10px auto 10px auto;
-}
-
-.cartTable tr th, .cartTable tr td
-{
-    border: 1px solid #000;
-    text-align: center;
-}*/
 
 .cartTable
 {

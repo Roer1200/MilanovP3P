@@ -10,7 +10,7 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+           if (!Page.IsPostBack)
             {
                 string productId = Request.QueryString["productId"];
                 if (!String.IsNullOrEmpty(productId))
@@ -53,12 +53,12 @@ namespace Milanov.pages.store
                         btnBack.Visible = true;
                         lblOutput.Text = sb.ToString();
                         
-                        this.Title = product.Name;
+                        this.Title = product.Name + " - Milanov";
                     }
                 }   
                 else
                 {
-                    Response.Redirect("~/error.aspx");
+                    Response.Redirect("~/pages/error.aspx");
                 }
             }
         }

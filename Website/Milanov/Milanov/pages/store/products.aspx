@@ -23,7 +23,4 @@
     <p>
         <asp:Label ID="lblOutput" runat="server" Text="Er zijn geen producten gevonden in deze categorie."></asp:Label>
     </p>
-    <p>
-        test
-    </p>
 </asp:Content>

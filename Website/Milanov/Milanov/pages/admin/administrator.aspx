@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackEnd.Master" AutoEventWireup="true" CodeBehind="administrator.aspx.cs" Inherits="Milanov.pages.admin.administrator" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <img id="Img1" runat="server" src="~/images/lipsum.gif" class="imgLeft" />
+    <img id="Img1" runat="server" src="~/images/lipsum.gif" alt="lipsum" class="imgLeft" />
     <h3>Title 1</h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lectus urna,

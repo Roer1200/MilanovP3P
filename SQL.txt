@@ -9,7 +9,7 @@ CREATE TABLE products
 id int PRIMARY KEY IDENTITY NOT NULL,
 name varchar(50) NOT NULL,
 cat_id int FOREIGN KEY REFERENCES categories(id) NOT NULL,
-price float NOT NULL,
+price decimal (18, 2) NOT NULL,
 image varchar(50) NOT NULL,
 description text NOT NULL
 )
@@ -35,12 +35,6 @@ rol_id int FOREIGN KEY REFERENCES roles(id) NOT NULL
 INSERT INTO [MilanovDB].[dbo].[categories] ([name]) VALUES ('Natuur')
 INSERT INTO [MilanovDB].[dbo].[categories] ([name]) VALUES ('Stad')
 INSERT INTO [MilanovDB].[dbo].[categories] ([name]) VALUES ('Portret')
-
-INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje1', 1, 2.01, '1.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje2', 2, 2.02, '2.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje3', 3, 2.03, '3.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje4', 2, 2.04, '4.jpg', 'omschrijving') 
-INSERT INTO [MilanovDB].[dbo].[products]([name], [cat_id], [price], [image], [description]) VALUES ('Plaatje5', 1, 2.05, '5.jpg', 'omschrijving') 
 
 INSERT INTO [MilanovDB].[dbo].[roles] ([name]) VALUES ('administrator')
 INSERT INTO [MilanovDB].[dbo].[roles] ([name]) VALUES ('regular')

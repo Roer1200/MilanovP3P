@@ -13,7 +13,9 @@ namespace Milanov.pages.users
         {
             if (Session["login"] != null)
             {
+                this.Title = Session["login"] + " - Milanov";
                 lblCU.Text = "Welcome <b>" + Session["login"] + "</b>!";
+
                 if ((string)Session["role"] != "1")
                 {
                     btnCMS.Visible = false;

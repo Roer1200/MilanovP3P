@@ -34,7 +34,7 @@ public static class ConnectionClass
                 string name = reader.GetString(1);
                 //int cat_id = reader.GetInt32(2);
                 string cname = reader.GetString(2);
-                double price = reader.GetDouble(3);
+                decimal price = reader.GetDecimal(3);
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
@@ -70,7 +70,7 @@ public static class ConnectionClass
                 string name = reader.GetString(1);
                 // int cat_id = reader.GetInt32(2);
                 string cname = reader.GetString(2);
-                double price = reader.GetDouble(3);
+                decimal price = reader.GetDecimal(3);
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 
@@ -107,7 +107,7 @@ public static class ConnectionClass
                     int id = reader.GetInt32(0);
                     string name = reader.GetString(1);
                     int cat_id = reader.GetInt32(2);
-                    double price = reader.GetDouble(3);
+                    decimal price = reader.GetDecimal(3);
                     string image = reader.GetString(4);
                     string description = reader.GetString(5);
 
@@ -253,30 +253,40 @@ public static class ConnectionClass
     public static string RegisterUser(Users users)
     {
         //Check if user exists
-        string queryA = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", users.Username);
-        command.CommandText = queryA;
-        string queryB = string.Format("SELECT COUNT(*) FROM users WHERE email = '{0}'", users.Email);
-        command.CommandText = queryB;
+        string query = string.Format("SELECT COUNT(*) FROM users WHERE username = '{0}'", users.Username);
+        command.CommandText = query;
 
         try
         {
             conn.Open();
-            int amountOfUsers = (int)command.ExecuteScalar();
-            int amountOfEmail = (int)command.ExecuteScalar();
+            int amountOfUsers = (int)command.ExecuteScalar();            
 
-            if (amountOfUsers < 1 && amountOfEmail < 1)
+            if (amountOfUsers < 1)
             {
-                //User and or email does not exist, create a new user
-                queryA = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", users.Username, users.Password,
-                                      users.Email, users.Rol_id);
-                command.CommandText = queryA;
-                command.ExecuteNonQuery();
-                return "Uw account is aangemaakt!";
+                //User does not exist, check  if e-mail exists
+                query = string.Format("SELECT COUNT(*) FROM users WHERE email = '{0}'", users.Email);
+                command.CommandText = query;
+
+                int amountOfEmail = (int)command.ExecuteScalar();
+
+                if (amountOfEmail < 1)
+                {
+                    query = string.Format("INSERT INTO users VALUES ('{0}', '{1}', '{2}', '{3}')", users.Username, users.Password,
+                                          users.Email, users.Rol_id);
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+                    return "Uw account (" + users.Username + ") is aangemaakt!";
+                }
+                else
+                {
+                    // E-mail exists
+                    return "Een gebruiker met dit e-mail adres bestaat al, het account is niet aangemaakt.";
+                }
             }
             else
             {
-                //User and/or email exists
-                return "Een gebruiker met deze naam en/of e-mail bestaat al, het account is niet aangemaakt.";
+                //User exists
+                return "Een gebruiker met deze gebruikersnaam bestaat al, het account is niet aangemaakt.";
             }
         }
         finally
@@ -373,11 +383,23 @@ public static class ConnectionClass
 
             if (dbEmail == Ecurrent)
             {
-                // Emails match
-                query = string.Format("UPDATE users SET email = '{0}' WHERE username = '{1}'", Enew, username);
+                // Emails match, check if new e-mail is in use
+                query = string.Format("SELECT COUNT(*) FROM users WHERE email = '{0}'", Enew);
                 command.CommandText = query;
-                command.ExecuteNonQuery();
-                return "Uw mail adres is aangepast!";
+
+                int amountOfEmail = (int)command.ExecuteScalar();
+
+                if (amountOfEmail < 1)
+                {
+                    query = string.Format("UPDATE users SET email = '{0}' WHERE username = '{1}'", Enew, username);
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+                    return "Uw mail adres is aangepast!";
+                }
+                else
+                {
+                    return "Het nieuwe e-mail adres is al in gebruik!";
+                }
             }
             else
             {
@@ -444,7 +466,7 @@ public static class ConnectionClass
                 int id = reader.GetInt32(0);
                 string name = reader.GetString(1);
                 int cat_id = reader.GetInt32(2);
-                double price = reader.GetDouble(3);
+                decimal price = reader.GetDecimal(3);
                 string image = reader.GetString(4);
                 string description = reader.GetString(5);
 

@@ -83,7 +83,7 @@ namespace Milanov.pages.admin
             {
                 string name = txtName.Text;
                 int cat_id = Convert.ToInt32(ddlCategory.SelectedValue);
-                double price = Convert.ToDouble(txtPrice.Text);
+                decimal price = Convert.ToDecimal(txtPrice.Text);
                 string image = ddlImage.SelectedValue;
                 string description = txtDescription.Text;
 

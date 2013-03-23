@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="account.aspx.cs" Inherits="Milanov.pages.users.account" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Milanov - Profiel</title>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <asp:Label ID="lblCU" runat="server"></asp:Label>
     <br /><br />
@@ -168,6 +169,7 @@
     </asp:Table>
     </p>
 
+    <!-- Button CMS -->
     <p>
     <asp:Button ID="btnCMS" runat="server" Text="Beheergedeelte" CausesValidation="false" OnClick="btnCMS_Click" />
     </p>

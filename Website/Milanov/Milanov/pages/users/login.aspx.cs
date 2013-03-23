@@ -11,7 +11,7 @@ namespace Milanov.pages.users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Title = "Login - Milanov";
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

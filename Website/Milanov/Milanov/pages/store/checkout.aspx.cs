@@ -15,6 +15,8 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Title = "Betalen - Milanov";
+
             if (!Page.IsPostBack)
             {
                 if (Session["Cart"] != null)

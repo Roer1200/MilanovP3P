@@ -34,13 +34,11 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Label ID="lblOutput" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <asp:Button ID="btnSend" runat="server" Text="Verzenden" onclick="btnSend_Click" />
             </td>
         </tr>
     </table>
+    <p>
+        <asp:Label ID="lblOutput" runat="server"></asp:Label>
+    </p>
 </asp:Content>

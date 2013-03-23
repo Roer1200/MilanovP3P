@@ -12,7 +12,7 @@ namespace Milanov.pages.users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Title = "Wachtwoord vergeten - Milanov";
         }
 
         protected void btnSend_Click(object sender, EventArgs e)

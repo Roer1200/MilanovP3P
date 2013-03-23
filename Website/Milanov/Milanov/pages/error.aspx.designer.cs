@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milanov {
+namespace Milanov.pages {
     
     
     public partial class error {

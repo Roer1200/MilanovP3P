@@ -11,7 +11,7 @@ namespace Milanov.pages.users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Title = "Register - Milanov";
         }
 
         private void ClearTextFields()

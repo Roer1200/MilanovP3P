@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Milanov
+namespace Milanov.pages
 {
     public partial class error : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Title = "Error - Milanov";
+
             if (!Page.IsPostBack)
             {
                 string aspxerrorpath = Request.QueryString["aspxerrorpath"];

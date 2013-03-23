@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FrontEnd.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="Milanov.pages.users.register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Milanov - Register</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
@@ -47,12 +46,15 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Button ID="btnRegister" runat="server" Text="Register" onclick="btnRegister_Click" /><br />
-                <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                    ControlToCompare="txtConfirm" ControlToValidate="txtPassword" 
-                    ErrorMessage="Passwords must match" ForeColor="Red"></asp:CompareValidator><br />
-                <asp:Label ID="lblResult" runat="server"></asp:Label>
+                <asp:Button ID="btnRegister" runat="server" Text="Register" onclick="btnRegister_Click" />
             </td>
         </tr>
     </table>
+    <p>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" 
+            ControlToCompare="txtConfirm" ControlToValidate="txtPassword" 
+            ErrorMessage="Passwords must match" ForeColor="Red">
+        </asp:CompareValidator><br />
+        <asp:Label ID="lblResult" runat="server"></asp:Label>
+    </p>
 </asp:Content>

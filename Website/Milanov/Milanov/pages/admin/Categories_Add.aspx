@@ -14,8 +14,10 @@
                     ControlToValidate="txtName" ErrorMessage="*"></asp:RequiredFieldValidator>
             </td>
         </tr>       
-    </table>
-    <asp:Label ID="lblResult" runat="server" Text=""></asp:Label><br />
+    </table>    
     <asp:Button ID="btnSave" runat="server" Text="Opslaan" onclick="btnSave_Click" /></asp:Button>
     <asp:Button ID="btnBack" runat="server" Text="Terug" CausesValidation="false" OnClick="btnBack_Click"></asp:Button>
+    <p>
+        <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+    </p>
 </asp:Content>

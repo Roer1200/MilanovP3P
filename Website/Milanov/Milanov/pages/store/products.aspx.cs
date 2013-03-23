@@ -8,6 +8,8 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Title = "Winkel - Milanov";
+
             if (!Page.IsPostBack)
             {
                 string categoryId = Request.QueryString["categoryId"];

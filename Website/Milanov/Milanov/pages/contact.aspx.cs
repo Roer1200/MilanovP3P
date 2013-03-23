@@ -12,7 +12,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Title = "Contact - Milanov";
         }
 
         protected void btnSend_Click(object sender, EventArgs e)

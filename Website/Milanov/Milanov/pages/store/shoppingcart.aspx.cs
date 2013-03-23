@@ -7,10 +7,12 @@ namespace Milanov.pages.store
 {
     public partial class shoppingcart : System.Web.UI.Page
     {
-        double _TotalPrice = 0.00;
+        decimal _TotalPrice = 0.00m;
 
         protected void Page_Load(object sender, EventArgs e)
-        {                    
+        {
+            this.Title = "Winkelwagen - Milanov";
+        
             if (!Page.IsPostBack)
             {
                 string delId = Request.QueryString["delId"];
@@ -53,11 +55,9 @@ namespace Milanov.pages.store
                             <td>&euro; {2}</td>
                                 </tr>",
                                 product.Id, product.Name, product.Price, product.Image));
-
-
                     }
 
-                    lblOutput.Text = sb.ToString() + "!null";
+                    lblOutput.Text = sb.ToString();
                     checkForDiscount();
                 }
                 else
@@ -65,7 +65,7 @@ namespace Milanov.pages.store
                     sb.Append(
                             string.Format(@"
                             <tr>
-                                <td colspan='4'>Het winkelmandje is leeg. !> 0</td>
+                                <td colspan='4'>Het winkelmandje is leeg.</td>
                             </tr>"));
 
                     lblOutput.Text = sb.ToString();
@@ -92,7 +92,7 @@ namespace Milanov.pages.store
                 List<string> delList = (List<string>)Session["Cart"];
                 if (delList.Count > 0)
                 {
-                    delList.Clear();
+                    delList.Clear();                    
                     Session["Cart"] = delList;
                 }
             }
@@ -116,8 +116,8 @@ namespace Milanov.pages.store
         {
             if ((string)Session["role"] == "2" && _TotalPrice > 0)
             {
-                double originalPrice = _TotalPrice;
-                double discountPrice = ((_TotalPrice / 100) * 5); // 5% korting
+                decimal originalPrice = _TotalPrice;
+                decimal discountPrice = ((_TotalPrice / 100) * 5); // 5% korting
 
                 _TotalPrice = ((_TotalPrice / 100) * 95); // 5% korting voor vaste klanten
                 discountPrice = Math.Round(discountPrice, 2);
@@ -125,7 +125,7 @@ namespace Milanov.pages.store
                 ltrPrice.Text = originalPrice.ToString();
                 ltrDiscount.Visible = true;
                 ltrDiscPrice.Visible = true;
-                ltrDiscount.Text = "Korting: 5% -> &euro; " + discountPrice.ToString();
+                ltrDiscount.Text = "Korting: &euro; " + discountPrice.ToString() + " (5%)";
                 ltrDiscPrice.Text = "Uw prijs: &euro; " + _TotalPrice.ToString();
             }
             else

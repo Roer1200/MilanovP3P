@@ -5,7 +5,6 @@
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Milanov - Contact</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
