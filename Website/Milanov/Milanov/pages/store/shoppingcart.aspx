@@ -21,7 +21,9 @@
             <tr>
                 <td colspan="4" align="right">
                     Totaal: &euro; <asp:Literal ID="ltrPrice" runat="server" Text="ERROR"></asp:Literal><br />
+                    <asp:Literal ID="ltrDiscountN" runat="server" Visible="false" Text="Korting: &euro; "></asp:Literal>
                     <asp:Literal ID="ltrDiscount" runat="server" Visible="false" Text="ERROR"></asp:Literal><br />
+                    <asp:Literal ID="ltrDiscPriceN" runat="server" Visible="false" Text="Uw prijs: &euro; "></asp:Literal>
                     <asp:Literal ID="ltrDiscPrice" runat="server" Visible="false" Text="ERROR"></asp:Literal>
                 </td>
             </tr>

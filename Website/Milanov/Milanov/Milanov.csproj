@@ -100,7 +100,8 @@
     <Content Include="pages\admin\categories_overview.aspx" />
     <Content Include="pages\admin\users_overview.aspx" />
     <Content Include="pages\contact.aspx" />
-    <Content Include="pages\store\checkout.aspx" />
+    <Content Include="pages\store\failed.aspx" />
+    <Content Include="pages\store\succes.aspx" />
     <Content Include="pages\store\products.aspx" />
     <Content Include="pages\store\product.aspx" />
     <Content Include="pages\store\shoppingcart.aspx" />
@@ -185,12 +186,19 @@
     <Compile Include="pages\contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\store\checkout.aspx.cs">
-      <DependentUpon>checkout.aspx</DependentUpon>
+    <Compile Include="pages\store\failed.aspx.cs">
+      <DependentUpon>failed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\store\checkout.aspx.designer.cs">
-      <DependentUpon>checkout.aspx</DependentUpon>
+    <Compile Include="pages\store\failed.aspx.designer.cs">
+      <DependentUpon>failed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\store\succes.aspx.cs">
+      <DependentUpon>succes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\store\succes.aspx.designer.cs">
+      <DependentUpon>succes.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\store\products.aspx.cs">
       <DependentUpon>products.aspx</DependentUpon>

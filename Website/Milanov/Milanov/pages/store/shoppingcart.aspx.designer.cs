@@ -49,6 +49,15 @@ namespace Milanov.pages.store {
         protected global::System.Web.UI.WebControls.Literal ltrPrice;
         
         /// <summary>
+        /// ltrDiscountN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrDiscountN;
+        
+        /// <summary>
         /// ltrDiscount control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace Milanov.pages.store {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltrDiscount;
+        
+        /// <summary>
+        /// ltrDiscPriceN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrDiscPriceN;
         
         /// <summary>
         /// ltrDiscPrice control.
