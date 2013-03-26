@@ -11,9 +11,12 @@ namespace Milanov.pages.users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Register - Milanov";
+            this.Title = "Register - Milanov";      // Change the current title
         }
 
+        /// <summary>
+        /// Clears all the textfields.
+        /// </summary>
         private void ClearTextFields()
         {
             txtUsername.Text = "";
@@ -22,12 +25,17 @@ namespace Milanov.pages.users
             txtEmail.Text = "";
         }
 
+        /// <summary>
+        /// If button register is clicked, try to register the new user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            //Create a new user
+            // Create a new user
             Users users = new Users(txtUsername.Text, txtPassword.Text, txtEmail.Text, 3);
 
-            //Register the user and return a result message
+            // Register the user and return a result message
             lblResult.Text = ConnectionClass.RegisterUser(users);
 
             // If category is added -> ClearTextFields
@@ -37,6 +45,11 @@ namespace Milanov.pages.users
             }
         }
 
+        /// <summary>
+        /// If button back is clicked, redirect user to login.aspx
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("/pages/users/login.aspx");

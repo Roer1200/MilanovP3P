@@ -8,17 +8,18 @@ namespace Milanov.pages.store
 {
     public partial class shoppingcart : System.Web.UI.Page
     {
-        decimal _TotalPrice = 0.00m;
+        decimal _TotalPrice = 0.00m; // decimal to count the total price
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Winkelwagen - Milanov";
+            this.Title = "Winkelwagen - Milanov";       // Change the current title
         
             if (!Page.IsPostBack)
             {
                 string delId = Request.QueryString["delId"];
-                if (!String.IsNullOrEmpty(delId))
+                if (!String.IsNullOrEmpty(delId)) // url containts a delId
                 {
+                    // Deletes the item from the shoppingcart that has been deleted by user
                     List<string> delList = (List<string>)Session["Cart"];
                     if (delList != null && delList.Contains(delId))
                     {
@@ -26,19 +27,23 @@ namespace Milanov.pages.store
                         Session["Cart"] = delList;
                     }
                 }
-                GetProductsFromCart();
+                GetProductsForCart();
             }
         }
 
-        private void GetProductsFromCart()
+        #region GetProductsForCart
+        /// <summary>
+        /// Gets the products that are ordered and shows them in shoppingcart
+        /// </summary>
+        private void GetProductsForCart()
         {
             StringBuilder sb = new StringBuilder();
 
-            if (Session["Cart"] != null)
+            if (Session["Cart"] != null) // Session["Cart"] is NOT null
             {
                 List<string> productList = (List<string>)Session["Cart"];
 
-                if (productList.Count > 0)
+                if (productList.Count > 0) // if the productList > 0 ->
                 {
 
                     ArrayList cartList = new ArrayList();
@@ -61,7 +66,7 @@ namespace Milanov.pages.store
                     lblOutput.Text = sb.ToString();
                     checkForDiscount();
                 }
-                else
+                else    // productList is NOT > 0 ->
                 {
                     sb.Append(
                             string.Format(@"
@@ -73,7 +78,7 @@ namespace Milanov.pages.store
                     ltrPrice.Text = _TotalPrice.ToString();
                 }
             }
-            else
+            else    // Session["Cart"] is NULL
             {
                 sb.Append(
                         string.Format(@"
@@ -85,7 +90,14 @@ namespace Milanov.pages.store
                 ltrPrice.Text = _TotalPrice.ToString();
             }
         }
+        #endregion
 
+        #region EmptyCart
+        /// <summary>
+        /// If Empty button is clicked, delete all products from shoppingcart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnEmpty_Click(object sender, EventArgs e)
         {
             if (Session["Cart"] != null)
@@ -93,37 +105,75 @@ namespace Milanov.pages.store
                 List<string> delList = (List<string>)Session["Cart"];
                 if (delList.Count > 0)
                 {
-                    delList.Clear();                    
+                    delList.Clear();
                     Session["Cart"] = delList;
                 }
             }
-            GetProductsFromCart();
+            GetProductsForCart();
         }
 
+        /// <summary>
+        /// Checks if user should get discount
+        /// </summary>
+        private void checkForDiscount()
+        {
+            if ((string)Session["role"] == "2" && _TotalPrice > 0) // If user is a regular customer -> calculate new price with 5% discount
+            {
+                decimal originalPrice = _TotalPrice;
+                decimal discountPrice = ((_TotalPrice / 100) * 5); // 5% korting
+
+                _TotalPrice = ((_TotalPrice / 100) * 95); // 5% korting voor vaste klanten
+                discountPrice = Math.Round(discountPrice, 2);
+                _TotalPrice = Math.Round(_TotalPrice, 2);
+                ltrPrice.Text = originalPrice.ToString();
+                ltrDiscount.Visible = true;
+                ltrDiscPrice.Visible = true;
+                ltrDiscountN.Visible = true;
+                ltrDiscPriceN.Visible = true;
+                ltrDiscount.Text = discountPrice.ToString();
+                ltrDiscPrice.Text = _TotalPrice.ToString();
+            }
+            else // User is not a regular custumor
+            {
+                ltrPrice.Text = _TotalPrice.ToString();
+                ltrDiscount.Visible = false;
+                ltrDiscPrice.Visible = false;
+                ltrDiscountN.Visible = false;
+                ltrDiscPriceN.Visible = false;
+            }
+        }
+        #endregion
+
+        #region CheckOut
+        /// <summary>
+        /// If button CheckOout is clicked, go to paypal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if (!lblOutput.Text.Contains("Het winkelmandje is leeg."))
+            if (!lblOutput.Text.Contains("Het winkelmandje is leeg.")) // If shoppingcart contains items ->
             {
                 string nPrice = ltrPrice.Text;
                 string dPrice = ltrDiscPrice.Text;
 
-                nPrice = nPrice.Replace(@",", @".");
-                dPrice = dPrice.Replace(@",", @".");
+                nPrice = nPrice.Replace(@",", @"."); // Changes the price that does not contain discount from xxx,xx to xxx.xx ( , -> . )
+                dPrice = dPrice.Replace(@",", @"."); // Changes the price that contains discount from xxx,xx to xxx.xx ( , -> . )
 
-                //Pay pal process Refer for what are the variable are need to send http://www.paypalobjects.com/IntegrationCenter/ic_std-variable-ref-buy-now.html
+                /* PayPal variables http://www.paypalobjects.com/IntegrationCenter/ic_std-variable-ref-buy-now.html */
 
                 string redirecturl = "";
 
                 //Mention URL to redirect content to paypal site
                 redirecturl += "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + ConfigurationManager.AppSettings["paypalemail"].ToString();
 
-                //First name i assign static based on login details assign this value
+                //First name we assign static, in live this name should be changed to the user his/her name
                 redirecturl += "&first_name=milanovfirst";
 
-                //City i assign static based on login user detail you change this value
+                //City we assign static, in live the city should be changed to the user his/her city
                 redirecturl += "&city=milanovcity";
 
-                //State i assign static based on login user detail you change this value
+                //State we assign static, in live this state should be changed to the user his/her state
                 redirecturl += "&state=milanovstate";
 
                 //Product Name
@@ -152,7 +202,7 @@ namespace Milanov.pages.store
                 //Tax amount if any
                 redirecturl += "&tax=0";
 
-                //Add quatity i added one only statically 
+                //Add quatity
                 redirecturl += "&quantity=1";
 
                 //Currency code 
@@ -166,39 +216,12 @@ namespace Milanov.pages.store
 
                 Response.Redirect(redirecturl);
             }
-            else
+            else    // Shoppingcart does not contain items, show error message
             {
                 lblError.Visible = true;
                 lblError.Text = "Er moet eerst een product worden toegevoegd.";
             }
         }
-
-        private void checkForDiscount()
-        {
-            if ((string)Session["role"] == "2" && _TotalPrice > 0)
-            {
-                decimal originalPrice = _TotalPrice;
-                decimal discountPrice = ((_TotalPrice / 100) * 5); // 5% korting
-
-                _TotalPrice = ((_TotalPrice / 100) * 95); // 5% korting voor vaste klanten
-                discountPrice = Math.Round(discountPrice, 2);
-                _TotalPrice = Math.Round(_TotalPrice, 2);
-                ltrPrice.Text = originalPrice.ToString();
-                ltrDiscount.Visible = true;
-                ltrDiscPrice.Visible = true;
-                ltrDiscountN.Visible = true;
-                ltrDiscPriceN.Visible = true;
-                ltrDiscount.Text = discountPrice.ToString();
-                ltrDiscPrice.Text = _TotalPrice.ToString();
-            }
-            else
-            {
-                ltrPrice.Text = _TotalPrice.ToString();
-                ltrDiscount.Visible = false;
-                ltrDiscPrice.Visible = false;
-                ltrDiscountN.Visible = false;
-                ltrDiscPriceN.Visible = false;
-            }
-        }
+        #endregion
     }
 }

@@ -13,7 +13,7 @@ namespace Milanov.pages.store
            if (!Page.IsPostBack)
             {
                 string productId = Request.QueryString["productId"];
-                if (!String.IsNullOrEmpty(productId))
+                if (!String.IsNullOrEmpty(productId)) // url containts a productId -> show specified product
                 {
                     ArrayList productList = new ArrayList();
                     productList = ConnectionClass.GetProductDetails(productId);
@@ -53,16 +53,21 @@ namespace Milanov.pages.store
                         btnBack.Visible = true;
                         lblOutput.Text = sb.ToString();
                         
-                        this.Title = product.Name + " - Milanov";
+                        this.Title = product.Name + " - Milanov";   // Change the current title
                     }
                 }   
-                else
+                else // url does not contain a productId, redirect to error.aspx
                 {
                     Response.Redirect("~/pages/error.aspx");
                 }
             }
         }
 
+        /// <summary>
+        /// If button AddToCart is clicked, add the selected product to shoppingcart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
             string productId = Request.QueryString["productId"];

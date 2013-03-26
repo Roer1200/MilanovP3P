@@ -17,6 +17,7 @@ namespace Milanov
                 lblLogin.Text = "Welcome " + Session["login"];
                 lblLogin.Visible = true;
                 lbLogin.Text = "Logout";
+
                 // If user is not admin, send him to home
                 if ((string)Session["role"] != "1")
                 {
@@ -33,14 +34,12 @@ namespace Milanov
 
         protected void lbLogin_Click(object sender, EventArgs e)
         {
-            //User logs in 
-            if (lbLogin.Text == "Login")
+            if (lbLogin.Text == "Login") // User logs in
             {
                 Response.Redirect("~/pages/users/login.aspx");
             }
-            else
+            else // User logs out
             {
-                //User logs out
                 Session.Clear();
                 Response.Redirect("~/pages/home.aspx");
             }

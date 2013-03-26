@@ -11,16 +11,18 @@ namespace Milanov.pages.users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Check if a user is logged in
             if (Session["login"] != null)
             {
                 this.Title = Session["login"] + " - Milanov";
                 lblCU.Text = "Welcome <b>" + Session["login"] + "</b>!";
 
-                if ((string)Session["role"] != "1")
+                // Check if user is admin
+                if ((string)Session["role"] != "1")     // If admin show 'administrator' button.
                 {
                     btnCMS.Visible = false;
                 }
-                else
+                else    // If NOT admin don't show 'administrator' button.
                 {
                     btnCMS.Visible = true;
                 }
@@ -31,7 +33,22 @@ namespace Milanov.pages.users
             }
         }
 
+        /// <summary>
+        /// Clears all the e-mail textfields
+        /// </summary>
+        private void ClearEmailTextFields()
+        {
+            txtEcurrent.Text = "";
+            txtEnew.Text = "";
+            txtEconfirm.Text = "";
+        }
+
         #region ShowUserInfo
+        /// <summary>
+        /// If button info is clicked, open or close user info
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnInfo_Click(object sender, EventArgs e)
         {
             if (tblInfo.Visible != true)
@@ -52,6 +69,11 @@ namespace Milanov.pages.users
         #endregion
 
         #region ChangePassword
+        /// <summary>
+        /// If button ChangePassword is clicked, open or close fields to change password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
             if (tblPassword.Visible != true)
@@ -66,6 +88,11 @@ namespace Milanov.pages.users
             }
         }
 
+        /// <summary>
+        /// If button Psubmit is clicked, try to change password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnPsubmit_Click(object sender, EventArgs e)
         {
             lblPoutput.Text = ConnectionClass.ChangePassword(Session["Login"].ToString(), txtPcurrent.Text, txtPnew.Text);
@@ -73,13 +100,11 @@ namespace Milanov.pages.users
         #endregion
 
         #region ChangeEmail
-        private void ClearEmailTextFields()
-        {
-            txtEcurrent.Text = "";
-            txtEnew.Text = "";
-            txtEconfirm.Text = "";
-        }
-
+        /// <summary>
+        /// If button ChangeEmail is clicked, open or close fields to change e-mail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnChangeEmail_Click(object sender, EventArgs e)
         {
             if (tblEmail.Visible != true)
@@ -94,6 +119,11 @@ namespace Milanov.pages.users
             }
         }
 
+        /// <summary>
+        /// If button Esubmit is clicked, try to change e-mail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnEsubmit_Click(object sender, EventArgs e)
         {
             lblEoutput.Text = ConnectionClass.ChangeEmail(Session["Login"].ToString(), txtEcurrent.Text, txtEnew.Text);
@@ -104,7 +134,7 @@ namespace Milanov.pages.users
                 {
                     tblInfo.Visible = false;
                 }
-                ClearEmailTextFields();
+                ClearEmailTextFields();     // If e-mail is changed -> ClearEmailTextFields();
             }
         }
         #endregion

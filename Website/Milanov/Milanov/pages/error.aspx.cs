@@ -11,7 +11,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Error - Milanov";
+            this.Title = "Error - Milanov";     // Change the current title
 
             if (!Page.IsPostBack)
             {

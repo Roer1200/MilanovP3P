@@ -14,8 +14,14 @@ namespace Milanov.pages.admin
 
         }
 
+        /// <summary>
+        /// If button delete is clicked, here it will check what you are trying to delete
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            // If you are trying to delete the inbuilt admin account it will display a error message and disable you from deleting
             TableCell cell = GridView1.Rows[e.RowIndex].Cells[1];
             if (cell.Text == "1")
             {
@@ -28,8 +34,14 @@ namespace Milanov.pages.admin
             }
         }
 
+        /// <summary>
+        /// If button edit is clicked, here it will check what you are trying to edit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            // If you are trying to edit the inbuilt admin account it will display a error message and disable you from editing
             TableCell cell = GridView1.Rows[e.NewEditIndex].Cells[1];
             if (cell.Text == "1")
             {

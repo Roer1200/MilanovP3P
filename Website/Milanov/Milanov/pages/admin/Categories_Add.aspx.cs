@@ -14,11 +14,19 @@ namespace Milanov.pages.admin
 
         }
 
+        /// <summary>
+        /// Clears all the textfields.
+        /// </summary>
         private void ClearTextFields()
         {
             txtName.Text = "";
         }
 
+        /// <summary>
+        /// If button save is clicked, try to save the new category
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSave_Click(object sender, EventArgs e)
         {
             // Create a new category
@@ -34,6 +42,11 @@ namespace Milanov.pages.admin
             }
         }
 
+        /// <summary>
+        /// If button back is clicked, redirect to categories_overview.aspx
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("/pages/admin/categories_overview.aspx");

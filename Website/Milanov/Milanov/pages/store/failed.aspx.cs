@@ -11,7 +11,7 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Failed - Milanov";
+            this.Title = "Failed - Milanov";        // Change the current title
         }
     }
 }

@@ -8,12 +8,12 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Winkel - Milanov";
+            this.Title = "Winkel - Milanov";        // Change the current title
 
             if (!Page.IsPostBack)
             {
                 string categoryId = Request.QueryString["categoryId"];
-                if (!String.IsNullOrEmpty(categoryId))
+                if (!String.IsNullOrEmpty(categoryId)) // url contains a categoryId -> show products in specified category
                 {
                     ArrayList productsList = new ArrayList();
                     productsList = ConnectionClass.GetProductByCategory(categoryId.ToString());
@@ -47,7 +47,7 @@ namespace Milanov.pages.store
                         lblOutput.Text = sb.ToString();
                     }
                 }
-                else
+                else // url does not contain a categoryId -> show all products
                 {
                     ArrayList productsList = new ArrayList();
                     productsList = ConnectionClass.GetProductByCategory("%");

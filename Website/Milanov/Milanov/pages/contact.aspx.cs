@@ -12,11 +12,16 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Contact - Milanov";
+            this.Title = "Contact - Milanov";       // Change the current title
         }
 
+        /// <summary>
+        /// // If send button is clicked, try to send the e-mail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSend_Click(object sender, EventArgs e)
-        {
+        {            
             try
             {
                 MailMessage eMailMessage = new MailMessage();
@@ -44,11 +49,19 @@ namespace Milanov.pages
             }
         }
 
+        /// <summary>
+        /// If reset button is clicked, go to ClearTextFields();
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnReset_Click(object sender, EventArgs e)
         {
             ClearTextFields();
         }
 
+        /// <summary>
+        /// Clears all the textfields.
+        /// </summary>
         private void ClearTextFields()
         {
             txtName.Text = "";

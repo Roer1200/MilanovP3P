@@ -2,6 +2,8 @@
 using System.Collections;
 using System.IO;
 using System.Drawing;
+using System.Collections.Specialized;
+using System.Linq;
 
 namespace Milanov.pages.admin
 {
@@ -9,11 +11,14 @@ namespace Milanov.pages.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string selectedValue = ddlImage.SelectedValue;
-            showImages();
-            ddlImage.SelectedValue = selectedValue;
+            string selectedValue = ddlImage.SelectedValue;      // This is probably not necessary ...
+            showImages();                               // Execute showImages()
+            ddlImage.SelectedValue = selectedValue;             // This is probably not necessary ...
         }
         
+        /// <summary>
+        /// Adds and shows all the available images in the DropDownList
+        /// </summary>
         private void showImages()
         {
             string[] images = Directory.GetFiles(Server.MapPath("~/images/products/"));
@@ -30,6 +35,9 @@ namespace Milanov.pages.admin
             ddlImage.DataBind();
         }
 
+        /// <summary>
+        /// Clears all the textfields.
+        /// </summary>
         private void ClearTextFields()
         {
             txtName.Text = "";
@@ -37,46 +45,67 @@ namespace Milanov.pages.admin
             txtDescription.Text = "";
         }
 
+        /// <summary>
+        /// If button upload is clicked, try to upload the file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnUploadImage_Click(object sender, EventArgs e)
         {
             try
             {
+                NameValueCollection imageExtensions = new NameValueCollection();
+                imageExtensions.Add(".jpg", "image/jpeg");
+                imageExtensions.Add(".gif", "image/gif");
+                imageExtensions.Add(".png", "image/png");
+                                 
                 string filename = Path.GetFileName(FileUpload1.FileName);
-
-                if (ddlImage.Items.FindByText(filename) != null)
+                string ext = "." + filename.Substring(filename.LastIndexOf(@".") + 1);
+                
+                if (imageExtensions.AllKeys.Contains(ext)) // check if extension is .jpg, .gif or .png
                 {
-                    lblResult.Text = "Foto " + filename + " is al in gebruik, kies een andere naam.";
-                }
-                else
-                {
-                    FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);          
-                    lblResult.Text = "Foto " + filename + " succesvol geupload!";
-                    Page_Load(sender, e);
-                    ddlImage.SelectedValue = filename.ToString();
-
-                    // Add preview layer
-                    int opacity = 128; // 50% opaque (0 = invisible, 255 = fully opaque)
-                    Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
-                    Graphics graphicImage = Graphics.FromImage(bitmapImage);
-                    for (int i = 1; i < 4; i++)
+                    if (ddlImage.Items.FindByText(filename) != null) // check if filename is in use
                     {
-                        for (int j = 1; j < 4; j++)
-                        {
-                            graphicImage.DrawString("© Milanov", new Font("Verdana", 20, FontStyle.Bold), new SolidBrush(Color.FromArgb(opacity, Color.WhiteSmoke)), new Point(((bitmapImage.Width / 5) * j), ((bitmapImage.Height / 4) * i)));
-                        }
+                        lblResult.Text = "Foto " + filename + " is al in gebruik, kies een andere naam.";
                     }
-                    bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
+                    else // extension is correct, name is not in use -> upload image and make preview image
+                    {
+                        FileUpload1.SaveAs(Server.MapPath("~/images/products/") + filename);
+                        Page_Load(sender, e);
+                        ddlImage.SelectedValue = filename.ToString();
 
-                    lblResult.Text = "Foto " + filename + " succesvol geupload!";
+                        // Add preview layer
+                        int opacity = 128; // 50% opaque (0 = invisible, 255 = fully opaque)
+                        Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
+                        Graphics graphicImage = Graphics.FromImage(bitmapImage);
+                        for (int i = 1; i < 4; i++)
+                        {
+                            for (int j = 1; j < 4; j++)
+                            {
+                                graphicImage.DrawString("© Milanov", new Font("Verdana", 20, FontStyle.Bold), new SolidBrush(Color.FromArgb(opacity, Color.WhiteSmoke)), new Point(((bitmapImage.Width / 5) * j), ((bitmapImage.Height / 4) * i)));
+                            }
+                        }
+                        bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
+
+                        lblResult.Text = "Foto " + filename + " succesvol geupload!";
+                    }
+                }
+                else  // the chosen file has an extension that is not allowed
+                {                   
+                    lblResult.Text = "Deze extensie wordt niet geaccepteerd, alleen bestanden met .jpg, .gif en .png mogen gebruikt worden.";
                 }
             }
-
             catch (Exception)
             {                
                 lblResult.Text = "Upload foto mislukt!";
             }
         }
 
+        /// <summary>
+        /// If button save is clicked, try to save the new product
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -100,6 +129,11 @@ namespace Milanov.pages.admin
             }
         }
 
+        /// <summary>
+        /// If button back is clicked, redirect to products_overview.aspx
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("/pages/admin/products_overview.aspx");

@@ -31,8 +31,8 @@
                     <li><a href="/pages/contact.aspx">Contact</a></li>
                     <li><a href="/pages/users/account.aspx">Account</a>
                         <ul>
-                            <li><asp:Label ID="lblLogin" runat="server" Text="">lblLogin</asp:Label></li>
-                            <li><asp:LinkButton ID="lbLogin" runat="server" CausesValidation="false" onclick="lbLogin_Click">lbLogin</asp:LinkButton></li>
+                            <li><asp:Label ID="lblLogin" runat="server" Text=""></asp:Label></li>
+                            <li><asp:LinkButton ID="lbLogin" runat="server" CausesValidation="false" onclick="lbLogin_Click"></asp:LinkButton></li>
                         </ul>                                
                     </li>
                 </ul>

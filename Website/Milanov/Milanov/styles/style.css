@@ -53,15 +53,11 @@ form
 #content_area 
 {
     background-color: #FCFCF8;
-    border: 1px solid #D8EDE8;
-    /* Firefox */
-    min-height: -moz-calc(100% - 375px);
-    /* WebKit */
-    min-height: -webkit-calc(100% - 375px);
-    /* Opera */
-    min-height: -o-calc(100% - 375px);
-    /* Standard */
-    min-height: calc(100% - 375px);
+    border: 1px solid #D8EDE8;    
+    min-height: -moz-calc(100% - 375px);        /* Firefox */    
+    min-height: -webkit-calc(100% - 375px);     /* WebKit */    
+    min-height: -o-calc(100% - 375px);          /* Opera */    
+    min-height: calc(100% - 375px);             /* Standard */
     height: auto;
     width: 1000px;
     margin: auto;
@@ -175,6 +171,7 @@ form
     border:1px solid #03161B;
     padding:3px 7px 2px 7px;
 }
+
 .cartTable th 
 {
     font-size:1.1em;
@@ -235,7 +232,7 @@ form
     padding: 10px;
 }
 
-a:link { color:#000000; text-decoration:none; }      /* unvisited link */
-a:visited { color:#000000; text-decoration:none; }  /* visited link */
-a:hover { color:#103E4D; text-decoration:none; }  /* mouse over link */
-a:active { color:#000000; text-decoration:none;}  /* selected link */
+a:link { color:#000000; text-decoration:none; }         /* unvisited link */
+a:visited { color:#000000; text-decoration:none; }      /* visited link */
+a:hover { color:#103E4D; text-decoration:none; }        /* mouse over link */
+a:active { color:#000000; text-decoration:none;}        /* selected link */

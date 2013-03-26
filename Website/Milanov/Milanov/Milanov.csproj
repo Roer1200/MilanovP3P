@@ -107,7 +107,7 @@
     <Content Include="pages\store\shoppingcart.aspx" />
     <Content Include="pages\users\account.aspx" />
     <Content Include="pages\users\login.aspx" />
-    <Content Include="pages\users\password_recovery.aspx" />
+    <Content Include="pages\users\forgotpassword.aspx" />
     <Content Include="pages\users\register.aspx" />
     <Content Include="pages\admin\products_add.aspx" />
     <Content Include="pages\home.aspx" />
@@ -235,12 +235,12 @@
     <Compile Include="pages\users\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\users\password_recovery.aspx.cs">
-      <DependentUpon>password_recovery.aspx</DependentUpon>
+    <Compile Include="pages\users\forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\users\password_recovery.aspx.designer.cs">
-      <DependentUpon>password_recovery.aspx</DependentUpon>
+    <Compile Include="pages\users\forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\users\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>

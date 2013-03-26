@@ -14,44 +14,54 @@ namespace Milanov.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Succes - Milanov";
+            this.Title = "Succes - Milanov";        // Change the current title
 
             if (!Page.IsPostBack)
-            {
+            {                
                 string orderId = Request.QueryString["orderId"];
-                if (!String.IsNullOrEmpty(orderId))
+                if (!String.IsNullOrEmpty(orderId))     // url contains a orderId
                 {
-                    if (orderId == ((string)Session["login"]))
+                    if (orderId == ((string)Session["login"]))      // orderId equals to current user
                     {
-                        if (Session["Cart"] != null)
+                        if (Session["Cart"] != null)    // session["Cart"] is NOT null -> ShowBoughtImages();
                         {
                             List<string> boughtList = (List<string>)Session["Cart"];
-                            ShowBoughtImages(boughtList);
+                            ShowAndMailBoughtImages(boughtList);
                         }
-                        else
+                        else    // session["Cart"] is null, redirect to error.aspx
                         {
-                            // Something went wrong
+                            Response.Redirect("~/error.aspx");
                         }
                     }
+                    else    // orderId does not equals  to current user, redirect to error.aspx
+                    {
+                        Response.Redirect("~/error.aspx");
+                    }
                 }
-                else
+                else // url does not contain a orderId
                 {
                     Response.Redirect("~/error.aspx");
                 }
             }                    
         }
 
-        private void ShowBoughtImages(List<string> boughtList)
-        {
-            StringBuilder sb = new StringBuilder();
+        /// <summary>
+        /// Shows and e-mails all the images that are bought by the user
+        /// </summary>
+        /// <param name="boughtList"></param>
+        private void ShowAndMailBoughtImages(List<string> boughtList)
+        {  
+            /*      <- This code can be used for downloading the images. ->
+             * NameValueCollection imageExtensions = new NameValueCollection();            
+             * imageExtensions.Add(".jpg", "image/jpeg");            
+             * imageExtensions.Add(".gif", "image/gif");            
+             * imageExtensions.Add(".png", "image/png");
+             */
 
-            /*NameValueCollection imageExtensions = new NameValueCollection();
-            imageExtensions.Add(".jpg", "image/jpeg");
-            imageExtensions.Add(".gif", "image/gif");
-            imageExtensions.Add(".png", "image/png");*/
-
-            if (boughtList.Count > 0)
+            if (boughtList.Count > 0) // If the list of bought images is > 0 (this SHOULD always be true as we check this earlier) ->
             {
+                StringBuilder sb = new StringBuilder();
+
                 ArrayList cartList = new ArrayList();
                 cartList = ConnectionClass.GetShopProducts(boughtList);
 
@@ -64,18 +74,21 @@ namespace Milanov.pages.store
                     sb.Append(string.Format(@"<img src='/images/products/{1}' alt='{0}' height='20%' width='20%' /><br /><br />", product.Name, product.Image));
                     images.Add(product.Image);
 
-                    /* string ext = "." + product.Image.Substring(product.Image.LastIndexOf(@".") + 1);
-                    if (imageExtensions.AllKeys.Contains(ext))
-                    {
-                        Response.ContentType = imageExtensions.Get(ext);
-                        Response.AppendHeader("Content-Disposition", "attachment; filename=" + product.Image);
-                        Response.TransmitFile(Server.MapPath("~/images/products/" + product.Image));
-                        Response.End();
-                    } */
+                    /* <- This code can be used for downloading the images. ->
+                     * string ext = "." + product.Image.Substring(product.Image.LastIndexOf(@".") + 1);                    
+                     * if (imageExtensions.AllKeys.Contains(ext))                    
+                     * {                        
+                     *  Response.ContentType = imageExtensions.Get(ext);                        
+                     *  Response.AppendHeader("Content-Disposition", "attachment; filename=" + product.Image);                        
+                     *  Response.TransmitFile(Server.MapPath("~/images/products/" + product.Image));                        
+                     *  Response.End();                    
+                     * } 
+                     */
                 }
 
-                lblImage.Text = sb.ToString();
+                lblImage.Text = sb.ToString(); // Shows the images
 
+                // E-mail the images
                 try
                 {
                     MailMessage eMailMessage = new MailMessage();
@@ -108,9 +121,9 @@ namespace Milanov.pages.store
                     lblOutput.Text = "Er is iets fout gegaan, neem contact op met de websitebeheerder.";
                 }
             }
-            else
+            else    // The list of bought images is NOT > 0 (this SHOULD never happen)
             {
-                // Something went wrong
+                Response.Redirect("~/error.aspx");
             }
         }
     }

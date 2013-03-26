@@ -11,7 +11,7 @@ namespace Milanov.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Home - Milanov";
+            this.Title = "Home - Milanov";      // Change the current title
         }
     }
 }

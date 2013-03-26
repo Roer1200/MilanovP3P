@@ -8,18 +8,24 @@ using System.Net.Mail;
 
 namespace Milanov.pages.users
 {
-    public partial class password_recovery : System.Web.UI.Page
+    public partial class forgotpassword : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Title = "Wachtwoord vergeten - Milanov";
+            this.Title = "Wachtwoord vergeten - Milanov";       // Change the current title
         }
 
+        /// <summary>
+        /// If button send is clicked, try send e-mail with password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSend_Click(object sender, EventArgs e)
         {
+            // Get the password
             string password = ConnectionClass.ForgotPassword(txtUsername.Text, txtEmail.Text);
 
-            if (!password.Contains("Wachtwoord is niet verzonden"))
+            if (!password.Contains("Wachtwoord is niet verzonden"))     // If password does not contain a error message, send e-mail with password.
             {
                 try
                 {
@@ -48,7 +54,7 @@ namespace Milanov.pages.users
                     lblOutput.Text = "Er is iets fout gegaan, neem contact op met de websitebeheerder.";
                 }
             }
-            else
+            else    // If password contains a error message, display error message.
             {
                 lblOutput.Text = password;
             }

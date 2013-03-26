@@ -11,7 +11,7 @@ namespace Milanov
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Check if a user is logged in
+            // Check if a user is logged in
             if (Session["login"] != null)
             {
                 lblLogin.Text = "Welcome " + Session["login"];
@@ -27,14 +27,12 @@ namespace Milanov
 
         protected void lbLogin_Click(object sender, EventArgs e)
         {
-            //User logs in 
-            if (lbLogin.Text == "Login")
+            if (lbLogin.Text == "Login") // User logs in
             {
                 Response.Redirect("~/pages/users/login.aspx");
             }
-            else
+            else // User logs out
             {
-                //User logs out
                 Session.Clear();
                 Response.Redirect("~/pages/home.aspx");
             }

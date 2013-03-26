@@ -28,14 +28,12 @@ namespace Milanov
 
         protected void lbLogin_Click(object sender, EventArgs e)
         {
-            //User logs in 
-            if (lbLogin.Text == "Login")
+            if (lbLogin.Text == "Login") // User logs in
             {
                 Response.Redirect("~/pages/users/login.aspx");
             }
-            else
-            {
-                //User logs out
+            else // User logs out
+            {                
                 Session.Clear();
                 Response.Redirect("~/pages/home.aspx");
             }

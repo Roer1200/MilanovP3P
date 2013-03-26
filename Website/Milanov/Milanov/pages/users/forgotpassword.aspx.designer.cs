@@ -10,7 +10,7 @@
 namespace Milanov.pages.users {
     
     
-    public partial class password_recovery {
+    public partial class forgotpassword {
         
         /// <summary>
         /// txtUsername control.
