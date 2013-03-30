@@ -51,7 +51,7 @@
             ConnectionString="<%$ ConnectionStrings:MilanovDBConnectionString %>" 
             DeleteCommand="DELETE FROM categories WHERE id = @id AND '0' = (SELECT COUNT(cat_id) FROM products WHERE cat_id = @id)" 
             SelectCommand="SELECT * FROM [categories]" 
-            UpdateCommand="UPDATE [categories] SET [name] = @name WHERE [id] = @id">
+            UpdateCommand="UPDATE [categories] SET [name] = @name WHERE [id] = @id AND '0' = (SELECT COUNT(name) FROM categories WHERE name = @name)">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>

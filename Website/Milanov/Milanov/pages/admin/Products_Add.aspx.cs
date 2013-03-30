@@ -12,7 +12,7 @@ namespace Milanov.pages.admin
         protected void Page_Load(object sender, EventArgs e)
         {
             string selectedValue = ddlImage.SelectedValue;      // This is probably not necessary ...
-            showImages();                               // Execute showImages()
+            showImages();                                       // Execute showImages()
             ddlImage.SelectedValue = selectedValue;             // This is probably not necessary ...
         }
         
