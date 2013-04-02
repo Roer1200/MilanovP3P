@@ -75,16 +75,17 @@ namespace Milanov.pages.admin
                         ddlImage.SelectedValue = filename.ToString();
 
                         // Add preview layer
-                        int opacity = 128; // 50% opaque (0 = invisible, 255 = fully opaque)
                         Bitmap bitmapImage = new Bitmap(Server.MapPath("~/images/products/") + filename);
                         Graphics graphicImage = Graphics.FromImage(bitmapImage);
-                        for (int i = 1; i < 4; i++)
+                        Image preview = Image.FromFile(Server.MapPath("~/images/preview.png"), true);
+                        for (int i = 1; i < 4; i += 2)
                         {
-                            for (int j = 1; j < 4; j++)
+                            for (int j = 1; j < 4; j += 2)
                             {
-                                graphicImage.DrawString("© Milanov", new Font("Verdana", 20, FontStyle.Bold), new SolidBrush(Color.FromArgb(opacity, Color.WhiteSmoke)), new Point(((bitmapImage.Width / 5) * j), ((bitmapImage.Height / 4) * i)));
+                                graphicImage.DrawImage(preview, new Rectangle(new Point((((bitmapImage.Width / 4) * j) - 52), ((bitmapImage.Height / 4) * i)), new Size(104, 19)));
                             }
                         }
+
                         bitmapImage.Save(Server.MapPath("~/images/preview/") + filename);
 
                         lblResult.Text = "Foto " + filename + " succesvol geupload!";

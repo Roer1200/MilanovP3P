@@ -91,6 +91,7 @@
     <Content Include="images\lipsum.gif" />
     <Content Include="images\mini_cart.png" />
     <Content Include="images\icon_p.png" />
+    <Content Include="images\preview.png" />
     <Content Include="images\trashmini.png" />
     <Content Include="images\twitter.png" />
     <Content Include="images\icon_u.png" />
